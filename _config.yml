@@ -12,18 +12,18 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "custom" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # 다크모드 토글버튼
 # dark_theme_toggle        : true
 # Site Settings
-locale                   : "ko"
+locale                   : "ko-KR"
 title                    : "응벅로그"
 title_separator          : "-"
 subtitle                 : "Don't worry if it doesn't work right."
 name                     : "EungBug(Eunbi Lee)"
 description              : "웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작."
 url                      : "https://eungbug.github.io"
-baseurl                  : "/eungbug" # the subpath of your site, e.g. "/blog"
+baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "https://github.com/EungBug/eungbug.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
