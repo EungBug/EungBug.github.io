@@ -10,6 +10,7 @@
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
+    padding-left: 1em;
   }
 
   @include breakpoint($x-large) {
@@ -34,8 +35,9 @@
 .archive__subtitle {
   margin: 1.414em 0 0.5em;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
-  color: $muted-text-color;
+  font-size: $type-size-4;
+  font-weight: 900;
+  color: mix(#000, $link-color, 40%);
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
