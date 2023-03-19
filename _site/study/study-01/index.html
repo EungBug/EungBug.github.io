@@ -1,0 +1,865 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Study] 마크다운(Markdown) 문법 - 응벅로그</title>
+<meta name="description" content="마크다운 문법 숙지에서 숙달까지">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="[Study] 마크다운(Markdown) 문법">
+<meta property="og:url" content="http://localhost:4000/study/study-01/">
+
+
+  <meta property="og:description" content="마크다운 문법 숙지에서 숙달까지">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-20T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-20T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/study-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Study] 마크다운(Markdown) 문법">
+    <meta itemprop="description" content="마크다운 문법 숙지에서 숙달까지">
+    <meta itemprop="datePublished" content="2023-03-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-20T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/study-01/" class="u-url" itemprop="url">[Study] 마크다운(Markdown) 문법
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#마크다운markdown">마크다운(Markdown)</a></li><li><a href="#제목header">제목(Header)</a></li><li><a href="#제목-1">제목 1</a><ul><li><a href="#제목-2">제목 2</a><ul><li><a href="#제목-3">제목 3</a><ul><li><a href="#제목-4">제목 4</a><ul><li><a href="#제목-5">제목 5</a><ul><li><a href="#제목-6">제목 6</a></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><a href="#h1">h1</a><ul><li><a href="#h2">h2</a></li></ul></li><li><a href="#문장paragraph">문장(Paragraph)</a></li><li><a href="#줄바꿈line-breaks">줄바꿈(Line Breaks)</a></li><li><a href="#강조emphasis">강조(Emphasis)</a></li><li><a href="#목록list">목록(List)</a><ul><li><a href="#순서가-필요한-목록">순서가 필요한 목록</a></li><li><a href="#순서가-필요하지-않은-목록">순서가 필요하지 않은 목록</a></li></ul></li><li><a href="#링크links">링크(Links)</a></li><li><a href="#이미지image">이미지(Image)</a><ul><li><a href="#이미지-링크">이미지 링크</a></li></ul></li><li><a href="#인용문blockquote">인용문(BlockQuote)</a></li><li><a href="#인라인inline-코드-강조">인라인(inline) 코드 강조</a></li><li><a href="#블록block-코드-강조">블록(block) 코드 강조</a></li><li><a href="#표table">표(Table)</a></li><li><a href="#원시-htmlraw-html">원시 HTML(Raw HTML)</a></li><li><a href="#수평선horizontal-rule">수평선(Horizontal Rule)</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>패스트캠퍼스 <code class="language-plaintext highlighter-rouge">박영웅 강사님</code> 강의를 통해 학습한 내용을 기반으로 작성한 글입니다.<br />
+새로 배우는 문법들은 추후 추가적으로 업데이트 할 예정!<br />
+<br /></p>
+
+<h1 id="마크다운markdown">마크다운(Markdown)</h1>
+<blockquote>
+  <p>마크다운(Markdown)은 일반 텍스트 기반의 경량 마크업 언어다. 
+일반 텍스트로 서식이 있는 문서를 작성하는 데 사용되며, 일반 마크업 언어에 비해 문법이 쉽고 간단한 것이 특징이다.<br />
+(위키백과)</p>
+</blockquote>
+
+<p>장점</p>
+<ul>
+  <li>문법이 쉽고 간결하다.</li>
+  <li>관리가 쉽다.</li>
+  <li>지원 가능한 플랫폼과 프로그램이 다양하다.</li>
+</ul>
+
+<p>단점</p>
+<ul>
+  <li>표준이 없다. (미리보기와 결과가 상이할 수 있다.)</li>
+  <li>모든 HTML 마크업을 대신하지 못한다.</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="제목header">제목(Header)</h1>
+
+<p>HTML의 <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code>태그부터 <code class="language-plaintext highlighter-rouge">&lt;h6&gt;</code>태그의 제목을 표현할 때 사용한다.
+<code class="language-plaintext highlighter-rouge">#</code>이 적을수록 중요도가 높다.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># 제목 1 = h1</span>
+<span class="gu">## 제목 2 = h2</span>
+<span class="gu">### 제목 3 = h3</span>
+<span class="gu">#### 제목 4 = h4</span>
+<span class="gu">##### 제목 5 = h5</span>
+<span class="gu">###### 제목 6 = h6</span>
+
+h1은 ==, h2는 -- 로 대체 가능하다
+</code></pre></div></div>
+<p><strong>👩🏻‍💻 결과</strong></p>
+<h1 id="제목-1">제목 1</h1>
+<h2 id="제목-2">제목 2</h2>
+<h3 id="제목-3">제목 3</h3>
+<h4 id="제목-4">제목 4</h4>
+<h5 id="제목-5">제목 5</h5>
+<h6 id="제목-6">제목 6</h6>
+
+<h1 id="h1">h1</h1>
+
+<h2 id="h2">h2</h2>
+<p><br /></p>
+
+<h1 id="문장paragraph">문장(Paragraph)</h1>
+
+<p>문장 입력 시 줄바꿈(enter)을 해도 적용되지 않는다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>올바로 동작하지 않더라도 걱정말아라.
+모든 것이 그랬다면, 넌 직업을 잃었을테니까
+</code></pre></div></div>
+<p><strong>👩🏻‍💻 결과</strong>  <br />
+올바로 동작하지 않더라도 걱정말아라.
+모든 것이 그랬다면, 넌 직업을 잃었을테니까</p>
+
+<p><br /></p>
+
+<h1 id="줄바꿈line-breaks">줄바꿈(Line Breaks)</h1>
+
+<p><code class="language-plaintext highlighter-rouge">띄어쓰기 2번</code> 또는 <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> 태그를 통해 줄바꿈 처리 가능하다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>올바로 동작하지 않더라도 걱정말아라.  
+모든 것이 그랬다면,<span class="nt">&lt;br&gt;</span>
+넌 직업을 잃었을테니까
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+올바로 동작하지 않더라도 걱정말아라.<br />
+모든 것이 그랬다면,<br />
+넌 직업을 잃었을테니까</p>
+
+<p><br /></p>
+
+<h1 id="강조emphasis">강조(Emphasis)</h1>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ge">_이텔릭_</span>  
+<span class="gs">**볼드**</span>  
+<span class="gs">**_이텔릭 + 볼드_**</span>  
+~~취소선~~  
+<span class="nt">&lt;u&gt;</span>밑줄<span class="nt">&lt;/u&gt;</span>
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+<em>이텔릭</em><br />
+<strong>볼드</strong><br />
+<strong><em>이텔릭 + 볼드</em></strong><br />
+<del>취소선</del><br />
+<u>밑줄</u></p>
+
+<p><br /></p>
+
+<h1 id="목록list">목록(List)</h1>
+<p>순서가 필요한 목록 <code class="language-plaintext highlighter-rouge">&lt;ol&gt;태그</code>과 순서가 필요하지 않은 목록 <code class="language-plaintext highlighter-rouge">&lt;ul&gt;태그</code> 를 작성할 수 있다.<br />
+서브 목록을 만들때는 들여쓰기 2번(띄어쓰기 4번)한다.</p>
+
+<h2 id="순서가-필요한-목록">순서가 필요한 목록</h2>
+<p>1,2,3 순서대로 작성해도 되지만 <code class="language-plaintext highlighter-rouge">1.</code>로도 작성된다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> 순서가 필요한 목록
+<span class="p">1.</span> 순서가 필요한 목록
+<span class="p">1.</span> 순서가 필요한 목록
+<span class="p">   1.</span> 순서가 필요한 목록
+<span class="p">      1.</span> 순서가 필요한 목록
+<span class="p">   1.</span> 순서가 필요한 목록
+<span class="p">1.</span> 순서가 필요한 목록
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong></p>
+<ol>
+  <li>순서가 필요한 목록</li>
+  <li>순서가 필요한 목록</li>
+  <li>순서가 필요한 목록
+    <ol>
+      <li>순서가 필요한 목록
+        <ol>
+          <li>순서가 필요한 목록</li>
+        </ol>
+      </li>
+      <li>순서가 필요한 목록</li>
+    </ol>
+  </li>
+  <li>순서가 필요한 목록</li>
+</ol>
+
+<h2 id="순서가-필요하지-않은-목록">순서가 필요하지 않은 목록</h2>
+<p><code class="language-plaintext highlighter-rouge">- 대쉬</code>기호를 사용해서 작성한다. (<code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">+</code> 기호로도 작성이 가능하다)</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> 순서가 필요하지 않은 목록
+<span class="p">-</span> 순서가 필요하지 않은 목록
+<span class="p">-</span> 순서가 필요하지 않은 목록
+<span class="p">  *</span> 순서가 필요하지 않은 목록
+<span class="p">    +</span> 순서가 필요하지 않은 목록
+<span class="p">  -</span> 순서가 필요하지 않은 목록
+<span class="p">-</span> 순서가 필요하지 않은 목록
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong></p>
+<ul>
+  <li>순서가 필요하지 않은 목록</li>
+  <li>순서가 필요하지 않은 목록</li>
+  <li>순서가 필요하지 않은 목록
+    <ul>
+      <li>순서가 필요하지 않은 목록
+        <ul>
+          <li>순서가 필요하지 않은 목록</li>
+        </ul>
+      </li>
+      <li>순서가 필요하지 않은 목록</li>
+    </ul>
+  </li>
+  <li>순서가 필요하지 않은 목록</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="링크links">링크(Links)</h1>
+<p><code class="language-plaintext highlighter-rouge">[]</code> 대괄호에 텍스트, <code class="language-plaintext highlighter-rouge">()</code> 소괄호에 URL을 작성한다.<br />
+URL 뒤에 띄어쓰기 후 <code class="language-plaintext highlighter-rouge">"title"</code> 링크 설명을 작성할 수 있다.</p>
+
+<p><a href="https://google.com">Google</a><br />
+<a href="https://google.com" title="Google링크!">Google</a></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Google</span><span class="p">](</span><span class="sx">https://google.com</span> <span class="nn">"Google링크!"</span><span class="p">)</span>
+URL 링크는 <span class="nt">&lt;&gt;</span> 꺽쇠 괄호 안에 작성한다
+<span class="nv">&lt;https://google.com&gt;</span>
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+<a href="https://google.com" title="Google링크!">Google</a><br />
+<a href="https://google.com">https://google.com</a></p>
+
+<p><br /></p>
+
+<h1 id="이미지image">이미지(Image)</h1>
+<p><code class="language-plaintext highlighter-rouge">![이미지 설명 대체 텍스트](이미지 링크)</code>로 작성한다.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Logo입니다.</span><span class="p">](</span><span class="sx">https://eungbug.github.io/assets/img/me/me.png</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+<img src="https://eungbug.github.io/assets/img/me/me.png" alt="Logo입니다." /></p>
+
+<p><br /></p>
+
+<h2 id="이미지-링크">이미지 링크</h2>
+
+<p>링크 작성법 + 이미지 작성법으로 <code class="language-plaintext highlighter-rouge">[![대체 텍스트](이미지경로)](링크 URL)</code>형식으로 작성한다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">![응벅로그</span><span class="p">](</span><span class="sx">https://eungbug.github.io/assets/img/me/me.png</span><span class="p">)</span>](https://eungbug.github.io/)
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+<a href="https://eungbug.github.io/"><img src="https://eungbug.github.io/assets/img/me/me.png" alt="응벅로그" /></a></p>
+
+<p><br /></p>
+<h1 id="인용문blockquote">인용문(BlockQuote)</h1>
+
+<p>인용문은  <code class="language-plaintext highlighter-rouge">&gt;</code>기호 뒤에 띄어쓰기 후 인용문을 작성한다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; 남의 말이나 글에서 직접 또는 간접적으로 따운 문장.  </span>
+<span class="gt">&gt; (네이버 국어 사전)</span>
+<span class="gt">
+&gt; 인용문</span>
+<span class="gt">&gt;</span>
+<span class="gt">&gt; &gt; 중첩 인용문</span>
+<span class="gt">&gt; &gt;</span>
+<span class="gt">&gt; &gt; &gt; 중중첩 인용문</span>
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong></p>
+<blockquote>
+  <p>남의 말이나 글에서 직접 또는 간접적으로 따운 문장.<br />
+(네이버 국어 사전)</p>
+</blockquote>
+
+<blockquote>
+  <p>인용문</p>
+
+  <blockquote>
+    <p>중첩 인용문</p>
+
+    <blockquote>
+      <p>중중첩 인용문</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="인라인inline-코드-강조">인라인(inline) 코드 강조</h1>
+<p><code>백틱(`)</code>기호를 사용하여 인라인 코드를 강조한다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CSS에서 <span class="sb">`background`</span> 혹은 <span class="sb">`background-image`</span> 속성으로 요소에 배경 이미지를 삽입할 수 있습니다.
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+CSS에서 <code class="language-plaintext highlighter-rouge">background</code> 혹은 <code class="language-plaintext highlighter-rouge">background-image</code> 속성으로 요소에 배경 이미지를 삽입할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h1 id="블록block-코드-강조">블록(block) 코드 강조</h1>
+<p><code>백틱(`)</code>기호를 3개를 쓰고 <code>(```)</code>코드의 언어를 작성한 뒤, 다시 3개의 백틱으로 블록을 감싸서 강조한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```css
+a {
+  color: red;
+}
+```
+
+```bash
+$ git commit -m 'Study Markdown'
+```
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s1">'Study Markdown'</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="표table">표(Table)</h1>
+<p><code class="language-plaintext highlighter-rouge">|</code>로 구분하여 작성하고, <code class="language-plaintext highlighter-rouge">-</code>기호를 통해 헤더 셀을 구분한다.
+헤더 셀을 구분할 때 <code class="language-plaintext highlighter-rouge">:</code> 기호를 통해 열 정렬을 설정할 수 있다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>: 생략 &gt; 기본 왼쪽 정렬
+:--: - 가운데 정렬  
+--: - 오른쪽 정렬
+</code></pre></div></div>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>position 속성
+
+값 | 의미 | 기본값
+-- | :--: | --: 
+static | 기분 없음 | O
+relative | 요소 자신 | X
+absolute | 위치 상 부모 요소 | X
+fixed | 뷰포트 | X
+
+</code></pre></div></div>
+<p><strong>👩🏻‍💻 결과</strong><br />
+position 속성</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>값</th>
+      <th style="text-align: center">의미</th>
+      <th style="text-align: right">기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>static</td>
+      <td style="text-align: center">기분 없음</td>
+      <td style="text-align: right">O</td>
+    </tr>
+    <tr>
+      <td>relative</td>
+      <td style="text-align: center">요소 자신</td>
+      <td style="text-align: right">X</td>
+    </tr>
+    <tr>
+      <td>absolute</td>
+      <td style="text-align: center">위치 상 부모 요소</td>
+      <td style="text-align: right">X</td>
+    </tr>
+    <tr>
+      <td>fixed</td>
+      <td style="text-align: center">뷰포트</td>
+      <td style="text-align: right">X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h1 id="원시-htmlraw-html">원시 HTML(Raw HTML)</h1>
+<p>마크다운 문법에서 HTML 문법을 사용할 수 있다.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>동해물과 <span class="nt">&lt;u&gt;</span>백두산<span class="nt">&lt;/u&gt;</span>이 마르고 닳도록<span class="nt">&lt;br&gt;</span>
+하느님이 보우하사 우리나라 만세<span class="nt">&lt;br&gt;</span>
+a태그  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://google.com"</span><span class="nt">&gt;</span>Google<span class="nt">&lt;/a&gt;&lt;br&gt;</span>
+img태그 <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://eungbug.github.io/assets/img/me/me.png"</span> <span class="na">alt=</span><span class="s">"로고"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><strong>👩🏻‍💻 결과</strong><br />
+동해물과 <u>백두산</u>이 마르고 닳도록<br />
+하느님이 보우하사 우리나라 만세<br />
+a태그  <a href="https://google.com">Google</a><br />
+img태그 <img src="https://eungbug.github.io/assets/img/me/me.png" alt="로고" /></p>
+
+<p><br /></p>
+
+<h1 id="수평선horizontal-rule">수평선(Horizontal Rule)</h1>
+<p>수평선은 <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">_</code>기호를 3개 이상 입력하여 작성한다.</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">---
+
+***
+</span>
+<span class="ge">__</span>_
+</code></pre></div></div>
+<p><strong>👩🏻‍💻 결과</strong></p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<p><br /></p>
+
+<!-- 
+``` markdown
+
+```
+
+**👩🏻‍💻 결과**  
+
+
+<br>
+ -->
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#markdown" class="page__taxonomy-item p-category" rel="tag">markdown</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-20">March 20, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BStudy%5D+%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4%28Markdown%29+%EB%AC%B8%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fstudy-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fstudy-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Fstudy-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-01/" rel="permalink">[Etc] Github(jekyll) 개발 블로그를 개설하다.
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Github page + jekyll로 만든 저의 개발 블로그입니다.☺️
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/study-01/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/study-01"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
