@@ -5,6 +5,12 @@ var store = [{
         "url": "/etc/etc-01/",
         "teaser": null
       },{
+        "title": "TIL-01 : HTML",
+        "excerpt":"HTML(Hyper Text Markup Language) Hyper Text : 참조를 통해 현재 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트(링크) HTML은 웹의 구조를 담당한다. HTML의 기본 구성 요소 태그 태그란 다양한 구성 요소(텍스트, 이미지, 버튼 등)를 정의하는 역할을 하고 HTML 문법을 이루는 가장 작은 단위로 &lt;&gt;사이에 태그명을 넣는 형식이다. 속성 속성은 태그에...","categories": ["Study"],
+        "tags": ["HTML"],
+        "url": "/study/til-01-draft/",
+        "teaser": null
+      },{
         "title": "[Study] 마크다운(Markdown) 문법",
         "excerpt":"패스트캠퍼스 박영웅 강사님 강의를 통해 학습한 내용을 기반으로 작성한 글입니다. 새로 배우는 문법들은 추후 추가적으로 업데이트 할 예정! 마크다운(Markdown) 마크다운(Markdown)은 일반 텍스트 기반의 경량 마크업 언어다. 일반 텍스트로 서식이 있는 문서를 작성하는 데 사용되며, 일반 마크업 언어에 비해 문법이 쉽고 간단한 것이 특징이다. (위키백과) 장점 문법이 쉽고 간결하다. 관리가 쉽다....","categories": ["Study"],
         "tags": ["markdown"],

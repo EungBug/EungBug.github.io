@@ -19,6 +19,17 @@
       </item>
     
 	<item>
+		<title>TIL-01 : HTML</title>
+        
+        
+            <description>Today I Learned HTML!</description>
+        
+        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-01-draft/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-01-draft/</guid>
+      </item>
+    
+	<item>
 		<title>[Etc] Github(jekyll) 개발 블로그를 개설하다.</title>
         
         
