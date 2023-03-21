@@ -334,6 +334,238 @@ header .menu li:nth-child(2) {} /* 0 0 2 2  22점 */
 ```
 
 
+## CSS 속성(Properties)
+---
+
+### 단위
+
+| 단위 | 설명 |
+| -- | -- |
+| px | 픽셀. 절대 단위로 화면을 구성하는 사각형 1개의 크기를 의미한다. |
+| % | 상위 요소 속성값에 상대적인 크기를 가진다. |
+| em | 부모 요소의 글꼴 크기에 상대적인 크기를 가진다. |
+| rem | html의 글꼴 크기에 상대적인 크기를 가진다. |
+| vm | 뷰포트의 가로 너비 기준 상대적인 크기를 가진다. |
+| vh | 뷰포트의 세로 너비 기준 상대적인 크기를 가진다. |
+
+예시 
+```css 
+.html {
+  font-size: 1rem; /* 16px */
+}
+
+.parent {
+  font-size: 16px;
+}
+
+.child {
+  font-size: 80%; /* 16px * 0.8 = 12.8px */
+  font-size: 2em; /* 16px * 2em = 32px */
+  font-size: 3rem; /* 16px * 3rem = 48px */
+}
+```
+
+### width, height
+요소의 `가로와 세로 너비`를 지정하는 속성이다.  
+기본값은 `auto`이며 브라우저가 너비를 계산하는 특징이 있고, 속성의 값으로는 `단위`를 포함한 크기를 넣어 지정한다. 
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+} 
+```
+
+아래와 같이 요소의 크기를 지정 후 `margin-left`와 `margin-right`를 `auto`로 지정 시 요소는 수평방향으로 중앙에 정렬할 수 있다.
+```css 
+div {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+#### max-width / max-height
+요소가 커질 수 있는 최대 가로와 세로 너비를 지정할 때 사용한다.  
+기본값은 `none`으로 제한이 없고, 단위로 지정할 수 있다.
+
+#### min-widht / min-height
+요소가 작아질 수 있는 최소 가로와 세로 너비를 지정할 때 사용한다.  
+기본값은 `0`이며, 단위로 지정할 수 있다.
+
+### margin
+margin은 요소의 `외부 여백`을 지정하는 단축 속성으로, 기본값은 `0`이다.  
+속성값에 `auto` 또는 `단위`를 지정하여(음수도 입력 가능!) 사용할 수 있다.
+
+```
+margin: <크기>;
+margin-top: <크기>;
+margin-right: <크기>;
+margin-bottom: <크기>;
+margin-left: <크기>;
+margin: <margin-top> <margin-right> <margin-bottom> <margin-left>;
+margin: <margin-top> <margin-right & margin-left> <margin-bottom>;
+margin: <margin-top & margin-bottom> <margin-right & margin-left>;
+```
+
+`margin 겹침 현상` : 형제 관계에 있는 요소들의 margin 영역이 중첩되면 더 큰 값을 가진 margin 영역으로 병합되어 출력되는 현상
+
+
+### padding
+padding은 요소의 `내부 여백`을 지정하는 단축속성으로 기본값은 `0`이다.  
+`단위`를 입력하거나, `%`를 통해 부모 요소의 가로 너비에 대한 비율로 지정이 가능하다.  
+padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다.
+
+
+```css
+padding: <크기>;
+padding-top: <크기>;
+padding-right: <크기>;
+padding-bottom: <크기>;
+padding-left: <크기>;
+padding: <padding-top> <padding-right> <padding-bottom> <padding-left>;
+padding: <padding-top> <padding-right & padding-left> <padding-bottom>;
+padding: <padding-top & padding-bottom> <padding-right & padding-left>;
+```
+
+### 테두리(border)
+요소의 테두리 선을 지정하는 단축속성으로 `border: 선-두께 선-종류 선-색상;`과 같이 작성하여 사용한다.
+<br>
+
+`border-width: 크기;` : **테두리의 굵기**를 지정하고 단위를 입력해 크기를 지정한다.   
+```css
+/* border-width의 개별속성 */
+border-width: (top, right, bottom, left);
+border-width: (top & bottom) (left & right);
+border-width: top (left & right) bottom;
+border-width: top right bottom left;
+```
+
+`border-style: 속성값;` : **테두리의 모양**을 지정한다.  
+```css
+/* 자주 사용하는 border style */
+border-style: none;   /* 선 없음 */
+border-style: hidden; /* 선 숨김 */
+border-style: solid;  /* 실선 */
+border-style: dashed; /* 점선(파선) */
+```
+* border-style도 width와 마찬가지로 개별 속성으로 사용할 수 있다.
+
+`border-color:색상값;` : **테두리 선의 색상**을 지정한다. 기본값은 `black`
+* border-color도 개별 속성으로 사용할 수 있다.
+
+#### border 기타 속성
+`border-방향` / `border-방향-속성`  
+```css
+border-top: 두께 종류 색상;
+border-top-width: 크기;
+border-top-style: 값;
+border-top-color: 값;
+```
+
+#### border-radius
+모서리를 `둥글게` 깎는 속성이다. 기본값은 0이다.
+
+```css
+border-radius: 10px;
+/* 4개 입력 시 모서리를 둥글기를 각각 지정할 수 있다 */
+border-radius: top-left top-right bottom-right bottom-left;
+```
+
+### box-sizing
+브라우저가 요소를 화면에 렌더링할 떄 border, padding, content 영역의 가로와 세로 너비를 종합적으로 계산하기 때문에 의도한 바와 다르게 나오는 경우가 발생한다.  
+`box-sizing` 속성은 width와 height 속성의 적용 기준을 지정한다.
+
+- `content-box` (기본값) : width, height 속성의 적용 범위를 `content 영역`으로 제한한다. (요소의 content만으로 크기를 계산)
+- `border-box` : width, height 속성의 적용 범위를 `border 영역`으로 제한한다. (요소의 content + padding + border를 합쳐 크기를 계산)
+
+
+### 색상 표현
+CSS에서 색상 값을표기하는 방법은 여러가지가 있다.
+
+| 표기법 | 설명 | 예시|
+| -- | -- | -- |
+| 색상 이름 | 색상의 영문명(키워드)을 속성값으로 사용 | red, blue |
+| HEX 코드 | 16진수로 색상을 표기법 #RRGGBB | #FFF, #000000 |
+| RGB | 빛의 삼원색 rgb(red, green, blue) | rgb(255, 255, 255) |
+| RGBA | 빛의 삼원색과 투명도 rgba(red, green, blue, alpha) | rgba(0, 0, 0, 0.5) |
+
+
+### overflow
+요소의 크기 이상으로 **content가 넘쳤을 때** 보여짐을 제어하는 단축속성이다.
+- `visible`(기본값) : 넘친 내용을 그대로 보여준다.
+- `hidden` : 넘친 내용을 잘라낸다.
+- scroll : 넘친 내용을 잘라내고, 스크롤바가 생성된다. (가로, 세로 모두 스크롤바를 생성)
+- `auto` : 넘친 내용이 있는 경우에만 잘라내고 스크롤바가 생성된다. (가로만 넘친 경우 가로만 스크롤바를 생성)
+
+- 개별속성으로 x, y축 따로 지정이 가능하다.(overflow-x / overflow-y)
+```css
+.parent {
+  overflow: hidden;
+}
+```
+
+### display
+display는 요소가 화면에 `출력`되는 특성을 지정하는 속성이다.
+
+- block : 상자 요소
+- inline : 글자 요소
+- inline-block : 글자 + 상자 요소
+- flex : 플렉스 박스 (1차원)
+- grid : 그리드 (2차원)
+- none : 화면에서 사라짐
+
+### opacity(투명도)
+요소의 투명도를 지정하는 속성으로 `0부터 1사이의 소수점`을 입력 시 투명도가 달라지고, 기본값인 `1은 불투명`한 상태를 나타낸다.
+
+### 글꼴
+
+`font-size` : **텍스트의 크기**를 지정할 때 사용하는 속성이다. **기본 크기는 16px**이다.
+```css
+p { font-size: 20px; }
+```
+
+`font-weight` : **텍스트의 굵기**를 지정할 때 사용하는 속성이다.
+- normal, 400 : 기본 굵기
+- bold, 700 : 두꺼운 굵기
+- 100 ~ 900 : 100단위로 굵기를 지정
+```css
+p { font-weight: bold; }
+```
+
+`font-style`: **텍스트의 스타일**을 지정할 때 사용하는 속성으로 주로 기울기를 표현하고 싶을 때 사용한다. 기본값은 **normal**로 기울기 없음을 나타낸다.
+```css
+p { font-style: italic;}
+```
+
+`font-family` : 글꼴을 지정할 때 사용하는 속성이다.  마지막에 글꼴의 계열을 필수로 작성해야하고, 여러 글꼴을 지정 시 <u>맨 앞에 작성한 글꼴부터</u> 적용 가능 여부를 판단하여 사용한다. 모든 글꼴을 적용할 수 없으면 마지막에 작성한 <u>유사한 형태의 글꼴 계열에 해당하는 글꼴</u>을 지정한다.
+* 한글이나 공백이 있는 경우 `큰따옴표("")`로 감싸야한다.
+```css
+font-family: 글꼴1, 글꼴2, ..., 글꼴 계열;
+```
+
+글꼴 유형
+| 유형 | 설명 |
+| -- | -- |
+| serif | 삐침이 있는 명조 계열 |
+| sans-serif | 삐침이 없고 굵기가 일정한 고딕 계열 |
+| monospace | 텍스트 폭과 간격이 일정한 계열 |
+| fantasy | 화려한 글꼴 |
+| cursive | 필기체 계열 |
+<br>
+
+`line-height` : 텍스트의 **한 줄의 높이**를 지정할 때 사용하는 속성이다. (행간)
+```css
+/* line-height는 배수로 조정하는 것이 좋다 */
+line-height: 2;    /* 현재 폰트 사이즈의 2배 */
+line-height: 32px; 
+line-height: 200%; /* 현재 폰트 사이즈의 2배 */
+```
+
+
+
+
 
 
 

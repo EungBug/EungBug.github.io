@@ -299,7 +299,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#csscascading-style-sheets">CSS(Cascading Style Sheets)</a><ul><li><a href="#주석">주석</a></li><li><a href="#css-적용-방법">CSS 적용 방법</a></li><li><a href="#선택자---기본">선택자 - 기본</a><ul><li><a href="#---전체-선택자">* - 전체 선택자</a></li><li><a href="#태그-선택자">태그 선택자</a></li><li><a href="#클래스-선택자">클래스 선택자</a></li><li><a href="#아이디-선택자">아이디 선택자</a></li></ul></li><li><a href="#복합-선택자">복합 선택자</a><ul><li><a href="#일치-선택자">일치 선택자</a></li><li><a href="#자식-선택자">자식 선택자</a></li><li><a href="#하위-선택자">하위 선택자</a></li><li><a href="#인접-형제-선택자">인접 형제 선택자</a></li><li><a href="#일반-형제-선택자">일반 형제 선택자</a></li></ul></li><li><a href="#가상-클래스-선택자">가상 클래스 선택자</a><ul><li><a href="#동적-가상-클래스-선택자">동적 가상 클래스 선택자</a></li><li><a href="#입력-요소-가상-클래스-선택자">입력 요소 가상 클래스 선택자</a></li><li><a href="#구조적-가상-클래스-선택자">구조적 가상 클래스 선택자</a></li><li><a href="#부정-선택자">부정 선택자</a></li><li><a href="#가상-요소-선택자">가상 요소 선택자</a></li><li><a href="#속성-선택자">속성 선택자</a></li></ul></li><li><a href="#css-특징">CSS 특징</a><ul><li><a href="#스타일-상속">스타일 상속</a></li><li><a href="#선택자-우선순위">선택자 우선순위</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#csscascading-style-sheets">CSS(Cascading Style Sheets)</a><ul><li><a href="#주석">주석</a></li><li><a href="#css-적용-방법">CSS 적용 방법</a></li><li><a href="#선택자---기본">선택자 - 기본</a><ul><li><a href="#---전체-선택자">* - 전체 선택자</a></li><li><a href="#태그-선택자">태그 선택자</a></li><li><a href="#클래스-선택자">클래스 선택자</a></li><li><a href="#아이디-선택자">아이디 선택자</a></li></ul></li><li><a href="#복합-선택자">복합 선택자</a><ul><li><a href="#일치-선택자">일치 선택자</a></li><li><a href="#자식-선택자">자식 선택자</a></li><li><a href="#하위-선택자">하위 선택자</a></li><li><a href="#인접-형제-선택자">인접 형제 선택자</a></li><li><a href="#일반-형제-선택자">일반 형제 선택자</a></li></ul></li><li><a href="#가상-클래스-선택자">가상 클래스 선택자</a><ul><li><a href="#동적-가상-클래스-선택자">동적 가상 클래스 선택자</a></li><li><a href="#입력-요소-가상-클래스-선택자">입력 요소 가상 클래스 선택자</a></li><li><a href="#구조적-가상-클래스-선택자">구조적 가상 클래스 선택자</a></li><li><a href="#부정-선택자">부정 선택자</a></li><li><a href="#가상-요소-선택자">가상 요소 선택자</a></li><li><a href="#속성-선택자">속성 선택자</a></li></ul></li><li><a href="#css-특징">CSS 특징</a><ul><li><a href="#스타일-상속">스타일 상속</a></li><li><a href="#선택자-우선순위">선택자 우선순위</a></li></ul></li><li><a href="#css-속성properties">CSS 속성(Properties)</a><ul><li><a href="#단위">단위</a></li><li><a href="#width-height">width, height</a><ul><li><a href="#max-width--max-height">max-width / max-height</a></li><li><a href="#min-widht--min-height">min-widht / min-height</a></li></ul></li><li><a href="#margin">margin</a></li><li><a href="#padding">padding</a></li><li><a href="#테두리border">테두리(border)</a><ul><li><a href="#border-기타-속성">border 기타 속성</a></li><li><a href="#border-radius">border-radius</a></li></ul></li><li><a href="#box-sizing">box-sizing</a></li><li><a href="#색상-표현">색상 표현</a></li><li><a href="#overflow">overflow</a></li><li><a href="#display">display</a></li><li><a href="#opacity투명도">opacity(투명도)</a></li><li><a href="#글꼴">글꼴</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -704,6 +704,285 @@ CSS의 <code class="language-plaintext highlighter-rouge">@import 규칙</code>�
 <span class="nd">:not</span><span class="o">(</span><span class="nc">.box</span><span class="o">)</span> <span class="p">{}</span> <span class="c">/* 0 0 1 0 &gt; 10점 not은 점수 계산 x */</span>
 </code></pre></div>  </div>
 </blockquote>
+
+<h2 id="css-속성properties">CSS 속성(Properties)</h2>
+<hr />
+
+<h3 id="단위">단위</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>단위</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>px</td>
+      <td>픽셀. 절대 단위로 화면을 구성하는 사각형 1개의 크기를 의미한다.</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>상위 요소 속성값에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>em</td>
+      <td>부모 요소의 글꼴 크기에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>rem</td>
+      <td>html의 글꼴 크기에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>vm</td>
+      <td>뷰포트의 가로 너비 기준 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>vh</td>
+      <td>뷰포트의 세로 너비 기준 상대적인 크기를 가진다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예시</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.html</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* 16px */</span>
+<span class="p">}</span>
+
+<span class="nc">.parent</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.child</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span> <span class="c">/* 16px * 0.8 = 12.8px */</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span> <span class="c">/* 16px * 2em = 32px */</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span> <span class="c">/* 16px * 3rem = 48px */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="width-height">width, height</h3>
+<p>요소의 <code class="language-plaintext highlighter-rouge">가로와 세로 너비</code>를 지정하는 속성이다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">auto</code>이며 브라우저가 너비를 계산하는 특징이 있고, 속성의 값으로는 <code class="language-plaintext highlighter-rouge">단위</code>를 포함한 크기를 넣어 지정한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<p>아래와 같이 요소의 크기를 지정 후 <code class="language-plaintext highlighter-rouge">margin-left</code>와 <code class="language-plaintext highlighter-rouge">margin-right</code>를 <code class="language-plaintext highlighter-rouge">auto</code>로 지정 시 요소는 수평방향으로 중앙에 정렬할 수 있다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="max-width--max-height">max-width / max-height</h4>
+<p>요소가 커질 수 있는 최대 가로와 세로 너비를 지정할 때 사용한다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">none</code>으로 제한이 없고, 단위로 지정할 수 있다.</p>
+
+<h4 id="min-widht--min-height">min-widht / min-height</h4>
+<p>요소가 작아질 수 있는 최소 가로와 세로 너비를 지정할 때 사용한다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">0</code>이며, 단위로 지정할 수 있다.</p>
+
+<h3 id="margin">margin</h3>
+<p>margin은 요소의 <code class="language-plaintext highlighter-rouge">외부 여백</code>을 지정하는 단축 속성으로, 기본값은 <code class="language-plaintext highlighter-rouge">0</code>이다.<br />
+속성값에 <code class="language-plaintext highlighter-rouge">auto</code> 또는 <code class="language-plaintext highlighter-rouge">단위</code>를 지정하여(음수도 입력 가능!) 사용할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>margin: &lt;크기&gt;;
+margin-top: &lt;크기&gt;;
+margin-right: &lt;크기&gt;;
+margin-bottom: &lt;크기&gt;;
+margin-left: &lt;크기&gt;;
+margin: &lt;margin-top&gt; &lt;margin-right&gt; &lt;margin-bottom&gt; &lt;margin-left&gt;;
+margin: &lt;margin-top&gt; &lt;margin-right &amp; margin-left&gt; &lt;margin-bottom&gt;;
+margin: &lt;margin-top &amp; margin-bottom&gt; &lt;margin-right &amp; margin-left&gt;;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">margin 겹침 현상</code> : 형제 관계에 있는 요소들의 margin 영역이 중첩되면 더 큰 값을 가진 margin 영역으로 병합되어 출력되는 현상</p>
+
+<h3 id="padding">padding</h3>
+<p>padding은 요소의 <code class="language-plaintext highlighter-rouge">내부 여백</code>을 지정하는 단축속성으로 기본값은 <code class="language-plaintext highlighter-rouge">0</code>이다.<br />
+<code class="language-plaintext highlighter-rouge">단위</code>를 입력하거나, <code class="language-plaintext highlighter-rouge">%</code>를 통해 부모 요소의 가로 너비에 대한 비율로 지정이 가능하다.<br />
+padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-top</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-right</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-bottom</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-left</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-bottom</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-left</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span> <span class="o">&amp;</span> <span class="nt">padding-left</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-bottom</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span> <span class="o">&amp;</span> <span class="nt">padding-bottom</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span> <span class="o">&amp;</span> <span class="nt">padding-left</span><span class="o">&gt;;</span>
+</code></pre></div></div>
+
+<h3 id="테두리border">테두리(border)</h3>
+<p>요소의 테두리 선을 지정하는 단축속성으로 <code class="language-plaintext highlighter-rouge">border: 선-두께 선-종류 선-색상;</code>과 같이 작성하여 사용한다.
+<br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">border-width: 크기;</code> : <strong>테두리의 굵기</strong>를 지정하고 단위를 입력해 크기를 지정한다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* border-width의 개별속성 */</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="o">(</span><span class="nt">top</span><span class="o">,</span> <span class="nt">right</span><span class="o">,</span> <span class="nt">bottom</span><span class="o">,</span> <span class="nt">left</span><span class="o">);</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="o">(</span><span class="nt">top</span> <span class="o">&amp;</span> <span class="nt">bottom</span><span class="o">)</span> <span class="o">(</span><span class="nt">left</span> <span class="o">&amp;</span> <span class="nt">right</span><span class="o">);</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="nt">top</span> <span class="o">(</span><span class="nt">left</span> <span class="o">&amp;</span> <span class="nt">right</span><span class="o">)</span> <span class="nt">bottom</span><span class="o">;</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="nt">top</span> <span class="nt">right</span> <span class="nt">bottom</span> <span class="nt">left</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">border-style: 속성값;</code> : <strong>테두리의 모양</strong>을 지정한다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 자주 사용하는 border style */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>   <span class="c">/* 선 없음 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span> <span class="c">/* 선 숨김 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">solid</span><span class="o">;</span>  <span class="c">/* 실선 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">dashed</span><span class="o">;</span> <span class="c">/* 점선(파선) */</span>
+</code></pre></div></div>
+<ul>
+  <li>border-style도 width와 마찬가지로 개별 속성으로 사용할 수 있다.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">border-color:색상값;</code> : <strong>테두리 선의 색상</strong>을 지정한다. 기본값은 <code class="language-plaintext highlighter-rouge">black</code></p>
+<ul>
+  <li>border-color도 개별 속성으로 사용할 수 있다.</li>
+</ul>
+
+<h4 id="border-기타-속성">border 기타 속성</h4>
+<p><code class="language-plaintext highlighter-rouge">border-방향</code> / <code class="language-plaintext highlighter-rouge">border-방향-속성</code></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-top</span><span class="o">:</span> <span class="nt">두께</span> <span class="nt">종류</span> <span class="nt">색상</span><span class="o">;</span>
+<span class="nt">border-top-width</span><span class="o">:</span> <span class="nt">크기</span><span class="o">;</span>
+<span class="nt">border-top-style</span><span class="o">:</span> <span class="nt">값</span><span class="o">;</span>
+<span class="nt">border-top-color</span><span class="o">:</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="border-radius">border-radius</h4>
+<p>모서리를 <code class="language-plaintext highlighter-rouge">둥글게</code> 깎는 속성이다. 기본값은 0이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">10</span><span class="nt">px</span><span class="o">;</span>
+<span class="c">/* 4개 입력 시 모서리를 둥글기를 각각 지정할 수 있다 */</span>
+<span class="nt">border-radius</span><span class="o">:</span> <span class="nt">top-left</span> <span class="nt">top-right</span> <span class="nt">bottom-right</span> <span class="nt">bottom-left</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="box-sizing">box-sizing</h3>
+<p>브라우저가 요소를 화면에 렌더링할 떄 border, padding, content 영역의 가로와 세로 너비를 종합적으로 계산하기 때문에 의도한 바와 다르게 나오는 경우가 발생한다.<br />
+<code class="language-plaintext highlighter-rouge">box-sizing</code> 속성은 width와 height 속성의 적용 기준을 지정한다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">content-box</code> (기본값) : width, height 속성의 적용 범위를 <code class="language-plaintext highlighter-rouge">content 영역</code>으로 제한한다. (요소의 content만으로 크기를 계산)</li>
+  <li><code class="language-plaintext highlighter-rouge">border-box</code> : width, height 속성의 적용 범위를 <code class="language-plaintext highlighter-rouge">border 영역</code>으로 제한한다. (요소의 content + padding + border를 합쳐 크기를 계산)</li>
+</ul>
+
+<h3 id="색상-표현">색상 표현</h3>
+<p>CSS에서 색상 값을표기하는 방법은 여러가지가 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>표기법</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>색상 이름</td>
+      <td>색상의 영문명(키워드)을 속성값으로 사용</td>
+      <td>red, blue</td>
+    </tr>
+    <tr>
+      <td>HEX 코드</td>
+      <td>16진수로 색상을 표기법 #RRGGBB</td>
+      <td>#FFF, #000000</td>
+    </tr>
+    <tr>
+      <td>RGB</td>
+      <td>빛의 삼원색 rgb(red, green, blue)</td>
+      <td>rgb(255, 255, 255)</td>
+    </tr>
+    <tr>
+      <td>RGBA</td>
+      <td>빛의 삼원색과 투명도 rgba(red, green, blue, alpha)</td>
+      <td>rgba(0, 0, 0, 0.5)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="overflow">overflow</h3>
+<p>요소의 크기 이상으로 <strong>content가 넘쳤을 때</strong> 보여짐을 제어하는 단축속성이다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">visible</code>(기본값) : 넘친 내용을 그대로 보여준다.</li>
+  <li><code class="language-plaintext highlighter-rouge">hidden</code> : 넘친 내용을 잘라낸다.</li>
+  <li>scroll : 넘친 내용을 잘라내고, 스크롤바가 생성된다. (가로, 세로 모두 스크롤바를 생성)</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">auto</code> : 넘친 내용이 있는 경우에만 잘라내고 스크롤바가 생성된다. (가로만 넘친 경우 가로만 스크롤바를 생성)</p>
+  </li>
+  <li>개별속성으로 x, y축 따로 지정이 가능하다.(overflow-x / overflow-y)
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
+<span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="display">display</h3>
+<p>display는 요소가 화면에 <code class="language-plaintext highlighter-rouge">출력</code>되는 특성을 지정하는 속성이다.</p>
+
+<ul>
+  <li>block : 상자 요소</li>
+  <li>inline : 글자 요소</li>
+  <li>inline-block : 글자 + 상자 요소</li>
+  <li>flex : 플렉스 박스 (1차원)</li>
+  <li>grid : 그리드 (2차원)</li>
+  <li>none : 화면에서 사라짐</li>
+</ul>
+
+<h3 id="opacity투명도">opacity(투명도)</h3>
+<p>요소의 투명도를 지정하는 속성으로 <code class="language-plaintext highlighter-rouge">0부터 1사이의 소수점</code>을 입력 시 투명도가 달라지고, 기본값인 <code class="language-plaintext highlighter-rouge">1은 불투명</code>한 상태를 나타낸다.</p>
+
+<h3 id="글꼴">글꼴</h3>
+
+<p><code class="language-plaintext highlighter-rouge">font-size</code> : <strong>텍스트의 크기</strong>를 지정할 때 사용하는 속성이다. <strong>기본 크기는 16px</strong>이다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">font-weight</code> : <strong>텍스트의 굵기</strong>를 지정할 때 사용하는 속성이다.</p>
+<ul>
+  <li>normal, 400 : 기본 굵기</li>
+  <li>bold, 700 : 두꺼운 굵기</li>
+  <li>100 ~ 900 : 100단위로 굵기를 지정
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">font-style</code>: <strong>텍스트의 스타일</strong>을 지정할 때 사용하는 속성으로 주로 기울기를 표현하고 싶을 때 사용한다. 기본값은 <strong>normal</strong>로 기울기 없음을 나타낸다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">font-family</code> : 글꼴을 지정할 때 사용하는 속성이다.  마지막에 글꼴의 계열을 필수로 작성해야하고, 여러 글꼴을 지정 시 <u>맨 앞에 작성한 글꼴부터</u> 적용 가능 여부를 판단하여 사용한다. 모든 글꼴을 적용할 수 없으면 마지막에 작성한 <u>유사한 형태의 글꼴 계열에 해당하는 글꼴</u>을 지정한다.</p>
+<ul>
+  <li>한글이나 공백이 있는 경우 <code class="language-plaintext highlighter-rouge">큰따옴표("")</code>로 감싸야한다.
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span> <span class="nt">글꼴1</span><span class="o">,</span> <span class="nt">글꼴2</span><span class="o">,</span> <span class="o">...,</span> <span class="nt">글꼴</span> <span class="nt">계열</span><span class="o">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>글꼴 유형
+| 유형 | 설명 |
+| – | – |
+| serif | 삐침이 있는 명조 계열 |
+| sans-serif | 삐침이 없고 굵기가 일정한 고딕 계열 |
+| monospace | 텍스트 폭과 간격이 일정한 계열 |
+| fantasy | 화려한 글꼴 |
+| cursive | 필기체 계열 |
+<br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">line-height</code> : 텍스트의 <strong>한 줄의 높이</strong>를 지정할 때 사용하는 속성이다. (행간)</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* line-height는 배수로 조정하는 것이 좋다 */</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">2</span><span class="o">;</span>    <span class="c">/* 현재 폰트 사이즈의 2배 */</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">32</span><span class="nt">px</span><span class="o">;</span> 
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">200</span><span class="o">%;</span> <span class="c">/* 현재 폰트 사이즈의 2배 */</span>
+</code></pre></div></div>
 
 
         
