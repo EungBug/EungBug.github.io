@@ -5,17 +5,17 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0900</lastBuildDate>
 	
 	<item>
-		<title>[Study] 마크다운(Markdown) 문법</title>
+		<title>TIL-02 : CSS</title>
         
         
-            <description>마크다운 문법 숙지에서 숙달까지</description>
+            <description>Today I Learned CSS!</description>
         
-        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/study-01/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/study-01/</guid>
+        <pubDate>Tue, 21 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-02/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-02/</guid>
       </item>
     
 	<item>
@@ -25,8 +25,19 @@
             <description>Today I Learned HTML!</description>
         
         <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-01-draft/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-01-draft/</guid>
+        <link>http://localhost:4000/study/til-01/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-01/</guid>
+      </item>
+    
+	<item>
+		<title>[Study] 마크다운(Markdown) 문법</title>
+        
+        
+            <description>마크다운 문법 숙지에서 숙달까지</description>
+        
+        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/study-01/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/study-01/</guid>
       </item>
     
 	<item>
