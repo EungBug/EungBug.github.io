@@ -1,0 +1,714 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-03 : CSS - 응벅로그</title>
+<meta name="description" content="Today I Learned CSS!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-03 : CSS">
+<meta property="og:url" content="http://localhost:4000/study/til-03/">
+
+
+  <meta property="og:description" content="Today I Learned CSS!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-22T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-22T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-03 : CSS">
+    <meta itemprop="description" content="Today I Learned CSS!">
+    <meta itemprop="datePublished" content="2023-03-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-22T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-03/" class="u-url" itemprop="url">TIL-03 : CSS
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#background">background</a><ul><li><a href="#background-color">background-color</a></li><li><a href="#background-image">background-image</a></li><li><a href="#background-repeat">background-repeat</a></li><li><a href="#background-position">background-position</a></li><li><a href="#background-size">background-size</a></li><li><a href="#background-attachment">background-attachment</a></li><li><a href="#backgroudn-속성-한-번에-지정">backgroudn 속성 한 번에 지정</a></li></ul></li><li><a href="#position">position</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="background">background</h2>
+
+<h3 id="background-color">background-color</h3>
+<p>요소의 <code class="language-plaintext highlighter-rouge">배경 색상</code>을 지정하는 속성이다. 속성값으로 색상값을 입력해야 한다.<br />
+배경 색상의 기본값은 <code class="language-plaintext highlighter-rouge">transparent</code> 투명함이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-color: 색상값;</code></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-image">background-image</h3>
+<p>요소의 배경에 <code class="language-plaintext highlighter-rouge">이미지</code>를 넣는 속성이다. 속성값은 삽입할 이미지의 경로를 <code class="language-plaintext highlighter-rouge">url()</code> 함수로 지정해야 한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-image: url();</code></p>
+
+<p>background-image 속성을 사용할 때는 <strong>요소의 배경 크기가 반드시 있어야 한다.</strong>
+(width와 height 속성을 같이 사용해야 한다.)<br />
+배경 색상과 함께 사용 시 배경 색상은 이미지 뒤에 들어가게 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("이미지 경로")</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-repeat">background-repeat</h3>
+<p>요소의 배경 <code class="language-plaintext highlighter-rouge">이미지가 반복되는 설정</code>을 지정하는 속성이다.<br />
+요소의 크기가 이미지의 크기보다 큰 경우 자동으로 이미지가 반복해서 크기를 채우게 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-repeat: 속성값</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">repeat</code>(기본값) : 이미지를 수직, 수평 반복</li>
+  <li>repeat-x : 이미지를 수평 반복</li>
+  <li>repeat-y : 이미지를 수직 반복</li>
+  <li><code class="language-plaintext highlighter-rouge">no-repeat</code> : 이미지를 반복하지 않음</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-position">background-position</h3>
+<p>요소의 배경 이미지의 위치를 지정하는 속성이다.<br />
+속성값을 1개만 입력 시 x축 값으로 인식되고 y축은 자동으로 center가 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-position: x위치, y위치;</code></p>
+
+<p>background-position 속성 값</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>위치</th>
+      <th>속성값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x</td>
+      <td>left, center, right</td>
+      <td>x축 방향의 위치를 지정한다.</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>top, center, bottom</td>
+      <td>y축 방향의 위치를 지정한다.</td>
+    </tr>
+    <tr>
+      <td>공통</td>
+      <td>px, em, rem, % 등 단위</td>
+      <td>위치를 직접 지정한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">top</span><span class="p">,</span> <span class="nb">right</span><span class="p">;</span> <span class="c">/* 이미지가 우상단에 위치 */</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 이미지가 정가운데 위치 */</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="m">100px</span> <span class="m">30px</span><span class="p">;</span> <span class="c">/* 왼쪽에서 100px 위에서 30px 지점에 이미지 위치 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-size">background-size</h3>
+<p>요소의 배경에 삽입될 이미지의 크기를 지정하는 속성이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-size:속성값;</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">auto</code>(기본) : 이미지의 실제 크기</li>
+  <li><code class="language-plaintext highlighter-rouge">cover</code> : 이미지의 가로 세로 비율을 유지하면서 크기를 확대하거나 축소해 요소의 배경을 채움(요소의 더 넓은 너비에 맞춤)</li>
+  <li>contain : 이미지의 가로 세로 비율을 유지하면서 이미지가 배경 요소 안에 들어가도록 크기를 확대하거나 축소함(요소의 더 짧은 너비에 맞춤)</li>
+  <li>단위 : 너비 높이를 직접 입력</li>
+</ul>
+
+<h3 id="background-attachment">background-attachment</h3>
+<p>요소의 배경에 삽입된 이미지를 스크롤 특성을 지정하는 속성이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-attachment: 속성값;</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scroll</code>(기본) : 이미지가 요소를 따라서 같이 스크롤 됨</li>
+  <li><code class="language-plaintext highlighter-rouge">fixed</code> : 이미지가 뷰포트에 고정되고 스크롤 되지 않음</li>
+  <li>local : 요소 내 스크롤 시 이미지가 같이 스크롤 됨</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-attachment</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="backgroudn-속성-한-번에-지정">backgroudn 속성 한 번에 지정</h3>
+<p>background 속성은 속성값을 나열하여 한 번에 지정할 수 있다. 나열하는 순서는 정해져 있지 않지만 background-size 속성은 항상 background-position 속성을 먼저 입력하고 <code class="language-plaintext highlighter-rouge">슬래시(/)</code>로 구분한 후 사용한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background: &lt;color 속성값&gt; &lt;image 속성값&gt; &lt;repeat 속성값&gt; &lt;position 속성값/size 속성값&gt; &lt;attachment 속성값&gt;
+</code></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="py">backgroud</span><span class="p">:</span> <span class="no">red</span> <span class="sx">url("경로")</span> <span class="nb">no-repeat</span> <span class="nb">top</span> <span class="nb">center</span><span class="p">/</span><span class="n">cover</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>한 번에 지정하는 것은 가독성에 좋지 않기 때문에 각 속성을 하나씩 작성하는 것이 더 좋다.</li>
+</ul>
+
+<h2 id="position">position</h2>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-22">March 22, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-03+%3A+CSS%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-02/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-02/" rel="permalink">TIL-02 : CSS
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned CSS!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-01/" rel="permalink">TIL-01 : HTML
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned HTML!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/study-01/" rel="permalink">[Study] 마크다운(Markdown) 문법
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">마크다운 문법 숙지에서 숙달까지
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-01/" rel="permalink">[Etc] Github(jekyll) 개발 블로그를 개설하다.
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Github page + jekyll로 만든 저의 개발 블로그입니다.☺️
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-03/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-03"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

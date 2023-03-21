@@ -1,0 +1,1309 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-02 : CSS - 응벅로그</title>
+<meta name="description" content="Today I Learned CSS!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-02 : CSS">
+<meta property="og:url" content="http://localhost:4000/study/til-02/">
+
+
+  <meta property="og:description" content="Today I Learned CSS!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-21T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-21T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-02/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-02 : CSS">
+    <meta itemprop="description" content="Today I Learned CSS!">
+    <meta itemprop="datePublished" content="2023-03-21T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-21T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-02/" class="u-url" itemprop="url">TIL-02 : CSS
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#csscascading-style-sheets">CSS(Cascading Style Sheets)</a><ul><li><a href="#주석">주석</a></li><li><a href="#css-적용-방법">CSS 적용 방법</a></li><li><a href="#선택자---기본">선택자 - 기본</a><ul><li><a href="#---전체-선택자">* - 전체 선택자</a></li><li><a href="#태그-선택자">태그 선택자</a></li><li><a href="#클래스-선택자">클래스 선택자</a></li><li><a href="#아이디-선택자">아이디 선택자</a></li></ul></li><li><a href="#복합-선택자">복합 선택자</a><ul><li><a href="#일치-선택자">일치 선택자</a></li><li><a href="#자식-선택자">자식 선택자</a></li><li><a href="#하위-선택자">하위 선택자</a></li><li><a href="#인접-형제-선택자">인접 형제 선택자</a></li><li><a href="#일반-형제-선택자">일반 형제 선택자</a></li></ul></li><li><a href="#가상-클래스-선택자">가상 클래스 선택자</a><ul><li><a href="#동적-가상-클래스-선택자">동적 가상 클래스 선택자</a></li><li><a href="#입력-요소-가상-클래스-선택자">입력 요소 가상 클래스 선택자</a></li><li><a href="#구조적-가상-클래스-선택자">구조적 가상 클래스 선택자</a></li><li><a href="#부정-선택자">부정 선택자</a></li><li><a href="#가상-요소-선택자">가상 요소 선택자</a></li><li><a href="#속성-선택자">속성 선택자</a></li></ul></li><li><a href="#css-특징">CSS 특징</a><ul><li><a href="#스타일-상속">스타일 상속</a></li><li><a href="#선택자-우선순위">선택자 우선순위</a></li></ul></li><li><a href="#css-속성properties">CSS 속성(Properties)</a><ul><li><a href="#단위">단위</a></li><li><a href="#width-height">width, height</a><ul><li><a href="#max-width--max-height">max-width / max-height</a></li><li><a href="#min-widht--min-height">min-widht / min-height</a></li></ul></li><li><a href="#margin">margin</a></li><li><a href="#padding">padding</a></li><li><a href="#테두리border">테두리(border)</a><ul><li><a href="#border-기타-속성">border 기타 속성</a></li><li><a href="#border-radius">border-radius</a></li></ul></li><li><a href="#box-sizing">box-sizing</a></li><li><a href="#색상-표현">색상 표현</a></li><li><a href="#overflow">overflow</a></li><li><a href="#display">display</a></li><li><a href="#opacity투명도">opacity(투명도)</a></li><li><a href="#글꼴">글꼴</a></li><li><a href="#문자-관련-속성들">문자 관련 속성들</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="csscascading-style-sheets">CSS(Cascading Style Sheets)</h1>
+
+<p>css 문법은 <code class="language-plaintext highlighter-rouge">선택자</code>와 <code class="language-plaintext highlighter-rouge">선언부</code>로 구분된다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>선택자 {속성: 값;}
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">선택자</code> : CSS 스타일을 적용할 대상(요소)를 지정하는 영역이다.<br />
+<code class="language-plaintext highlighter-rouge">선언부</code> : 선택자에서 선택한 대상에 적용할 스타일을 작성하는 영역으로 선언부에는 반드시 속성과 값을 한 쌍으로 작성해야 한다.
+값 뒤에는 <code class="language-plaintext highlighter-rouge">세미콜론(;)</code>을 넣어 스타일을 여러개 작성이 가능하다.<br />
+<br />
+<code class="language-plaintext highlighter-rouge">속성</code> : 스타일의 종류<br />
+<code class="language-plaintext highlighter-rouge">값</code> : 스타일의 값<br />
+<code class="language-plaintext highlighter-rouge">{}</code> : 스타일 범위의 시작과 끝을 의미한다.</p>
+
+<h2 id="주석">주석</h2>
+<hr />
+
+<p>CSS에서 주석은 <code class="language-plaintext highlighter-rouge">/* 와 */</code> 사이에 주석으로 남길 내용을 작성하면 된다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 주석내용 */</span>
+</code></pre></div></div>
+
+<h2 id="css-적용-방법">CSS 적용 방법</h2>
+<hr />
+
+<ol>
+  <li>내부 스타일 시트 방법 (내장 방식) <br />
+HTML 문서 내부에 <code class="language-plaintext highlighter-rouge">style</code>태그를 통해 작성하는 방식이다.</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>외부 스타일 시트 방법<br />
+별도의 css 파일을 작성 후 <code class="language-plaintext highlighter-rouge">link</code>태그를 사용해서 HTML 문서와 연결하는 방식이다.<br />
+코드 유지보수가 가장 편하고 성능적으로 가장 좋아 실무에서 가장 많이 사용하는 방식이다.</li>
+</ol>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* css 파일 */</span>
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- HTML 문서 내부 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css 파일 경로"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>인라인 스타일 방법<br />
+요소에 직접 <code class="language-plaintext highlighter-rouge">style</code>속성을 직접 작성하는 방식이다.</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color: red; margin: 20px;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>import 방식<br />
+CSS의 <code class="language-plaintext highlighter-rouge">@import 규칙</code>으로 CSS 문서 안에서 또 다른 CSS 문서를 가져와 연결하는 방식이다.</li>
+</ol>
+
+<p>main.css</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="sx">url("./box.css")</span><span class="p">;</span>
+
+<span class="nt">div</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>box.css</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>html</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"./css/main.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="선택자---기본">선택자 - 기본</h2>
+<hr />
+
+<h3 id="---전체-선택자">* - 전체 선택자</h3>
+<p>전체 선택자는 <code class="language-plaintext highlighter-rouge">* 기호</code>를 사용해 표시하고 모든 요소를 한 번에 선택한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="태그-선택자">태그 선택자</h3>
+<p>태그 이름으로 선택자를 지정하는 방법이다.<br />
+태그명과 일치하는 모든 요소를 한 번에 선택한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">태그명</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span><span class="p">}</span>
+<span class="nt">ex</span><span class="o">)</span> <span class="nt">h1</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="클래스-선택자">클래스 선택자</h3>
+<p>클래스 선택자는 <code class="language-plaintext highlighter-rouge">.기호</code>를 붙이고 HTML의 class 속성 값을 이용해서 선택자를 지정하는 방식이다.<br />
+실무에서 가장 많이 사용하는 선택자 지정 방식이고 class 속성값은 중복이 가능하기 떄문에 여러 곳에 하나의 스타일을 적용시킬 수 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.class속성값</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span><span class="p">}</span>
+<span class="nt">ex</span><span class="o">)</span> <span class="nc">.box</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="아이디-선택자">아이디 선택자</h3>
+<p>아이디 선택자는 <code class="language-plaintext highlighter-rouge"># 기호</code>를 붙이고 HTML의 id 속성 값을 이용해서 선택자를 지정하는 방식이다. (id 속성값은 고유함)</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.id속성값</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span><span class="p">}</span>
+<span class="nt">ex</span><span class="o">)</span> <span class="nf">#title</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="복합-선택자">복합 선택자</h2>
+<hr />
+
+<h3 id="일치-선택자">일치 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABCXYZ</code>처럼 선택자 ABC와 XYZ를 동시에 만족하는 요소를 지정하는 방식이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* div태그이면서 class가 box인 요소 */</span>
+<span class="nt">div</span><span class="nc">.box</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="자식-선택자">자식 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABC &gt; XYZ</code>처럼 선택자 ABC의 자식 요소 XYZ를 찾아 지정하는 방식이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* div태그의 자식요소 중 class가 box인 요소를 찾는다 */</span>
+<span class="nt">div</span> <span class="o">&gt;</span> <span class="nc">.box</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="하위-선택자">하위 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABC XYZ</code>처럼 ABC 요소(부모요소)의 하위 요소 중 XYZ를 선택하여 지정하는 방식이다. <code class="language-plaintext highlighter-rouge">띄어쓰기</code>를 통해 구분한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* div태그의 하위 요소 중 p태그로 작성된 모든 요소를 선택 */</span>
+<span class="nt">div</span> <span class="nt">p</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="인접-형제-선택자">인접 형제 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABC + XYZ</code>처럼 ABC의 <code class="language-plaintext highlighter-rouge">다음</code> 형제 요소 중 XYZ를 선택하고 <code class="language-plaintext highlighter-rouge">인접한 하나</code>를 선택하여 지정하는 방식이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h1 + h2 { color: red; }
+
+&lt;h2&gt;제목2&lt;/h2&gt;
+&lt;h1&gt;제목1&lt;/h1&gt;
+&lt;h2&gt;제목2-1&lt;/h2&gt;  &lt; h1의 다음 형제요소이면서 인접한 h2만 스타일 적용
+&lt;h2&gt;제목2-2&lt;/h2&gt;
+</code></pre></div></div>
+
+<h3 id="일반-형제-선택자">일반 형제 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABC ~ XYZ</code>처럼 ABC의 <code class="language-plaintext highlighter-rouge">다음</code> 형제 요소 중 XYZ 요소를 모두 선택하여 지정하는 방식이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="o">~</span> <span class="nt">h2</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="가상-클래스-선택자">가상 클래스 선택자</h2>
+<hr />
+
+<h3 id="동적-가상-클래스-선택자">동적 가상 클래스 선택자</h3>
+<p>사용자의 행동에 따라 동적으로 변하는 상태를 이용해 선택자를 지정하는 방식이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:hover</td>
+      <td>요소에 마우스 커서가 올라가 있는 동안 해당 태그가 선택자로 지정된다.</td>
+    </tr>
+    <tr>
+      <td>:active</td>
+      <td>요소를 마우스로 클릭하고 있는 동안 해당 태그가 선택자로 지정된다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="입력-요소-가상-클래스-선택자">입력 요소 가상 클래스 선택자</h3>
+<p>입력 요소의 특정 상태를 이용해 선택자로 지정하는 방식으로 일부 요소만 사용할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:foucs</td>
+      <td>입력 요소에 커서가 활성화되면 선택자로 지정한다.</td>
+    </tr>
+    <tr>
+      <td>:checked</td>
+      <td>체크박스가 선택되어 있으면 선택자로 지정한다.</td>
+    </tr>
+    <tr>
+      <td>:disabled</td>
+      <td>요소가 비활성화되면 선택자로 지정된다.</td>
+    </tr>
+    <tr>
+      <td>:enabled</td>
+      <td>요소가 활성화되면 선택자로 지정된다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">tabindex="-1"</code>속성을 사용하면 focus가 될 수 없는 요소도 focus가 될 수 있는 요소로 만들 수 있다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div tabindex="-1"&gt;
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">input</span><span class="nd">:focus</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="nd">:checked</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="nd">:disabled</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="nd">:enabled</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="구조적-가상-클래스-선택자">구조적 가상 클래스 선택자</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ABC:first-child</td>
+      <td>ABC 요소가 형제 요소 중  첫 번째 요소라면 선택하여 지정한다.</td>
+    </tr>
+    <tr>
+      <td>ABC:last-child</td>
+      <td>ABC 요소가 형제 요소 중 마지막 요소라면 선택하여 지정한다.</td>
+    </tr>
+    <tr>
+      <td>ABC:nth-child(n)</td>
+      <td>ABC 요소가 형제 요소 중 n번째 요소라면 선택하여 지정한다.</td>
+    </tr>
+    <tr>
+      <td>ABC:nth-last_child(n)</td>
+      <td>ABC 요소가 형제 요수 중 마지막에서 n번째 요소라면 선택하여 지정한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>참고사항</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 2n = 2번째, 4번째.. 2의 배수와 일치하는 요소들 선택 (짝수번째)
+  n은 0부터 시작된다.
+*/</span>
+<span class="o">*</span><span class="nd">:nth-child</span><span class="o">(</span><span class="err">2</span><span class="nt">n</span><span class="o">)</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="부정-선택자">부정 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">ABC:not(XYZ)</code> 선택자 XYZ가 아닌 ABC 요소를 선택하여 지정하는 방식이다.</p>
+
+<h3 id="가상-요소-선택자">가상 요소 선택자</h3>
+<p>가상 요소 선택자는 HTML에 작성된 요소는 아니지만, 마치 존재하는 것처럼 취급해 선택하는 방식이다. <code class="language-plaintext highlighter-rouge">콜론 2개(::)</code>를 붙여서  사용한다.<br />
+<br />
+<code class="language-plaintext highlighter-rouge">content</code>는 필수로 작성해야하고(공백도 가능) 주로 요소의 앞 또는 뒤에 특정 스타일을 적용하고 싶을 때 사용하는 선택자이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">선택자</span><span class="nd">::가상</span> <span class="nt">요소</span> <span class="nt">선택자</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>::befor</td>
+      <td>선택자의 앞의 공간을 선택한다</td>
+    </tr>
+    <tr>
+      <td>::after</td>
+      <td>선택자의 뒤의 공간을 선택한다</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span><span class="nd">::before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span> <span class="c">/* content 값으로 삽입할 내용 작성 (인라인 요소)*/</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="nd">::after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="속성-선택자">속성 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">[속성]</code> 또는 <code class="language-plaintext highlighter-rouge">[속성=값]</code>처럼 대괄호 안에 속성을 작성하여 선택하는 방식이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span><span class="nt">disabled</span><span class="o">]</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span> <span class="p">}</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">=</span><span class="s1">"box"</span><span class="o">]</span> <span class="p">{</span> <span class="c">/* CSS 코드 */</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="css-특징">CSS 특징</h2>
+<hr />
+
+<h3 id="스타일-상속">스타일 상속</h3>
+<p><code class="language-plaintext highlighter-rouge">상속</code>은 부모 요소에 적용된 스타일을 자식 요소가 그대로 적용되는 현상을 말한다.<br />
+모든 속성들은 아니지만 <em>글자나 문자</em> 와 관련된 css 속성들이 상속된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">inherit</code> : 상속되지 않는 속성도 강제로 상속되도록 할 수 있다.(강제 상속)</p>
+
+<h3 id="선택자-우선순위">선택자 우선순위</h3>
+<p>CSS는 같은 요소에 여러 스타일이 적용된 경우, 기본 스타일 시트보다 사용자가 정의한 스타일 속성이 우선 적용되고 한 가지 선언에 대해서만 적용된다. 이는 CSS가 <u>단계적으로 적용되는 스타일</u>을 뜻하기 때문이다.<br />
+따라서 같은 요소가 여러 가지 선언의 대상이 된 경우, 어떤 선언의 css 속성을 우선 적용할지 결정하는 방법으로 <code class="language-plaintext highlighter-rouge">우선순위 점수</code>에 따라 적용된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">점수가 높은 선언</code>이 우선되고, 점수가 같으면 <code class="language-plaintext highlighter-rouge">가장 마지막에 해석된 선언</code>이 우선된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>선택자</th>
+      <th>예시</th>
+      <th>점수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 선택자</td>
+      <td>*</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>태그 선택자</td>
+      <td>div, p</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>가상 요소 선택자</td>
+      <td>::before, ::after</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>클래스 선택자</td>
+      <td>.box, .title</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>가상 클래스 선택자</td>
+      <td>:hober, :visited</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>아이디 선택자</td>
+      <td>#title, #box</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>인라인 스타일</td>
+      <td>style=”color:red”</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <td>!important</td>
+      <td>{color: red !important; }</td>
+      <td>99999999999</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>상속은 점수에 포함되지 않는다</em></p>
+
+<p><em>*점수 계산 방법</em></p>
+<blockquote>
+  <p>인라인(1000), 아이디(100), 클래스/가상 클래스(10), 태그/가상 요소(1)</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.list</span> <span class="nt">li</span><span class="nc">.item</span> <span class="p">{}</span> <span class="c">/* 0 0 2 1  &gt; 21점 */</span> 
+<span class="nc">.list</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="p">{}</span> <span class="c">/* 0 0 2 1 &gt; 21점 */</span>
+<span class="nf">#submit</span> <span class="nt">span</span> <span class="p">{}</span> <span class="c">/* 0 1 0 1 &gt; 101점 */</span>
+<span class="nt">header</span> <span class="nc">.menu</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="p">{}</span> <span class="c">/* 0 0 2 2  22점 */</span> 
+<span class="nd">:not</span><span class="o">(</span><span class="nc">.box</span><span class="o">)</span> <span class="p">{}</span> <span class="c">/* 0 0 1 0 &gt; 10점 not은 점수 계산 x */</span>
+</code></pre></div></div>
+
+<h2 id="css-속성properties">CSS 속성(Properties)</h2>
+<hr />
+
+<h3 id="단위">단위</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>단위</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>px</td>
+      <td>픽셀. 절대 단위로 화면을 구성하는 사각형 1개의 크기를 의미한다.</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>상위 요소 속성값에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>em</td>
+      <td>부모 요소의 글꼴 크기에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>rem</td>
+      <td>html의 글꼴 크기에 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>vm</td>
+      <td>뷰포트의 가로 너비 기준 상대적인 크기를 가진다.</td>
+    </tr>
+    <tr>
+      <td>vh</td>
+      <td>뷰포트의 세로 너비 기준 상대적인 크기를 가진다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예시</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.html</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* 16px */</span>
+<span class="p">}</span>
+
+<span class="nc">.parent</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.child</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span> <span class="c">/* 16px * 0.8 = 12.8px */</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">2em</span><span class="p">;</span> <span class="c">/* 16px * 2em = 32px */</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span> <span class="c">/* 16px * 3rem = 48px */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="width-height">width, height</h3>
+<p>요소의 <code class="language-plaintext highlighter-rouge">가로와 세로 너비</code>를 지정하는 속성이다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">auto</code>이며 브라우저가 너비를 계산하는 특징이 있고, 속성의 값으로는 <code class="language-plaintext highlighter-rouge">단위</code>를 포함한 크기를 넣어 지정한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<p>아래와 같이 요소의 크기를 지정 후 <code class="language-plaintext highlighter-rouge">margin-left</code>와 <code class="language-plaintext highlighter-rouge">margin-right</code>를 <code class="language-plaintext highlighter-rouge">auto</code>로 지정 시 요소는 수평방향으로 중앙에 정렬할 수 있다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="max-width--max-height">max-width / max-height</h4>
+<p>요소가 커질 수 있는 최대 가로와 세로 너비를 지정할 때 사용한다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">none</code>으로 제한이 없고, 단위로 지정할 수 있다.</p>
+
+<h4 id="min-widht--min-height">min-widht / min-height</h4>
+<p>요소가 작아질 수 있는 최소 가로와 세로 너비를 지정할 때 사용한다.<br />
+기본값은 <code class="language-plaintext highlighter-rouge">0</code>이며, 단위로 지정할 수 있다.</p>
+
+<h3 id="margin">margin</h3>
+<p>margin은 요소의 <code class="language-plaintext highlighter-rouge">외부 여백</code>을 지정하는 단축 속성으로, 기본값은 <code class="language-plaintext highlighter-rouge">0</code>이다.<br />
+속성값에 <code class="language-plaintext highlighter-rouge">auto</code> 또는 <code class="language-plaintext highlighter-rouge">단위</code>를 지정하여(음수도 입력 가능!) 사용할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>margin: &lt;크기&gt;;
+margin-top: &lt;크기&gt;;
+margin-right: &lt;크기&gt;;
+margin-bottom: &lt;크기&gt;;
+margin-left: &lt;크기&gt;;
+margin: &lt;margin-top&gt; &lt;margin-right&gt; &lt;margin-bottom&gt; &lt;margin-left&gt;;
+margin: &lt;margin-top&gt; &lt;margin-right &amp; margin-left&gt; &lt;margin-bottom&gt;;
+margin: &lt;margin-top &amp; margin-bottom&gt; &lt;margin-right &amp; margin-left&gt;;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">margin 겹침 현상</code> : 형제 관계에 있는 요소들의 margin 영역이 중첩되면 더 큰 값을 가진 margin 영역으로 병합되어 출력되는 현상</p>
+
+<h3 id="padding">padding</h3>
+<p>padding은 요소의 <code class="language-plaintext highlighter-rouge">내부 여백</code>을 지정하는 단축속성으로 기본값은 <code class="language-plaintext highlighter-rouge">0</code>이다.<br />
+<code class="language-plaintext highlighter-rouge">단위</code>를 입력하거나, <code class="language-plaintext highlighter-rouge">%</code>를 통해 부모 요소의 가로 너비에 대한 비율로 지정이 가능하다.<br />
+padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-top</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-right</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-bottom</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding-left</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">크기</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-bottom</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-left</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span> <span class="o">&amp;</span> <span class="nt">padding-left</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-bottom</span><span class="o">&gt;;</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">padding-top</span> <span class="o">&amp;</span> <span class="nt">padding-bottom</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">padding-right</span> <span class="o">&amp;</span> <span class="nt">padding-left</span><span class="o">&gt;;</span>
+</code></pre></div></div>
+
+<h3 id="테두리border">테두리(border)</h3>
+<p>요소의 테두리 선을 지정하는 단축속성으로 <code class="language-plaintext highlighter-rouge">border: 선-두께 선-종류 선-색상;</code>과 같이 작성하여 사용한다.
+<br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">border-width: 크기;</code> : <strong>테두리의 굵기</strong>를 지정하고 단위를 입력해 크기를 지정한다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* border-width의 개별속성 */</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="o">(</span><span class="nt">top</span><span class="o">,</span> <span class="nt">right</span><span class="o">,</span> <span class="nt">bottom</span><span class="o">,</span> <span class="nt">left</span><span class="o">);</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="o">(</span><span class="nt">top</span> <span class="o">&amp;</span> <span class="nt">bottom</span><span class="o">)</span> <span class="o">(</span><span class="nt">left</span> <span class="o">&amp;</span> <span class="nt">right</span><span class="o">);</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="nt">top</span> <span class="o">(</span><span class="nt">left</span> <span class="o">&amp;</span> <span class="nt">right</span><span class="o">)</span> <span class="nt">bottom</span><span class="o">;</span>
+<span class="nt">border-width</span><span class="o">:</span> <span class="nt">top</span> <span class="nt">right</span> <span class="nt">bottom</span> <span class="nt">left</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">border-style: 속성값;</code> : <strong>테두리의 모양</strong>을 지정한다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 자주 사용하는 border style */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>   <span class="c">/* 선 없음 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span> <span class="c">/* 선 숨김 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">solid</span><span class="o">;</span>  <span class="c">/* 실선 */</span>
+<span class="nt">border-style</span><span class="o">:</span> <span class="nt">dashed</span><span class="o">;</span> <span class="c">/* 점선(파선) */</span>
+</code></pre></div></div>
+<ul>
+  <li>border-style도 width와 마찬가지로 개별 속성으로 사용할 수 있다.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">border-color:색상값;</code> : <strong>테두리 선의 색상</strong>을 지정한다. 기본값은 <code class="language-plaintext highlighter-rouge">black</code></p>
+<ul>
+  <li>border-color도 개별 속성으로 사용할 수 있다.</li>
+</ul>
+
+<h4 id="border-기타-속성">border 기타 속성</h4>
+<p><code class="language-plaintext highlighter-rouge">border-방향</code> / <code class="language-plaintext highlighter-rouge">border-방향-속성</code></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-top</span><span class="o">:</span> <span class="nt">두께</span> <span class="nt">종류</span> <span class="nt">색상</span><span class="o">;</span>
+<span class="nt">border-top-width</span><span class="o">:</span> <span class="nt">크기</span><span class="o">;</span>
+<span class="nt">border-top-style</span><span class="o">:</span> <span class="nt">값</span><span class="o">;</span>
+<span class="nt">border-top-color</span><span class="o">:</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="border-radius">border-radius</h4>
+<p>모서리를 <code class="language-plaintext highlighter-rouge">둥글게</code> 깎는 속성이다. 기본값은 0이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">10</span><span class="nt">px</span><span class="o">;</span>
+<span class="c">/* 4개 입력 시 모서리를 둥글기를 각각 지정할 수 있다 */</span>
+<span class="nt">border-radius</span><span class="o">:</span> <span class="nt">top-left</span> <span class="nt">top-right</span> <span class="nt">bottom-right</span> <span class="nt">bottom-left</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="box-sizing">box-sizing</h3>
+<p>브라우저가 요소를 화면에 렌더링할 떄 border, padding, content 영역의 가로와 세로 너비를 종합적으로 계산하기 때문에 의도한 바와 다르게 나오는 경우가 발생한다.<br />
+<code class="language-plaintext highlighter-rouge">box-sizing</code> 속성은 width와 height 속성의 적용 기준을 지정한다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">content-box</code> (기본값) : width, height 속성의 적용 범위를 <code class="language-plaintext highlighter-rouge">content 영역</code>으로 제한한다. (요소의 content만으로 크기를 계산)</li>
+  <li><code class="language-plaintext highlighter-rouge">border-box</code> : width, height 속성의 적용 범위를 <code class="language-plaintext highlighter-rouge">border 영역</code>으로 제한한다. (요소의 content + padding + border를 합쳐 크기를 계산)</li>
+</ul>
+
+<h3 id="색상-표현">색상 표현</h3>
+<p>CSS에서 색상 값을표기하는 방법은 여러가지가 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>표기법</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>색상 이름</td>
+      <td>색상의 영문명(키워드)을 속성값으로 사용</td>
+      <td>red, blue</td>
+    </tr>
+    <tr>
+      <td>HEX 코드</td>
+      <td>16진수로 색상을 표기법 #RRGGBB</td>
+      <td>#FFF, #000000</td>
+    </tr>
+    <tr>
+      <td>RGB</td>
+      <td>빛의 삼원색 rgb(red, green, blue)</td>
+      <td>rgb(255, 255, 255)</td>
+    </tr>
+    <tr>
+      <td>RGBA</td>
+      <td>빛의 삼원색과 투명도 rgba(red, green, blue, alpha)</td>
+      <td>rgba(0, 0, 0, 0.5)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="overflow">overflow</h3>
+<p>요소의 크기 이상으로 <strong>content가 넘쳤을 때</strong> 보여짐을 제어하는 단축속성이다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">visible</code>(기본값) : 넘친 내용을 그대로 보여준다.</li>
+  <li><code class="language-plaintext highlighter-rouge">hidden</code> : 넘친 내용을 잘라낸다.</li>
+  <li>scroll : 넘친 내용을 잘라내고, 스크롤바가 생성된다. (가로, 세로 모두 스크롤바를 생성)</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">auto</code> : 넘친 내용이 있는 경우에만 잘라내고 스크롤바가 생성된다. (가로만 넘친 경우 가로만 스크롤바를 생성)</p>
+  </li>
+  <li>개별속성으로 x, y축 따로 지정이 가능하다.(overflow-x / overflow-y)</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="display">display</h3>
+<p>display는 요소가 화면에 <code class="language-plaintext highlighter-rouge">출력</code>되는 특성을 지정하는 속성이다.</p>
+
+<ul>
+  <li>block : 상자 요소</li>
+  <li>inline : 글자 요소</li>
+  <li>inline-block : 글자 + 상자 요소</li>
+  <li>flex : 플렉스 박스 (1차원)</li>
+  <li>grid : 그리드 (2차원)</li>
+  <li>none : 화면에서 사라짐</li>
+</ul>
+
+<h3 id="opacity투명도">opacity(투명도)</h3>
+<p>요소의 투명도를 지정하는 속성으로 <code class="language-plaintext highlighter-rouge">0부터 1사이의 소수점</code>을 입력 시 투명도가 달라지고, 기본값인 <code class="language-plaintext highlighter-rouge">1은 불투명</code>한 상태를 나타낸다.</p>
+
+<h3 id="글꼴">글꼴</h3>
+
+<p><code class="language-plaintext highlighter-rouge">font-size</code> : <strong>텍스트의 크기</strong>를 지정할 때 사용하는 속성이다. <strong>기본 크기는 16px</strong>이다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">font-weight</code> : <strong>텍스트의 굵기</strong>를 지정할 때 사용하는 속성이다.</p>
+<ul>
+  <li>normal, 400 : 기본 굵기</li>
+  <li>bold, 700 : 두꺼운 굵기</li>
+  <li>100 ~ 900 : 100단위로 굵기를 지정</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">font-style</code>: <strong>텍스트의 스타일</strong>을 지정할 때 사용하는 속성으로 주로 기울기를 표현하고 싶을 때 사용한다. 기본값은 <strong>normal</strong>로 기울기 없음을 나타낸다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">font-family</code> : 글꼴을 지정할 때 사용하는 속성이다.  마지막에 글꼴의 계열을 필수로 작성해야하고, 여러 글꼴을 지정 시 <u>맨 앞에 작성한 글꼴부터</u> 적용 가능 여부를 판단하여 사용한다. 모든 글꼴을 적용할 수 없으면 마지막에 작성한 <u>유사한 형태의 글꼴 계열에 해당하는 글꼴</u>을 지정한다.</p>
+<ul>
+  <li>한글이나 공백이 있는 경우 <code class="language-plaintext highlighter-rouge">큰따옴표("")</code>로 감싸야한다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span> <span class="nt">글꼴1</span><span class="o">,</span> <span class="nt">글꼴2</span><span class="o">,</span> <span class="o">...,</span> <span class="nt">글꼴</span> <span class="nt">계열</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>글꼴 유형
+| 유형 | 설명 |
+| – | – |
+| serif | 삐침이 있는 명조 계열 |
+| sans-serif | 삐침이 없고 굵기가 일정한 고딕 계열 |
+| monospace | 텍스트 폭과 간격이 일정한 계열 |
+| fantasy | 화려한 글꼴 |
+| cursive | 필기체 계열 |
+<br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">line-height</code> : 텍스트의 <strong>한 줄의 높이</strong>를 지정할 때 사용하는 속성이다. (행간)</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* line-height는 배수로 조정하는 것이 좋다 */</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">2</span><span class="o">;</span>    <span class="c">/* 현재 폰트 사이즈의 2배 */</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">32</span><span class="nt">px</span><span class="o">;</span> 
+<span class="nt">line-height</span><span class="o">:</span> <span class="err">200</span><span class="o">%;</span> <span class="c">/* 현재 폰트 사이즈의 2배 */</span>
+</code></pre></div></div>
+
+<h3 id="문자-관련-속성들">문자 관련 속성들</h3>
+
+<p><code class="language-plaintext highlighter-rouge">color</code> : 글자의 색상을 지정하는 속성이다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">text-align</code> : 문자의 정렬 방식을 지정하는 속성이다.</p>
+<ul>
+  <li>left : 왼쪽 정렬 (기본)</li>
+  <li>right : 오른쪽 정렬</li>
+  <li>center : 중앙 정렬</li>
+  <li>justify : 양쪽 정렬</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">text-decoration</code> : 문자의 장식을 지정하는 속성이다.</p>
+<ul>
+  <li>none : 장식없음</li>
+  <li>underline : 밑줄</li>
+  <li>overline : 윗줄</li>
+  <li>line-through : 중앙선</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">text-indent</code> : 문자 첫 줄을 들여쓸때 쓰는 속성이다.</p>
+<ul>
+  <li>0 : 들여쓰기 없음</li>
+  <li>단위를 지정하여 들여쓰거나 음수를 넣으면 내어쓰기가 된다.</li>
+</ul>
+
+<h2><br /></h2>
+
+<p>혹시라도 포스트에 잘못된 내용이 있거나, 오타가 있다면 댓글로 알려주시면 감사하겠습니다🙇🏻‍♀️</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-21">March 21, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-02+%3A+CSS%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-01/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/study/til-03/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-03/" rel="permalink">TIL-03 : CSS
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned CSS!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-01/" rel="permalink">TIL-01 : HTML
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned HTML!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/study-01/" rel="permalink">[Study] 마크다운(Markdown) 문법
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">마크다운 문법 숙지에서 숙달까지
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-01/" rel="permalink">[Etc] Github(jekyll) 개발 블로그를 개설하다.
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Github page + jekyll로 만든 저의 개발 블로그입니다.☺️
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-02/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-02"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

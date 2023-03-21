@@ -16,4 +16,16 @@ var store = [{
         "tags": ["HTML"],
         "url": "/study/til-01/",
         "teaser": null
+      },{
+        "title": "TIL-02 : CSS",
+        "excerpt":"CSS(Cascading Style Sheets) css 문법은 선택자와 선언부로 구분된다. 선택자 {속성: 값;} 선택자 : CSS 스타일을 적용할 대상(요소)를 지정하는 영역이다. 선언부 : 선택자에서 선택한 대상에 적용할 스타일을 작성하는 영역으로 선언부에는 반드시 속성과 값을 한 쌍으로 작성해야 한다. 값 뒤에는 세미콜론(;)을 넣어 스타일을 여러개 작성이 가능하다. 속성 : 스타일의 종류 값 :...","categories": ["Study"],
+        "tags": ["CSS"],
+        "url": "/study/til-02/",
+        "teaser": null
+      },{
+        "title": "TIL-03 : CSS",
+        "excerpt":"background background-color 요소의 배경 색상을 지정하는 속성이다. 속성값으로 색상값을 입력해야 한다. 배경 색상의 기본값은 transparent 투명함이다. background-color: 색상값; div { background-color: red; } background-image 요소의 배경에 이미지를 넣는 속성이다. 속성값은 삽입할 이미지의 경로를 url() 함수로 지정해야 한다. background-image: url(); background-image 속성을 사용할 때는 요소의 배경 크기가 반드시 있어야 한다. (width와...","categories": ["Study"],
+        "tags": ["CSS"],
+        "url": "/study/til-03/",
+        "teaser": null
       }]
