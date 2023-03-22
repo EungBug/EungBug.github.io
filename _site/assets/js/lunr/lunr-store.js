@@ -28,4 +28,10 @@ var store = [{
         "tags": ["CSS"],
         "url": "/study/til-03/",
         "teaser": null
+      },{
+        "title": "TIL-04 : JavaScript 기초 문법",
+        "excerpt":"JavaScript의 기초 먼저 스터디하고 추후 자세한 내용 스터디 예정 JavaScript 기초 주석(comment) 한 줄 주석은 슬래시2개(//)를 사용하고, 여러 줄 주석은 /* 와 */ 사이에 내용을 작성한다. // 한 줄 주석 /* 여러 줄 주석 입니다. */ 변수(variant) 변수란 변하는 수로 값이 변하는 데이터를 저장하고 참조하기 위한 공간을 의미한다. var, let,...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-04/",
+        "teaser": null
       }]
