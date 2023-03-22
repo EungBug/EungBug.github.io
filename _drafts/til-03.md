@@ -25,7 +25,9 @@ last_modified_at: 2023-03-22
 요소의 `배경 색상`을 지정하는 속성이다. 속성값으로 색상값을 입력해야 한다.  
 배경 색상의 기본값은 `transparent` 투명함이다.  
 
-`background-color: 색상값;`
+```css
+background-color: 색상값;
+```
 
 ```css
 div {
@@ -36,7 +38,9 @@ div {
 ### background-image
 요소의 배경에 `이미지`를 넣는 속성이다. 속성값은 삽입할 이미지의 경로를 `url()` 함수로 지정해야 한다.  
 
-`background-image: url();`
+```css
+background-image: url();
+```
 
 background-image 속성을 사용할 때는 **요소의 배경 크기가 반드시 있어야 한다.**
 (width와 height 속성을 같이 사용해야 한다.)  
@@ -52,7 +56,9 @@ div {
 요소의 배경 `이미지가 반복되는 설정`을 지정하는 속성이다.  
 요소의 크기가 이미지의 크기보다 큰 경우 자동으로 이미지가 반복해서 크기를 채우게 된다. 
 
-`background-repeat: 속성값`
+```css
+background-repeat: 속성값
+```
 
 - `repeat`(기본값) : 이미지를 수직, 수평 반복
 - repeat-x : 이미지를 수평 반복
@@ -69,7 +75,9 @@ div {
 요소의 배경 이미지의 위치를 지정하는 속성이다.  
 속성값을 1개만 입력 시 x축 값으로 인식되고 y축은 자동으로 center가 된다.  
 
-`background-position: x위치, y위치;`
+```css
+background-position: x위치, y위치;
+```
 
 background-position 속성 값
 
@@ -100,7 +108,9 @@ div {
 ### background-attachment
 요소의 배경에 삽입된 이미지를 스크롤 특성을 지정하는 속성이다.
 
-`background-attachment: 속성값;`
+```css
+background-attachment: 속성값;
+```
 
 - `scroll`(기본) : 이미지가 요소를 따라서 같이 스크롤 됨
 - `fixed` : 이미지가 뷰포트에 고정되고 스크롤 되지 않음
@@ -112,11 +122,14 @@ div {
 }
 ```
 
-### backgroudn 속성 한 번에 지정
+---
+**backgroudn 속성 한 번에 지정**
+
 background 속성은 속성값을 나열하여 한 번에 지정할 수 있다. 나열하는 순서는 정해져 있지 않지만 background-size 속성은 항상 background-position 속성을 먼저 입력하고 `슬래시(/)`로 구분한 후 사용한다.
 
-`background: <color 속성값> <image 속성값> <repeat 속성값> <position 속성값/size 속성값> <attachment 속성값>
-`
+```css
+background: <color 속성값> <image 속성값> <repeat 속성값> <position 속성값/size 속성값> <attachment 속성값>
+```
 
 ```css
 div {
@@ -127,4 +140,258 @@ div {
 - 한 번에 지정하는 것은 가독성에 좋지 않기 때문에 각 속성을 하나씩 작성하는 것이 더 좋다.
 
 ## position
+position은 HTML `요소의 위치를 지정`하는 속성이다. (배치))  
+top, bottom, left, right, z-index CSS 속성들과 같이 사용할 수 있다. (각 방향별 거리를 입력)  
+**position 속성의 값으로 `absolute`, `fixed`가 지정된 요소는 `display의 속성이 자동으로 block`으로 변경된다.**
+
+```css
+position: 속성값;
+```
+
+position 속성값들
+
+| 속성값 | 설명 | 기준 |
+| -- | -- | -- |
+| statc | 요소를 기본 흐름에 따라 배치한다. (기본값) | 기준 없음 |
+| relative | 요소를 기본 흐름에 따라 배치하지만 좌표 속성을 사용한다. | 요소 자신을 기준 |
+| absolute | 절대적인 좌표 위치에 따라 배치한다. | 위치 상 부모 요소를 기준 |
+| fixed | 절대적인 좌표 위치에 따라 배치하고 스크롤을 해도 고정된다. | 뷰포트를 기준 |
+| sticky | 기본 흐름에 따라 배치하지만 지정 좌표에 이르면 고정된다. | 스크롤 영역 기준 |
+
+
+### relative
+- relative로 지정된 요소는 `원래 있던 위치를 기준`으로 좌표 속성에 따라 요소의 위치가 움직인다.
+- 배치하기 전 원래 있던 공간은 시각적으로 비어 있고 원래 있던 것 처럼 **공간이 유지**된다.
+
+### absolute
+- absolute로 지정된 요소는 브라우저의 왼쪽 모서리가 기준점(뷰포트가 위치 상 부모가 됨)이 된다.
+- `위치 상 부모 요소를 기준`으로 배치되기 때문에 부모 요소에 static을 제외한 position 값을 주어 위치 상 부모 요소가 될 수 있도록 지정이 가능하다.
+- 배치하기 전 원래 있던 공간은 **빈 공간**으로 인식하게 된다.
+
+### Stack order
+어떤 요소가 더 위에 쌓이는지 결정되는 요소 쌓임 순서는 아래와 같다.
+
+1. 요소에 기본값인 static을 제외한 position 속성의 값이 있는 경우 위에 쌓인다. 
+2. 1번 조건이 같은 경우에는 z-index 속성의 숫자 값이 높을 수록 위에 쌓인다.
+3. 1번과 2번 조건까지 같은 경우에는 HTML의 다음 구조일 수록 위에 쌓인다.
+
+#### z-index
+z-index 속성을 사용하여 position 속성으로 배치한 요소의 z축 위치를 결정할 수 있다.
+
+```css
+z-index:정수;
+```
+
+- auto (기본값) : 부모 요소와 동일한 쌓임 정도로 기본 0으로 설정되어 있다.
+- 숫자 : 숫자가 높을 수록 위에 쌓인다. (음수도 가능하지만 주로 -1정도까지만 사용한다.)
+
+## flex
+
+`플렉스(플렉서블) 박스 레이아웃`이란 `1차원 방식`(가로나 세로 중 한 방향으로만 레이아웃을 설계하는 방식)으로 레이아웃을 설계할 수 있도록 고안된 스타일 속성을 말한다.
+
+`display: flex;` : 블록 요소와 같이 Flex Container로 지정한다.
+`dispaly: inline-flex` : 인라인 요소와 같이 Flex Container로 지정한다.
+
+구성 요소
+- `주축(main axis)` : 플렉스 박스의 진행 방향과 수평한 축
+- `교차축(cross axis)` : 주축과 수직한 축
+- `플렉스 컨테이너(flex container)` : display 값이 flex나 inline-flex로 지정된 요소
+- `플레스 아이템(flex item`) : 플렉스 컨테이너와 자식 관계를 이루는 태그 구성 요소
+
+### flex-direction
+플렉스 박스 레이아웃의 `주축 방향`을 결정하는 속성이다.
+
+```css
+flex-direction: 속성값;
+```
+
+- row : 주축 방향을 좌 -> 우로 지정한다. (수평정렬)
+- row-reverse : 주축 방향을 우 -> 좌로 지정한다.
+- column : 주축 방향을 위 -> 아래로 지정한다. (수직 정렬)
+- column-reverse : 주축 방향을 아래 -> 위로 지정한다.
+
+### flex-wrap
+플렉스 아이템이 플렉스 컨테이너 영역을 벗어날 때 어떻게 처리할지(`줄 바꿈` 여부)를 결정하는 속성이다.
+
+```css
+flex-wrap: 속성값;
+```
+ 
+- `nowrap`(기본값) : 벗어나도 줄바꿈 없이 무시한다.
+- `wrap` : 컨테이너를 벗어나면 줄 바꿈한다.
+- wrap-reverse : 컨테이너를 벗어나면 역방향으로 줄 바꿈한다.
+
+### justify-content
+플렉스 아이템의 `주축 방향으로 정렬`할 때 사용하는 속성이다.
+
+```css
+justify-content: 속성값;
+```
+
+- flex-start : 주축 방향의 시작점을 기준으로 정렬한다.
+- flex-end : 주축 방향의 끝점을 기준으로 정렬한다.
+- center : 주축 방향의 중앙에 정렬한다.
+- space-between : 플렉스 아이템 사이의 간격이 균일하도록 정렬한다.
+- space-around : 플렉스 아이템의 외부 여백을 균등하게 정렬한다.
+- space-evenly : 플렉스 아이템 사이와 양끝의 간격이 균일하도록 정렬한다.
+
+### align-content
+플렉스 아이템을 `교차축 방향으로 정렬`할 때 사용하는 속성이다.  
+flex-wrap 속성으로 인해 `여러 줄`이 된 경우에만 사용한다.
+
+```css
+align-content: 속성값;
+```
+
+- stretch(기본값) : 플렉스 아이템을 시작점으로 정렬하고 플렉스 아이템의 높이가 없는 경우 컨테이너에 맞게 늘어난다.
+- flex-start : 플렉스 아이템을 시작점으로 정렬한다.
+- flex-end : 플렉스 아이템을 끝점으로 정렬한다.
+- center : 플렉스 아이템을 가운데 정렬한다.
+- space-betwee : 플렉스 아이템 사이의 간격이 균일하도록 정렬한다.
+- space-around : 플렉스 아이템의 외부 여백을 균등하게 정렬한다.
+
+### align-items
+플렉스 아이템을 `교차축 방향으로 한 줄 정렬`할 때 사용하는 속성이다.
+
+```css
+align-items: 속성값;
+```
+
+- stretch(기본값) : 교차축 방향으로 너비나 높이가 늘어난다.
+- flex-start : 교차축 방향의 시작점으로 정렬한다.
+- flex-end : 교차축 방향의 끝점으로 정렬한다.
+- center : 교차축 방향의 가운데로 정렬한다.
+- baseline : 플렉스 아이템의 baseline(문자 기준선)을 기준으로 정렬한다.
+
+### 플렉스 아이템 관련 속성
+
+#### order
+플렉스 아이템의 순서를 지정하는 속성이다. 숫자가 작을 수록 앞에 정렬된다.
+
+```css
+order: 11;
+```
+
+#### flex-grow
+컨테이너에 남는 영역이 잇따면 플렉스 아이템의 너비가 증가하는 비율을 지정하는 속성이다. 기본값은 0으로 증가 비율이 없다.
+
+```css
+flex-grow: 2;
+```
+
+#### flex-shrink
+컨테이너의 너비가 플렉스 아이템들의 너비보다 작을 경우 플렉스 아이템의 감소 너비 비율을 지정하는 속성이다. 기본값은 1이며, 0을 입력 시 감소되지 않는다.
+
+```css
+flex-grow: 1;
+```
+
+#### flex-basis
+플렉스 아이템의 공간 배분 전 기본 너비를 설정하는 속성이다.
+기본값은 auto로 요소의 content 너비로 설정이 되고, 0으로 지정할 경우 content와 상관 없이 증가 너비의 비율로 늘어나게 된다.
+
+```css
+flex-basis: 0;
+flex-basis: 100px;
+```
+
+## transition 전환
+CSS에서 한 요소에 적용된 스타일 속성값을 다른 속성값으로 전환하는 효과를 지정하는 단축속성이다.
+
+```css
+/* 단축형으로 작성할 시 지속시간은 필수 속성이다. */
+transition: 속성명 지속시간 타이밍함수 대기시간;
+```
+
+### transition-property
+전환 효과를 적용할 대상 속성을 지정하는 속성이다.
+
+```css
+transition-property: 속성값;
+transition-property: all;
+```
+
+- none : 전환 효과를 지정하지 않는다.
+- all(기본값) : 모든 속성을 전환 효과 대상으로 지정한다.
+- 속성이름 : 특정 속성만 전환 효과 대상으로 지정한다.
+
+### transition-duration
+전환 효과의 지속 시간을 설정하는 속성이다. 속성값으로 초 단위로 입력한다.
+
+```css
+transition-duration: 시간;
+transition-duration: 1s;
+```
+
+### transition-timing-function
+전환 효과의 진행 속도(타이밍)를 지정하는 속성이다.
+
+- linear : 처음 속도와 마지막 속도가 일정하다.
+- ease : 처음에는 빨라지다 중간부터 점점 느려진다.
+- ease-in : 처음에는 느리지만 끝날 때까지 점점 빨라진다.
+- ease-out : 처음에는 빠르지만 끝날 때까지 점점 느려진다.
+- ease-in-out : 처음에 느리다가 점점 빨라지다가 다시 점점 느려진다.
+- cubic-bezier(p1, p2, p3, p4) : 사용자가 정의한 속도로 진행된다.
+
+```css
+transition-timing-function: ease-in;
+```
+
+### transition-delay
+전환 효과의 발생을 지연시킬 때 사용하는 속성이다. 속성값으로 초 단위로 입력한다.
+
+```css
+transition-delay: 시간;
+transition-delay: 1s;
+```
+
+
+## transform 변환
+요소의 크기를 변경하거나 위치를 이동시키거나 회전시키는 등 요소를 변환하는 효과를 지정할 때 사용하는 속성이다.
+
+```css
+/* 여러가지를 한번에 사용 가능 */
+transform: 변환함수1 변환함수2 변환함수3...;
+```
+
+자주 사용하는 2D 변환 함수들
+
+| 함수 | 설명 |
+| -- | -- |
+| translate(x, y) | 요소의 위치를 x축으로 x만큼 y축으로 y만큼 이동한다. | 
+| translateX(n) | 요소의 위치를 x축으로 n만큼 이동한다. |
+| translateY(n) | 요소의 위치를 y축으로 n만큼 이동한다. |
+| scale(x, y) | 요소를 x와 y만큼 확대 또는 축소한다. |
+| rotate(deg) | 요소를 각도만큼 회전한다. |
+| skewX(deg) | 요소를 x축으로 각도만큼 기울인다. |
+| skewY(deg) | 요소를 y축으로 각도만큼 기울인다. |
+
+
+자주 사용하는 3D 변환 함수들
+
+| 함수 | 설명 |
+| -- | -- |
+| perspective(n) | 원근 거리를 만든다. |
+| rotateX(deg) | X축을 기준으로 각도만큼 회전한다. |
+| rotateY(deg) | Y축을 기준으로 각도만큼 회전한다. |
+ - 원근법 함수는 제일 앞에 작성해야 한다.
+
+```css
+div {
+  transform: perspective(100px) rotateX(45deg);
+}
+```
+
+**perspective 속성과 함수의 차이**
+
+| 속성/함수 | 적용 대상| 기준점 설정 |
+| -- | -- | -- |
+| perspective: 600px; | 관찰대상의 부모 | perspective-origin |
+| transform: perspective(600px) | 관찰대상 | transform-origin |
+
+### backface-visibility
+3D변환으로 회전된 요소의 뒷면 숨김 여부를 지정하는 속성이다.
+
+- visible(기본값) : 뒷면을 보여준다.
+- hidden : 뒷면을 숨겨준다.
 
