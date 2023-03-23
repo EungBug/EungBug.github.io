@@ -9,30 +9,36 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Post Archive with Feature Rows - 응벅로그</title>
-<meta name="description" content="웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.">
+<!-- begin _includes/seo.html --><title>TIL-05 : 스타벅스 클론코딩 Header 영역 - 응벅로그</title>
+<meta name="description" content="Today I Learned!">
 
 
   <meta name="author" content="Eunbi Lee">
   
+  <meta property="article:author" content="Eunbi Lee">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="응벅로그">
-<meta property="og:title" content="Post Archive with Feature Rows">
-<meta property="og:url" content="http://localhost:4000/post-archive-feature-rows/">
+<meta property="og:title" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
+<meta property="og:url" content="http://localhost:4000/study/til-05/">
 
 
-  <meta property="og:description" content="웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.">
-
-
-
+  <meta property="og:description" content="Today I Learned!">
 
 
 
 
 
+
+
+  <meta property="article:published_time" content="2023-03-24T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-24T00:00:00+09:00">
 
 
 
@@ -41,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/post-archive-feature-rows/">
+<link rel="canonical" href="http://localhost:4000/study/til-05/">
 
 
 
@@ -100,7 +106,7 @@
 
   </head>
 
-  <body class="layout--archive">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -143,6 +149,8 @@
 
     <div class="initial-content">
       
+
+
 
 
 
@@ -281,38 +289,189 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title">Post Archive with Feature Rows</h1>
-    
-    
-  
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
+    <meta itemprop="description" content="Today I Learned!">
+    <meta itemprop="datePublished" content="2023-03-24T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-24T00:00:00+09:00">
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/study/til-05/" rel="permalink">TIL-05 : 스타벅스 클론코딩 Header 영역
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-05/" class="u-url" itemprop="url">TIL-05 : 스타벅스 클론코딩 Header 영역
 </a>
+          </h1>
+          
+
+
+        </header>
       
-    </h2>
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</a></li><li><a href="#트위터-카드">트위터 카드</a></li><li><a href="#google-fonts">google fonts</a></li><li><a href="#google-material-icons">google material icons</a></li><li><a href="#favicon">favicon</a><ul><li><a href="#favicon이-적용되지-않는다">favicon이 적용되지 않는다?</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>스타벅스 클론코딩 강의를 수강하며 배운 내용들을 정리해본다.</p>
+
+<h2 id="오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</h2>
+
+<p>오픈 그래프 프로토콜은 HTML 문서에서 meta 정보들을 미리보기를 통해 쉽게 표시하여 보여주는 프로토콜이다.<br />
+웹 페이지를 SNS 등에 공유할 때 웹사이트의 제목, 종류, 대표 URL, 대표 이미지 등의 정보들을 보여준다.</p>
+
+<p>오픈 그래프에 지정할 수 있는 대표적인 속성들은 아래와 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>og:type</td>
+      <td>웹 사이트의 유형</td>
+    </tr>
+    <tr>
+      <td>og:title</td>
+      <td>웹 사이트의 제목</td>
+    </tr>
+    <tr>
+      <td>og:description</td>
+      <td>웹 사이트의 간단한 설명</td>
+    </tr>
+    <tr>
+      <td>og:image</td>
+      <td>웹 사이트의 대표 이미지 주소</td>
+    </tr>
+    <tr>
+      <td>og:url</td>
+      <td>웹 사이트의 대표 URL</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"website"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"🎮몬스터와 싸워서 전투에서 이겨보세요!🎮"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"./images/site_image.png"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"URL"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="트위터-카드">트위터 카드</h2>
+
+<h2 id="google-fonts">google fonts</h2>
+
+<h2 id="google-material-icons">google material icons</h2>
+
+<h2 id="favicon">favicon</h2>
+
+<h3 id="favicon이-적용되지-않는다">favicon이 적용되지 않는다?</h3>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#html" class="page__taxonomy-item p-category" rel="tag">HTML</a>
+    
+    </span>
+  </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Today I Learned!
-</p>
-  </article>
-</div>
 
 
   
 
 
+  
 
-<div class="list__item">
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-24">March 24, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-05+%3A+%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9+Header+%EC%98%81%EC%97%AD%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-04/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -329,12 +488,12 @@
   </article>
 </div>
 
+        
+          
 
-  
 
 
-
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -351,12 +510,12 @@
   </article>
 </div>
 
+        
+          
 
-  
 
 
-
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -373,12 +532,12 @@
   </article>
 </div>
 
+        
+          
 
-  
 
 
-
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -395,224 +554,13 @@
   </article>
 </div>
 
-
-
-
-
-<div class="feature__wrapper">
-
-  
-
-</div>
-
-
-
-
-<div class="feature__wrapper">
-
-  
-    <div class="feature__item">
-      <div class="archive__item">
         
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-1-th.jpg"
-                 alt="placeholder image 1">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder 1</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting.</p>
-
-            </div>
-          
-
-          
-        </div>
       </div>
     </div>
   
-    <div class="feature__item">
-      <div class="archive__item">
-        
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-2-th.jpg"
-                 alt="placeholder image 2">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder 2</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting.</p>
-
-            </div>
-          
-
-          
-            <p><a href="/#test-link" class="btn btn--primary">Read More</a></p>
-          
-        </div>
-      </div>
-    </div>
   
-    <div class="feature__item">
-      <div class="archive__item">
-        
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-3-th.jpg"
-                 alt="">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder 3</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting.</p>
-
-            </div>
-          
-
-          
-        </div>
-      </div>
-    </div>
-  
-
 </div>
 
-
-
-
-<div class="feature__wrapper">
-
-  
-    <div class="feature__item--left">
-      <div class="archive__item">
-        
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-2-th.jpg"
-                 alt="placeholder image 2">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder Image Left Aligned</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting. Left aligned with <code class="language-plaintext highlighter-rouge">type="left"</code></p>
-
-            </div>
-          
-
-          
-            <p><a href="/#test-link" class="btn btn--primary">Read More</a></p>
-          
-        </div>
-      </div>
-    </div>
-  
-
-</div>
-
-
-
-
-<div class="feature__wrapper">
-
-  
-    <div class="feature__item--right">
-      <div class="archive__item">
-        
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-2-th.jpg"
-                 alt="placeholder image 2">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder Image Right Aligned</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting. Right aligned with <code class="language-plaintext highlighter-rouge">type="right"</code></p>
-
-            </div>
-          
-
-          
-            <p><a href="/#test-link" class="btn btn--primary">Read More</a></p>
-          
-        </div>
-      </div>
-    </div>
-  
-
-</div>
-
-
-
-
-<div class="feature__wrapper">
-
-  
-    <div class="feature__item--center">
-      <div class="archive__item">
-        
-          <div class="archive__item-teaser">
-            <img src="/assets/images/unsplash-gallery-image-2-th.jpg"
-                 alt="placeholder image 2">
-            
-          </div>
-        
-
-        <div class="archive__item-body">
-          
-            <h2 class="archive__item-title">Placeholder Image Center Aligned</h2>
-          
-
-          
-            <div class="archive__item-excerpt">
-              <p>This is some sample content that goes here with <strong>Markdown</strong> formatting. Centered with <code class="language-plaintext highlighter-rouge">type="center"</code></p>
-
-            </div>
-          
-
-          
-            <p><a href="/#test-link" class="btn btn--primary">Read More</a></p>
-          
-        </div>
-      </div>
-    </div>
-  
-
-</div>
-
-  </div>
-</div>
     </div>
 
     
@@ -664,6 +612,25 @@
 
 
 
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-05/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-05"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
 
 
 
