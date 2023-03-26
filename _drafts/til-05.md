@@ -16,7 +16,7 @@ toc_sticky: true
 comments: true
 
 date: 2023-03-24
-last_modified_at: 2023-03-24
+last_modified_at: 2023-03-26
 ---
 
 스타벅스 클론코딩 강의를 수강하며 배운 내용들을 정리해본다.
@@ -46,13 +46,70 @@ last_modified_at: 2023-03-24
 ```
 
 ## 트위터 카드
+트위터 카드는 트위터에서 웹 사이트를 공유할 때 메시지를 사용자 정의하는데 사용되는 메타 태그이다.
 
-## google fonts
+트위터 카드에 지정할 수 있는 대표적인 속성은 아래와 같다.
 
-## google material icons
+| 속성 | 설명 |
+| -- | -- |
+| twitter:card | 카드 유형을 지정하는 속성 |
+| twitter:url | 웹 사이트의 대표 URL |
+| twitter:title | 카드에 표시 될 제목 |
+| twitter:description | 카드의 표시 될 웹 사이트의 간단한 설명 |
+| twitter:image | 웹 사이트의 대표 이미지 주소 |
+| twitter:site | 웹 사이트가 속한 사이트의 이름 |
+
+```html
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:site" content="몬스터 죽이기 게임" />
+<meta property="twitter:title" content="몬스터 죽이기 게임" />
+<meta property="twitter:description" content="🎮몬스터와 싸워서 전투에서 이겨보세요!🎮" />
+<meta property="twitter:image" content="./images/site_image.png" />
+<meta property="twitter:url" content="URL" />
+```
 
 ## favicon
+파비콘이란 웹 사이트를 대표하는 16 * 16 픽셀의 작은 이미지로 브라우저의 탭 부분에 Title과 함께 표시된다.
 
-### favicon이 적용되지 않는다?
+ICO는 파비콘의 파일 형식으로 모든 브라우저에서 지원한다. 요즘은 PNG, JPEG, SVG 등 다른 파일 형식도 지원한다.
+
+### favicon이 적용되지 않을 때 TIP
+종종 작업을 하다가 파비콘을 적용하거나 변경하면 브라우저에 바로 반영되지 않는 경우가 있다. 이럴 때 개발자도구를 열고 강제 새로고침을 하면 반영된 파비콘을 확인 할 수 있다.
 
 
+## Javascript:void(0)이란?
+a태그의 href 속성 값으로 javascript:가 들어가면 경로로 취급하지 않고 콜론(:) 뒤를 javascript 코드로 해석하게 된다.  
+void는 함수가 비어있다는 의미로 void(0)은 아무것도 실행하지 않는 의미의 코드가 된다.
+
+따라서 a태그가 클릭 되긴 하지만 다른 페이지로 이동하거나 현재 페이지를 다시 로딩하지 않도록 가상의 URL을 적용한 것이다.
+
+
+## BEM(Block Element Modifier)
+클래스 속성 작명법중 하나로 블록, 요소, 수정자를 기준으로 작성한다.
+
+`.block__element--modifier` 형식으로 작성한다.
+
+- block : 구성 요소의 가장 상위 요소를 블록으로 지정한다.
+- element : block으로 지정한 요소의 일부분 중 하나 
+- modifier : 요소의 상태 또는 변형을 표시한다.
+
+
+## 요소를 특정 비율로 만드는 방법
+자식 요소에 padding-top 속성을 %로 지정할 경우 부모요소의 width를 기준으로 자식 요소의 높이를 비율에 맞게 설정할 수 있다.
+
+```css
+.parent {
+    width: 200px;
+}
+
+.child {
+    width: 100%;
+    padding-top: 56.25% /* 16:9 비율 */
+}
+```
+
+<br>
+
+---
+
+혹시라도 포스트에 잘못된 내용이 있거나, 오타가 있다면 댓글로 알려주시면 감사하겠습니다🙇🏻‍♀️
