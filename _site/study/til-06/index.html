@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>TIL-05 : 스타벅스 클론코딩 Header 영역 - 응벅로그</title>
-<meta name="description" content="Today I Learned!">
+<!-- begin _includes/seo.html --><title>TIL-06 : Git/GitHub - 응벅로그</title>
+<meta name="description" content="Today I Learned Git!">
 
 
   <meta name="author" content="Eunbi Lee">
@@ -22,19 +22,19 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="응벅로그">
-<meta property="og:title" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
-<meta property="og:url" content="http://localhost:4000/study/til-05/">
+<meta property="og:title" content="TIL-06 : Git/GitHub">
+<meta property="og:url" content="http://localhost:4000/study/til-06/">
 
 
-  <meta property="og:description" content="Today I Learned!">
-
-
-
+  <meta property="og:description" content="Today I Learned Git!">
 
 
 
 
-  <meta property="article:published_time" content="2023-03-24T00:00:00+09:00">
+
+
+
+  <meta property="article:published_time" content="2023-03-26T00:00:00+09:00">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/study/til-05/">
+<link rel="canonical" href="http://localhost:4000/study/til-06/">
 
 
 
@@ -290,16 +290,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
-    <meta itemprop="description" content="Today I Learned!">
-    <meta itemprop="datePublished" content="2023-03-24T00:00:00+09:00">
+    <meta itemprop="headline" content="TIL-06 : Git/GitHub">
+    <meta itemprop="description" content="Today I Learned Git!">
+    <meta itemprop="datePublished" content="2023-03-26T00:00:00+09:00">
     <meta itemprop="dateModified" content="2023-03-26T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/study/til-05/" class="u-url" itemprop="url">TIL-05 : 스타벅스 클론코딩 Header 영역
+            <a href="http://localhost:4000/study/til-06/" class="u-url" itemprop="url">TIL-06 : Git/GitHub
 </a>
           </h1>
           
@@ -313,150 +313,125 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</a></li><li><a href="#트위터-카드">트위터 카드</a></li><li><a href="#favicon">favicon</a><ul><li><a href="#favicon이-적용되지-않을-때-tip">favicon이 적용되지 않을 때 TIP</a></li></ul></li><li><a href="#javascriptvoid0이란">Javascript:void(0)이란?</a></li><li><a href="#bemblock-element-modifier">BEM(Block Element Modifier)</a></li><li><a href="#요소를-특정-비율로-만드는-방법">요소를 특정 비율로 만드는 방법</a></li></ul>
+              <ul class="toc__menu"><li><a href="#git">Git</a><ul><li><a href="#git의-기본-명령어들">Git의 기본 명령어들</a></li><li><a href="#commit">commit</a></li><li><a href="#log">log</a></li></ul></li><li><a href="#github">GitHub</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>스타벅스 클론코딩 강의를 수강하며 배운 내용들을 정리해본다.</p>
+        <p><code class="language-plaintext highlighter-rouge">강민철 강사님</code>의 Git/GitHub 특강을 참고하여 공부하고 이해한 내용들을 작성한 포스트입니다.</p>
 
-<h2 id="오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</h2>
+<h2 id="git">Git</h2>
 
-<p>오픈 그래프 프로토콜은 HTML 문서에서 meta 정보들을 미리보기를 통해 쉽게 표시하여 보여주는 프로토콜이다.<br />
-웹 페이지를 SNS 등에 공유할 때 웹사이트의 제목, 종류, 대표 URL, 대표 이미지 등의 정보들을 보여준다.</p>
+<p>Git이란 <code class="language-plaintext highlighter-rouge">버전 관리를 위한 도구</code>를 말한다.</p>
 
-<p>오픈 그래프에 지정할 수 있는 대표적인 속성들은 아래와 같다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>속성</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>og:type</td>
-      <td>웹 사이트의 유형</td>
-    </tr>
-    <tr>
-      <td>og:title</td>
-      <td>웹 사이트의 제목</td>
-    </tr>
-    <tr>
-      <td>og:description</td>
-      <td>웹 사이트의 간단한 설명</td>
-    </tr>
-    <tr>
-      <td>og:image</td>
-      <td>웹 사이트의 대표 이미지 주소</td>
-    </tr>
-    <tr>
-      <td>og:url</td>
-      <td>웹 사이트의 대표 URL</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"website"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"🎮몬스터와 싸워서 전투에서 이겨보세요!🎮"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"./images/site_image.png"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"URL"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h2 id="트위터-카드">트위터 카드</h2>
-<p>트위터 카드는 트위터에서 웹 사이트를 공유할 때 메시지를 사용자 정의하는데 사용되는 메타 태그이다.</p>
-
-<p>트위터 카드에 지정할 수 있는 대표적인 속성은 아래와 같다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>속성</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>twitter:card</td>
-      <td>카드 유형을 지정하는 속성</td>
-    </tr>
-    <tr>
-      <td>twitter:url</td>
-      <td>웹 사이트의 대표 URL</td>
-    </tr>
-    <tr>
-      <td>twitter:title</td>
-      <td>카드에 표시 될 제목</td>
-    </tr>
-    <tr>
-      <td>twitter:description</td>
-      <td>카드의 표시 될 웹 사이트의 간단한 설명</td>
-    </tr>
-    <tr>
-      <td>twitter:image</td>
-      <td>웹 사이트의 대표 이미지 주소</td>
-    </tr>
-    <tr>
-      <td>twitter:site</td>
-      <td>웹 사이트가 속한 사이트의 이름</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:site"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:title"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:description"</span> <span class="na">content=</span><span class="s">"🎮몬스터와 싸워서 전투에서 이겨보세요!🎮"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:image"</span> <span class="na">content=</span><span class="s">"./images/site_image.png"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:url"</span> <span class="na">content=</span><span class="s">"URL"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<h2 id="favicon">favicon</h2>
-<p>파비콘이란 <code class="language-plaintext highlighter-rouge">웹 사이트를 대표하는 16 * 16 픽셀의 작은 이미</code>지로 브라우저의 탭 부분에 Title과 함께 표시된다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">ICO</code>는 파비콘의 파일 형식으로 모든 브라우저에서 지원한다. 요즘은 PNG, JPEG, SVG 등 다른 파일 형식도 지원한다.</p>
-
-<h3 id="favicon이-적용되지-않을-때-tip">favicon이 적용되지 않을 때 TIP</h3>
-<p>종종 작업을 하다가 파비콘을 적용하거나 변경하면 브라우저에 바로 반영되지 않는 경우가 있다. 이럴 때 개발자도구를 열고 강제 새로고침을 하면 반영된 파비콘을 확인 할 수 있다.</p>
-
-<h2 id="javascriptvoid0이란">Javascript:void(0)이란?</h2>
-<p>a태그의 href 속성 값으로 javascript:가 들어가면 경로로 취급하지 않고 <code class="language-plaintext highlighter-rouge">콜론(:)</code> 뒤를 javascript 코드로 해석하게 된다.<br />
-void는 <code class="language-plaintext highlighter-rouge">함수가 비어있다</code>는 의미로 void(0)은 <code class="language-plaintext highlighter-rouge">아무것도 실행하지 않는</code> 의미의 코드가 된다.</p>
-
-<p>따라서 a태그가 클릭 되긴 하지만 <code class="language-plaintext highlighter-rouge">다른 페이지로 이동하거나 현재 페이지를 다시 로딩하지 않도록 가상의 URL</code>을 적용한 것이다.</p>
-
-<h2 id="bemblock-element-modifier">BEM(Block Element Modifier)</h2>
-<p>클래스 속성 작명법중 하나로 블록, 요소, 수정자를 기준으로 작성한다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">.block__element--modifier</code> 형식으로 작성한다.</p>
-
+<p>먼저 Git이 없이 개발을 한다면 아래와 같은 상황들이 발생한다.</p>
 <ul>
-  <li>block : 구성 요소의 가장 상위 요소를 블록으로 지정한다.</li>
-  <li>element : block으로 지정한 요소의 일부분 중 하나</li>
-  <li>modifier : 요소의 상태 또는 변형을 표시한다.</li>
+  <li>변경 내역을 확인하기 어렵다 : 파일을 일부 수정 후 저장 시 덮어쓰기가 된다. 그렇기 때문에 어떤 코드가 언제 어떻게 변경되었는지 변경 내역들을 비교할 수 없다.</li>
+  <li>작업을 특정 시점으로 되돌리가 어렵다.</li>
+  <li>협업하면서 작업하기 어렵다.</li>
 </ul>
 
-<h2 id="요소를-특정-비율로-만드는-방법">요소를 특정 비율로 만드는 방법</h2>
-<p>자식 요소에 <code class="language-plaintext highlighter-rouge">padding-top</code> 속성을 <code class="language-plaintext highlighter-rouge">%</code>로 지정할 경우 부모요소의 width를 기준으로 자식 요소의 높이를 비율에 맞게 설정할 수 있다.</p>
+<p>이러한 문제들로 인해 변경 사항 즉 <code class="language-plaintext highlighter-rouge">버전을 조금 더 일목요연하게 관리</code>하기 위해 탄생한 것이 Git이다.</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
-<span class="p">}</span>
+<p>버전이란 <code class="language-plaintext highlighter-rouge">유의미한 변화</code>가 결과물로 나온 것을 말하며 여기서 말하는 유의미한 변화를 <code class="language-plaintext highlighter-rouge">Commit(커밋)</code>이라고 한다.</p>
 
-<span class="nc">.child</span> <span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">56.25%</span> <span class="c">/* 16:9 비율 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>Git의 역할이 버전을 관리하는 것이기 때문에 Git을 사용하면 위에서 얘기한 문제들을 해결할 수 있다.</p>
 
-<p><br /></p>
+<ul>
+  <li>변경 내역을 기억하고 저장한다.</li>
+  <li>특정 시점으로 작업을 되돌릴 수 있다.</li>
+  <li>여러 명과 협업하며 코드를 나누거나 합칠 수 있다.</li>
+</ul>
 
-<hr />
+<p>Git은 작업 디렉터리, 스테이지, 저장소 이 3개의 공간을 관리해준다.</p>
 
-<p>혹시라도 포스트에 잘못된 내용이 있거나, 오타가 있다면 댓글로 알려주시면 감사하겠습니다🙇🏻‍♀️</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Working Tree</code> : 버전 관리의 대상(프로젝트)이 위치하는 directory를 의미한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">스테이지</code> : commit할 (버전으로 만들) 파일들을 올리는 공간을 의미한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">저장소</code> : 버전이 만들어지고 관리되는 공간을 의미한다.</li>
+</ul>
+
+<h3 id="git의-기본-명령어들">Git의 기본 명령어들</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>명령어</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git init</code></td>
+      <td>버전을 관리할 로컬 저장소를 만든다.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git add &lt;파일명&gt;</code></td>
+      <td>파일을 스테이지에 추가한다.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git add .</code></td>
+      <td>현재 디렉터리에 있는 모든 변경사항을 스테이지에 추가한다.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git status</code></td>
+      <td>현재 작업 디렉터리의 상태를 조회한다.</td>
+    </tr>
+    <tr>
+      <td>git rm -cached <파일></파일></td>
+      <td>스테이지에 추가한 변경사항을 다시 뺄 때 사용한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="commit">commit</h3>
+<p>commit은 버전 즉, <code class="language-plaintext highlighter-rouge">유의미한 변화가 결과물로 나온 것</code>, 스테이지에 올라온 변경사항들을 <code class="language-plaintext highlighter-rouge">하나의 버전으로 만드는 것</code>이다.<br />
+commit한 버전들은 원격 저장소에 올리기 전까지 로컬 저장소에만 저장된다.</p>
+
+<p>commit을 하는 명렁어는 <code class="language-plaintext highlighter-rouge">git commit</code> 또는 <code class="language-plaintext highlighter-rouge">git commit -m "메시지"</code> 두가지가 있다.</p>
+
+<p>메시지 옵션 없이 commit할 경우 vi 편집기가 열리며 변경사항에 대한 <code class="language-plaintext highlighter-rouge">제목과 자세한 내용</code>을 메시지로 작성할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">-m</code> 옵션을 주는 경우 <code class="language-plaintext highlighter-rouge">제목만 입력</code>해서 commit할 수 있다.</p>
+
+<h3 id="log">log</h3>
+<p>git log 명령어는 Git으로 버전을 만들면 <code class="language-plaintext highlighter-rouge">버전의 히스토리 내역을 확인</code> 수 있다.<br />
+commit의 고유한 해시와 commit 시 작성한 제목, 내용 등을 확인할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>명령어</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git log</td>
+      <td>commit 목록 조회하기</td>
+    </tr>
+    <tr>
+      <td>git log –oneline</td>
+      <td>commit 목록을 간단하게 한 줄로 조회하기</td>
+    </tr>
+    <tr>
+      <td>git log –patch</td>
+      <td>commit별 변경사항 내역까지 함께 조회하기</td>
+    </tr>
+    <tr>
+      <td>git log –branches</td>
+      <td>모든 브랜치의 commit 목록 조회하기</td>
+    </tr>
+    <tr>
+      <td>git log –graph</td>
+      <td>commit 목록을 그래프 형식으로 조회하기</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="github">GitHub</h2>
+<p>GitHub는 Git으로 관리한 프로젝트를 원격 상으로 관리해주는 서비스로 <code class="language-plaintext highlighter-rouge">원격 저장소 호스팅 서비스</code>라고 한다.</p>
+
 
         
       </section>
@@ -473,7 +448,9 @@ void는 <code class="language-plaintext highlighter-rouge">함수가 비어있�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#html" class="page__taxonomy-item p-category" rel="tag">HTML</a>
+      <a href="/tags/#git" class="page__taxonomy-item p-category" rel="tag">git</a><span class="sep">, </span>
+    
+      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">github</a>
     
     </span>
   </p>
@@ -507,19 +484,17 @@ void는 <code class="language-plaintext highlighter-rouge">함수가 비어있�
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=TIL-05+%3A+%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9+Header+%EC%98%81%EC%97%AD%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=TIL-06+%3A+Git%2FGitHub%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-06%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-06%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-06%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       <!--첫 번째 문단-->
 
 
-
-  
 
   
   	
@@ -532,10 +507,10 @@ void는 <code class="language-plaintext highlighter-rouge">함수가 비어있�
 
   <nav class="pagination">
     
-      <a href="/study/til-04/" class="pagination--pager">이전</a>
+      <a href="/study/til-05/" class="pagination--pager">이전</a>
     
     
-      <a href="/study/til-06/" class="pagination--pager">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -559,14 +534,14 @@ void는 <code class="language-plaintext highlighter-rouge">함수가 비어있�
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/study/til-06/" rel="permalink">TIL-06 : Git/GitHub
+        <a href="/study/til-05/" rel="permalink">TIL-05 : 스타벅스 클론코딩 Header 영역
 </a>
       
     </h2>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Today I Learned Git!
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned!
 </p>
   </article>
 </div>
@@ -700,8 +675,8 @@ void는 <code class="language-plaintext highlighter-rouge">함수가 비어있�
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/study/til-05/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/til-05"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/til-06/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-06"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

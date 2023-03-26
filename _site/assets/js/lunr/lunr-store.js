@@ -40,4 +40,10 @@ var store = [{
         "tags": ["HTML"],
         "url": "/study/til-05/",
         "teaser": null
+      },{
+        "title": "TIL-06 : Git/GitHub",
+        "excerpt":"강민철 강사님의 Git/GitHub 특강을 참고하여 공부하고 이해한 내용들을 작성한 포스트입니다. Git Git이란 버전 관리를 위한 도구를 말한다. 먼저 Git이 없이 개발을 한다면 아래와 같은 상황들이 발생한다. 변경 내역을 확인하기 어렵다 : 파일을 일부 수정 후 저장 시 덮어쓰기가 된다. 그렇기 때문에 어떤 코드가 언제 어떻게 변경되었는지 변경 내역들을 비교할 수...","categories": ["Study"],
+        "tags": ["git","github"],
+        "url": "/study/til-06/",
+        "teaser": null
       }]
