@@ -46,4 +46,10 @@ var store = [{
         "tags": ["git"],
         "url": "/study/til-06/",
         "teaser": null
+      },{
+        "title": "TIL-07 : CSS 변수 사용",
+        "excerpt":"사용자 지정 속성 JavaScript에서 변수를 선언하고 여러 곳에서 사용할 수 있듯이 CSS에서도 사용자 지정 속성을 변수처럼 만들어서 사용할 수 있다. 아래와 같이 h1과 h2 태그의 배경 색상으로 red 색상 값을 적용한 상황이라고 하고 h1 { background-color: red; } h2 { background-color: red; } 만약 배경 색상을 전부 blue로 변경하고 싶을...","categories": ["Study"],
+        "tags": ["CSS"],
+        "url": "/study/til-07/",
+        "teaser": null
       }]
