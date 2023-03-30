@@ -5,8 +5,19 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Wed, 29 Mar 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Thu, 30 Mar 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>[Etc] 첫 클론코딩 회고</title>
+        
+        
+            <description>제주맥주 홈페이지 클론코딩 회고</description>
+        
+        <pubDate>Thu, 30 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/etc/etc-02-review/</link>
+        <guid isPermaLink="true">http://localhost:4000/etc/etc-02-review/</guid>
+      </item>
+    
 	<item>
 		<title>TIL-07 : CSS 변수 사용</title>
         
