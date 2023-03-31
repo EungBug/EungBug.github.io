@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>TIL-07 : CSS 변수 사용 - 응벅로그</title>
-<meta name="description" content="Today I Learned CSS!">
+<!-- begin _includes/seo.html --><title>TIL-08 : JavaScript 이벤트 버블링 - 응벅로그</title>
+<meta name="description" content="Today I Learned JavaScript!">
 
 
   <meta name="author" content="Eunbi Lee">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="응벅로그">
-<meta property="og:title" content="TIL-07 : CSS 변수 사용">
-<meta property="og:url" content="http://localhost:4000/study/til-07/">
+<meta property="og:title" content="TIL-08 : JavaScript 이벤트 버블링">
+<meta property="og:url" content="http://localhost:4000/study/til-08/">
 
 
-  <meta property="og:description" content="Today I Learned CSS!">
-
-
-
+  <meta property="og:description" content="Today I Learned JavaScript!">
 
 
 
 
-  <meta property="article:published_time" content="2023-03-29T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-03-29T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-03-31T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-31T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/study/til-07/">
+
+<link rel="canonical" href="http://localhost:4000/study/til-08/">
 
 
 
@@ -290,16 +290,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="TIL-07 : CSS 변수 사용">
-    <meta itemprop="description" content="Today I Learned CSS!">
-    <meta itemprop="datePublished" content="2023-03-29T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-03-29T00:00:00+09:00">
+    <meta itemprop="headline" content="TIL-08 : JavaScript 이벤트 버블링">
+    <meta itemprop="description" content="Today I Learned JavaScript!">
+    <meta itemprop="datePublished" content="2023-03-31T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-31T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/study/til-07/" class="u-url" itemprop="url">TIL-07 : CSS 변수 사용
+            <a href="http://localhost:4000/study/til-08/" class="u-url" itemprop="url">TIL-08 : JavaScript 이벤트 버블링
 </a>
           </h1>
           
@@ -313,84 +313,63 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#사용자-지정-속성">사용자 지정 속성</a><ul><li><a href="#css-변수-선언">CSS 변수 선언</a></li><li><a href="#css-변수-사용">CSS 변수 사용</a></li></ul></li><li><a href="#사용자-지정-속성-대체">사용자 지정 속성 대체</a></li></ul>
+              <ul class="toc__menu"><li><a href="#이벤트-버블링event-bubbling">이벤트 버블링(Event Bubbling)</a></li><li><a href="#stoppropagation">stopPropagation()</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="사용자-지정-속성">사용자 지정 속성</h2>
+        <p><br /></p>
 
-<p>JavaScript에서 변수를 선언하고 여러 곳에서 사용할 수 있듯이 CSS에서도 <code class="language-plaintext highlighter-rouge">사용자 지정 속성</code>을 변수처럼 만들어서 사용할 수 있다.</p>
+<h1 id="이벤트-버블링event-bubbling">이벤트 버블링(Event Bubbling)</h1>
 
-<p>아래와 같이 h1과 h2 태그의 배경 색상으로 red 색상 값을 적용한 상황이라고 하고</p>
+<p>이벤트 버블링이란 요소에 이벤트 핸들러를 등록하여 이벤트가 발생했을 때 핸들러가 실행되는데, 해당 요소를 포함하고 있는 부모 요소 및 <code class="language-plaintext highlighter-rouge">상위 요소의 이벤트 핸들러까지 반복되면서 동작되는 현상</code>을 말한다.</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h2</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"parent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
-<p>만약 배경 색상을 전부 blue로 변경하고 싶을 때 일일이 선택자를 찾아서 수정해줘야 한다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.container</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.parent</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">child</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.child</span><span class="dl">'</span><span class="p">);</span>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="nx">container</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click container</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 
-<span class="nt">h2</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<span class="nx">parent</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click parent</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 
-<p>이럴 때 red 색상 값 대신 사용자 지정 속성을 만들어 해당 값을 <code class="language-plaintext highlighter-rouge">참조</code>한다면, 이 CSS 변수의 속성값만 수정하면 되기 때문에 
-<code class="language-plaintext highlighter-rouge">유지보수</code> 측면에서 큰 장점이며, 변수명을 통해 의미를 바로 <code class="language-plaintext highlighter-rouge">식별</code>할 수 있다는 장점이 있다.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">html</span> <span class="p">{</span>
-  <span class="py">--background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-color</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nt">h2</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-color</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="nx">child</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click child</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
-<h3 id="css-변수-선언">CSS 변수 선언</h3>
-<p>CSS 변수를 선언하는 방법은 <code class="language-plaintext highlighter-rouge">대시 기호 2개(--)</code>로 시작하며 속성의 이름(변수명)과 함께 <code class="language-plaintext highlighter-rouge">콜론(:)</code> 뒤에 속성값을 지정하면 된다.</p>
+<p>위와 같은 구조에서 각각의 div에 이벤트가 발생하면 출력하는 핸들러를 등록한다.<br />
+그리고 나서 child를 클릭 하면 아래와 같이 3개의 div에 등록한 핸들러가 순차적으로 모두 동작하게 된다.</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">html</span> <span class="p">{</span>
-  <span class="py">--primary-color</span><span class="p">:</span> <span class="m">#662409</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>click child
+click parent
+click container
 </code></pre></div></div>
 
-<p>이렇게 선언한 CSS 변수도 <code class="language-plaintext highlighter-rouge">유효 범위</code>가 존재한다.<br />
-변수를 선언한 요소를 포함하여 그 요소의 모든 후손 요소까지의 범위에서 유효하게 사용이 가능하다.<br />
-예를 들어 header 태그에서 선언한 변수는 footer 태그 안에서 사용할 수 없다.</p>
+<p><br /></p>
 
-<h3 id="css-변수-사용">CSS 변수 사용</h3>
-<p>CSS 변수를 선언했다면 사용하는 방법은 <code class="language-plaintext highlighter-rouge">var()</code> 함수를 사용하고 매개변수로 <code class="language-plaintext highlighter-rouge">속성의 이름</code>을 넣으면 된다.</p>
+<h1 id="stoppropagation">stopPropagation()</h1>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">);</span>
-<span class="p">}</span>
+<p>원하는 요소에만 이벤트를 발생하고 싶은데 버블링으로 상위 요소까지 올라가는 것을 막기 위해서<br />
+<code class="language-plaintext highlighter-rouge">event.stopPropagation()</code> 메서드를 사용하면 이벤트가 발생한 요소의 핸들러만 실행하고 <code class="language-plaintext highlighter-rouge">상위 요소로 이벤트가 전파되는 것을 막아준다.</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">child</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nf">stopPropagation</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">click child</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">})</span>
 </code></pre></div></div>
 
-<h2 id="사용자-지정-속성-대체">사용자 지정 속성 대체</h2>
-<p>사용자 지정 속성이 정의되지 않은 경우 var() 안에 대체 값을 함께 정의할 수 있다.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* --primary-color가 정의되지 않은 경우 blue로 대체된다. */</span>
-<span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">,</span> <span class="no">blue</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c">/* --primary-color가 정의되지 않은 경우 --font-color의 속성값으로 대체된다. */</span>
-<span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary-color</span><span class="p">,</span> <span class="n">var</span><span class="p">(</span><span class="n">--font-color</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>event.stopPropagation()을 추가한 뒤 child div를 클릭 시 전과는 다르게 <code class="language-plaintext highlighter-rouge">click child</code>만 출력되는 것을 볼 수 있다.</p>
 
         
       </section>
@@ -407,7 +386,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">JS</a>
     
     </span>
   </p>
@@ -432,7 +411,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-29">March 29, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-31">March 31, 2023</time></p>
 
       </footer>
 
@@ -441,19 +420,17 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=TIL-07+%3A+CSS+%EB%B3%80%EC%88%98+%EC%82%AC%EC%9A%A9%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-07%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=TIL-08+%3A+JavaScript+%EC%9D%B4%EB%B2%A4%ED%8A%B8+%EB%B2%84%EB%B8%94%EB%A7%81%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-08%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-07%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-08%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-07%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-08%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       <!--첫 번째 문단-->
 
 
-
-  
 
   
   	
@@ -466,10 +443,10 @@
 
   <nav class="pagination">
     
-      <a href="/study/til-06/" class="pagination--pager">이전</a>
+      <a href="/study/til-07/" class="pagination--pager">이전</a>
     
     
-      <a href="/study/til-08/" class="pagination--pager">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -493,14 +470,14 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/study/til-08/" rel="permalink">TIL-08 : JavaScript 이벤트 버블링
+        <a href="/etc/etc-02-review/" rel="permalink">[Etc] 첫 클론코딩 회고
 </a>
       
     </h2>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript!
+    <p class="archive__item-excerpt" itemprop="description">제주맥주 홈페이지 클론코딩 회고
 </p>
   </article>
 </div>
@@ -515,14 +492,14 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/etc/etc-02-review/" rel="permalink">[Etc] 첫 클론코딩 회고
+        <a href="/study/til-07/" rel="permalink">TIL-07 : CSS 변수 사용
 </a>
       
     </h2>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">제주맥주 홈페이지 클론코딩 회고
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned CSS!
 </p>
   </article>
 </div>
@@ -634,8 +611,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/study/til-07/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/til-07"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/til-08/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/ til-08"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

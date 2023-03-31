@@ -58,4 +58,10 @@ var store = [{
         "tags": ["클론코딩","회고"],
         "url": "/etc/etc-02-review/",
         "teaser": null
+      },{
+        "title": "TIL-08 : JavaScript 이벤트 버블링",
+        "excerpt":"이벤트 버블링(Event Bubbling) 이벤트 버블링이란 요소에 이벤트 핸들러를 등록하여 이벤트가 발생했을 때 핸들러가 실행되는데, 해당 요소를 포함하고 있는 부모 요소 및 상위 요소의 이벤트 핸들러까지 반복되면서 동작되는 현상을 말한다. &lt;div class=\"container\"&gt; &lt;div class=\"parent\"&gt; &lt;div class=\"child\"&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; const container = document.querySelector('.container'); const parent = document.querySelector('.parent'); const child = document.querySelector('.child');...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-08/",
+        "teaser": null
       }]
