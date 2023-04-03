@@ -5,8 +5,19 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Fri, 31 Mar 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>TIL-09 : JavaScript</title>
+        
+        
+            <description>Today I Learned JavaScript!</description>
+        
+        <pubDate>Tue, 04 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-09/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-09/</guid>
+      </item>
+    
 	<item>
 		<title>TIL-08 : JavaScript 이벤트 버블링</title>
         
@@ -104,17 +115,6 @@
         <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/study/til-01/</link>
         <guid isPermaLink="true">http://localhost:4000/study/til-01/</guid>
-      </item>
-    
-	<item>
-		<title>[Study] 마크다운(Markdown) 문법</title>
-        
-        
-            <description>마크다운 문법 숙지에서 숙달까지</description>
-        
-        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/study-01/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/study-01/</guid>
       </item>
     
   </channel>

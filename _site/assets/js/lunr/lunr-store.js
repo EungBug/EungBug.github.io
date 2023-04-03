@@ -64,4 +64,10 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-08/",
         "teaser": null
+      },{
+        "title": "TIL-09 : JavaScript",
+        "excerpt":"전개 연산자 전개 연산자란 배열 또는 객체 앞에 ...을 붙일 경우 객체나 배열의 요소를 펼쳐 나열해주는 연산자이다. const a = [1, 2, 3]; console.log(a); // [1, 2, 3] // 전개 연산자를 붙이면 배열 안에 있는 요소를 다 꺼내서 나열한다. console.log(...a); // 1, 2, 3 const b = [4, 5, 6];...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-09/",
+        "teaser": null
       }]
