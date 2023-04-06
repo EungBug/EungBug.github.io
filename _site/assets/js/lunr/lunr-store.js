@@ -70,10 +70,4 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-09/",
         "teaser": null
-      },{
-        "title": "TIL-10 : JavaScript 함수",
-        "excerpt":"함수 (Function) 함수란 특정 목적을 가지고 작성한 블록문을 의미한다. 필요할 때마다 함수를 호출하여 반복 수행할 수 있다. 함수 선언문 function 키워드로 시작하고, 함수명이 있어야 한다. function printHello() { console.log('HELLO'); } // 호출 printHello() 함수 표현식 변수의 이름을 지정하고, 할당 연산자를 통해 함수를 정의하는 것을 말한다. const printHello = function ()...","categories": ["Study"],
-        "tags": ["JS"],
-        "url": "/study/til-10/",
-        "teaser": null
       }]

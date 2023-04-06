@@ -750,7 +750,7 @@ CSS의 <code class="language-plaintext highlighter-rouge">@import 규칙</code>�
       <td>html의 글꼴 크기에 상대적인 크기를 가진다.</td>
     </tr>
     <tr>
-      <td>vm</td>
+      <td>vw</td>
       <td>뷰포트의 가로 너비 기준 상대적인 크기를 가진다.</td>
     </tr>
     <tr>
@@ -879,7 +879,7 @@ padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다
 </code></pre></div></div>
 
 <h3 id="box-sizing">box-sizing</h3>
-<p>브라우저가 요소를 화면에 렌더링할 떄 border, padding, content 영역의 가로와 세로 너비를 종합적으로 계산하기 때문에 의도한 바와 다르게 나오는 경우가 발생한다.<br />
+<p>브라우저가 요소를 화면에 렌더링할 때 border, padding, content 영역의 가로와 세로 너비를 종합적으로 계산하기 때문에 의도한 바와 다르게 나오는 경우가 발생한다.<br />
 <code class="language-plaintext highlighter-rouge">box-sizing</code> 속성은 width와 height 속성의 적용 기준을 지정한다.</p>
 
 <ul>
@@ -983,15 +983,40 @@ padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span> <span class="nt">글꼴1</span><span class="o">,</span> <span class="nt">글꼴2</span><span class="o">,</span> <span class="o">...,</span> <span class="nt">글꼴</span> <span class="nt">계열</span><span class="o">;</span>
 </code></pre></div></div>
 
-<p>글꼴 유형
-| 유형 | 설명 |
-| – | – |
-| serif | 삐침이 있는 명조 계열 |
-| sans-serif | 삐침이 없고 굵기가 일정한 고딕 계열 |
-| monospace | 텍스트 폭과 간격이 일정한 계열 |
-| fantasy | 화려한 글꼴 |
-| cursive | 필기체 계열 |
-<br /></p>
+<p>글꼴 유형</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>유형</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>serif</td>
+      <td>삐침이 있는 명조 계열</td>
+    </tr>
+    <tr>
+      <td>sans-serif</td>
+      <td>삐침이 없고 굵기가 일정한 고딕 계열</td>
+    </tr>
+    <tr>
+      <td>monospace</td>
+      <td>텍스트 폭과 간격이 일정한 계열</td>
+    </tr>
+    <tr>
+      <td>fantasy</td>
+      <td>화려한 글꼴</td>
+    </tr>
+    <tr>
+      <td>cursive</td>
+      <td>필기체 계열</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
 
 <p><code class="language-plaintext highlighter-rouge">line-height</code> : 텍스트의 <strong>한 줄의 높이</strong>를 지정할 때 사용하는 속성이다. (행간)</p>
 
@@ -1120,8 +1145,6 @@ padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다
   
 
   
-
-  
   	
   	
   	
@@ -1149,28 +1172,6 @@ padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
-</p>
-  </article>
-</div>
-
         
           
 
@@ -1233,6 +1234,28 @@ padding을 지정하는 경우 요소의 크기가 커진다는 특징이 있다
 
 
     <p class="archive__item-excerpt" itemprop="description">제주맥주 홈페이지 클론코딩 회고
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-07/" rel="permalink">TIL-07 : CSS 변수 사용
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned CSS!
 </p>
   </article>
 </div>
