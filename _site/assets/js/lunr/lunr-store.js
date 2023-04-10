@@ -88,4 +88,10 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-11/",
         "teaser": null
+      },{
+        "title": "TIL-12 : JavaScript",
+        "excerpt":"Number Number형과 관련된 자주 사용하는 속성 또는 메서드 정리 .toFixed() 숫자를 지정된 고정 소수점 표기까지 표현하는 문자로 반환한다. const num = 3.1415926535; console.log(num.toFixed(2)); // '3.14' (string) // 문자열을 다시 Number 타입으로 변환 console.log(parseFloat(num.toFixed(2))); // 3.14 (number) .toLocaleString() 숫자를 현지 언어 형식의 문자로 반환한다. const num = 10000; console.log(num.toLocaleString()); // 10,000...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-12/",
+        "teaser": null
       }]
