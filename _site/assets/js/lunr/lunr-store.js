@@ -70,4 +70,22 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-09/",
         "teaser": null
+      },{
+        "title": "[Etc] 레이아웃 클론코딩 과제 회고",
+        "excerpt":"레이아웃 클론코딩 과제 부트캠프 1차 과제로 HTML/CSS 레이아웃 클론 코딩 과제가 할당되었다. 과제가 있다는 것을 미리 알고 있었지만 3주 뒤로 알고 있었는데 갑작스럽게 과제 공지가 내려왔다. 피어리뷰 일정도 잡혀있어서 최대한 과제를 빠르게 제출하자는 생각으로 과제 제출 안내문을 읽으며 어떤 사이트가 가장 적합할지 고민 끝에 카카오뱅크 메인 페이지를 클론코딩 하기로 결정했다....","categories": ["Etc"],
+        "tags": ["클론코딩","회고"],
+        "url": "/etc/etc-03-review/",
+        "teaser": null
+      },{
+        "title": "TIL-10 : JavaScript 함수",
+        "excerpt":"함수 (Function) 함수란 특정 목적을 가지고 작성한 블록문을 의미한다. 필요할 때마다 함수를 호출하여 반복 수행할 수 있다. 함수 선언문 function 키워드로 시작하고, 함수명이 있어야 한다. function printHello() { console.log('HELLO'); } // 호출 printHello() 함수 표현식 변수의 이름을 지정하고, 할당 연산자를 통해 함수를 정의하는 것을 말한다. const printHello = function ()...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-10/",
+        "teaser": null
+      },{
+        "title": "TIL-11 : JavaScript",
+        "excerpt":"String 문자열 관련 자주 사용하는 속성과 메서드 정리 .length 문자열의 길이를 number형으로 반환하는 속성이다. 공백도 카운트에 포함된다. const str = 'Hello, World!'; console.log(str.length); // 13 .includes() 대상 문자에 주어진 문자가 포함되어 있는지 확인하여 boolean형으로 반환한다. 대소문자를 구분하며, 두 번째 인수로 숫자를 넣을 경우 해당 인덱스부터 시작해서 문자가 포함되어 있는지 확인한다....","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-11/",
+        "teaser": null
       }]

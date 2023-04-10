@@ -5,8 +5,41 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>TIL-11 : JavaScript</title>
+        
+        
+            <description>Today I Learned JavaScript String</description>
+        
+        <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-11/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-11/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-10 : JavaScript 함수</title>
+        
+        
+            <description>Today I Learned JavaScript 함수!</description>
+        
+        <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-10/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-10/</guid>
+      </item>
+    
+	<item>
+		<title>[Etc] 레이아웃 클론코딩 과제 회고</title>
+        
+        
+            <description>카카오뱅크 메인페이지 클론코딩 회고</description>
+        
+        <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/etc/etc-03-review/</link>
+        <guid isPermaLink="true">http://localhost:4000/etc/etc-03-review/</guid>
+      </item>
+    
 	<item>
 		<title>TIL-09 : JavaScript</title>
         
@@ -82,39 +115,6 @@
         <pubDate>Wed, 22 Mar 2023 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/study/til-04/</link>
         <guid isPermaLink="true">http://localhost:4000/study/til-04/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-03 : CSS</title>
-        
-        
-            <description>Today I Learned CSS!</description>
-        
-        <pubDate>Wed, 22 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-03/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-03/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-02 : CSS</title>
-        
-        
-            <description>Today I Learned CSS!</description>
-        
-        <pubDate>Tue, 21 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-02/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-02/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-01 : HTML</title>
-        
-        
-            <description>Today I Learned HTML!</description>
-        
-        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-01/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-01/</guid>
       </item>
     
   </channel>
