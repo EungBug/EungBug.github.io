@@ -83,6 +83,12 @@ var store = [{
         "url": "/study/til-10/",
         "teaser": null
       },{
+        "title": "TIL-13 : JavaScript Date",
+        "excerpt":"Date Date는 날짜와 시간을 위한 메서드를 제공하는 내장 객체이면서 생성자 함수이다. 타임스탬프 : 날짜 정보를 가지고 있는 문자 데이터를 말한다. (ex. Mon Apr 10 2023 15:22:05 GMT+0900 (한국 표준시) ) // new 연산자와 함께 생성자 함수를 호출하여 Date 객체를 반환 const date = new Date(); console.log(date); // Mon Apr 10...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-13/",
+        "teaser": null
+      },{
         "title": "TIL-11 : JavaScript",
         "excerpt":"String 문자열 관련 자주 사용하는 속성과 메서드 정리 .length 문자열의 길이를 number형으로 반환하는 속성이다. 공백도 카운트에 포함된다. const str = 'Hello, World!'; console.log(str.length); // 13 .includes() 대상 문자에 주어진 문자가 포함되어 있는지 확인하여 boolean형으로 반환한다. 대소문자를 구분하며, 두 번째 인수로 숫자를 넣을 경우 해당 인덱스부터 시작해서 문자가 포함되어 있는지 확인한다....","categories": ["Study"],
         "tags": ["JS"],
