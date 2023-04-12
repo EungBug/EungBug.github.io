@@ -83,12 +83,6 @@ var store = [{
         "url": "/study/til-10/",
         "teaser": null
       },{
-        "title": "TIL-13 : JavaScript Date",
-        "excerpt":"Date Date는 날짜와 시간을 위한 메서드를 제공하는 내장 객체이면서 생성자 함수이다. 타임스탬프 : 날짜 정보를 가지고 있는 문자 데이터를 말한다. (ex. Mon Apr 10 2023 15:22:05 GMT+0900 (한국 표준시) ) // new 연산자와 함께 생성자 함수를 호출하여 Date 객체를 반환 const date = new Date(); console.log(date); // Mon Apr 10...","categories": ["Study"],
-        "tags": ["JS"],
-        "url": "/study/til-13/",
-        "teaser": null
-      },{
         "title": "TIL-11 : JavaScript",
         "excerpt":"String 문자열 관련 자주 사용하는 속성과 메서드 정리 .length 문자열의 길이를 number형으로 반환하는 속성이다. 공백도 카운트에 포함된다. const str = 'Hello, World!'; console.log(str.length); // 13 .includes() 대상 문자에 주어진 문자가 포함되어 있는지 확인하여 boolean형으로 반환한다. 대소문자를 구분하며, 두 번째 인수로 숫자를 넣을 경우 해당 인덱스부터 시작해서 문자가 포함되어 있는지 확인한다....","categories": ["Study"],
         "tags": ["JS"],
@@ -99,5 +93,17 @@ var store = [{
         "excerpt":"Number Number형과 관련된 자주 사용하는 속성 또는 메서드 정리 .toFixed() 숫자를 지정된 고정 소수점 표기까지 표현하는 문자로 반환한다. const num = 3.1415926535; console.log(num.toFixed(2)); // '3.14' (string) // 문자열을 다시 Number 타입으로 변환 console.log(parseFloat(num.toFixed(2))); // 3.14 (number) .toLocaleString() 숫자를 현지 언어 형식의 문자로 반환한다. const num = 10000; console.log(num.toLocaleString()); // 10,000...","categories": ["Study"],
         "tags": ["JS"],
         "url": "/study/til-12/",
+        "teaser": null
+      },{
+        "title": "TIL-13 : JavaScript Date",
+        "excerpt":"Date Date는 날짜와 시간을 위한 메서드를 제공하는 내장 객체이면서 생성자 함수이다. 타임스탬프 : 날짜 정보를 가지고 있는 문자 데이터를 말한다. (ex. Mon Apr 10 2023 15:22:05 GMT+0900 (한국 표준시) ) // new 연산자와 함께 생성자 함수를 호출하여 Date 객체를 반환 const date = new Date(); console.log(date); // Mon Apr 10...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-13/",
+        "teaser": null
+      },{
+        "title": "TIL-14 : JavaScript Array",
+        "excerpt":"배열 배열에서 사용할 수 있는 속성과 메서드들 정리 .length 배열의 길이를 숫자로 반환한다. const arr = [1, 2, 3]; console.log(arr.length); // 3 .at() 대상 배열을 인덱싱할 때 사용한다. ()안에 음수 값을 넣으면 뒤에서부터 인덱싱한다. const arr = [1, 2, 3]; console.log(arr[0]); // 1 console.log(arr.at(0)); // 1 console.log(arr(arr.length - 1)) //...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-14/",
         "teaser": null
       }]

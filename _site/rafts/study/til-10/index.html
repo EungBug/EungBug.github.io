@@ -1,0 +1,783 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-10 : JavaScript 함수 - 응벅로그</title>
+<meta name="description" content="Today I Learned JavaScript 함수!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-10 : JavaScript 함수">
+<meta property="og:url" content="http://localhost:4000/study/til-10/">
+
+
+  <meta property="og:description" content="Today I Learned JavaScript 함수!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-06T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-10/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-10 : JavaScript 함수">
+    <meta itemprop="description" content="Today I Learned JavaScript 함수!">
+    <meta itemprop="datePublished" content="2023-04-06T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-04-06T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-10/" class="u-url" itemprop="url">TIL-10 : JavaScript 함수
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#함수-function">함수 (Function)</a><ul><li><a href="#함수-선언문">함수 선언문</a></li><li><a href="#함수-표현식">함수 표현식</a></li><li><a href="#호이스팅">호이스팅</a></li><li><a href="#함수-반환">함수 반환</a></li><li><a href="#매개변수-prameter">매개변수 Prameter</a></li><li><a href="#객체-구조분해할당">객체 구조분해할당</a></li><li><a href="#배열-구조분해할당">배열 구조분해할당</a></li><li><a href="#화살표-함수-arrow-function">화살표 함수 Arrow Function</a></li><li><a href="#즉시실행함수-iife">즉시실행함수 IIFE</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /></p>
+
+<h2 id="함수-function">함수 (Function)</h2>
+
+<p>함수란 <code class="language-plaintext highlighter-rouge">특정 목적을 가지고 작성한 블록문</code>을 의미한다. 필요할 때마다 함수를 <code class="language-plaintext highlighter-rouge">호출</code>하여 반복 수행할 수 있다.</p>
+
+<h3 id="함수-선언문">함수 선언문</h3>
+
+<p><code class="language-plaintext highlighter-rouge">function</code> 키워드로 시작하고, 함수명이 있어야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">printHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">HELLO</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 호출</span>
+<span class="nf">printHello</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="함수-표현식">함수 표현식</h3>
+<p>변수의 이름을 지정하고, 할당 연산자를 통해 함수를 정의하는 것을 말한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">printHello</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">HELLO</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 호출</span>
+<span class="nf">printHello</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="호이스팅">호이스팅</h3>
+
+<p>함수 선언문과 함수 표현식은 호이스팅에서 차이를 보인다.<br />
+호이스팅이란 함수 선언부가 유효범위 최상단으로 끌어올려지는 현상을 말한다.</p>
+
+<p>함수 선언문의 경우 호이스팅이 되기 때문에 함수를 선언하기 전 호출이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">printHello</span><span class="p">();</span> <span class="c1">// HELLO</span>
+
+<span class="kd">function</span> <span class="nf">printHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">HELLO</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>함수 표현식은 호이스팅 현상이 발생하지 않기 때문에 정의되지 않는 함수를 호출할 수 없다.(초기화 에러가 발생한다.)</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nf">printHello</span><span class="p">();</span> <span class="c1">// Error!</span>
+
+<span class="kd">const</span> <span class="nx">printHello</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">HELLO</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="함수-반환">함수 반환</h3>
+
+<p><code class="language-plaintext highlighter-rouge">return</code> 키워드를 사용하면 함수 호출에 대한 <code class="language-plaintext highlighter-rouge">결과를 반환</code>하고 함수를 <code class="language-plaintext highlighter-rouge">종료</code>할 수 있다.<br />
+return 키워드를 사용하지 않는 경우 기본적으로 함수는 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">getHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getHello</span><span class="p">());</span> <span class="c1">// Hello</span>
+</code></pre></div></div>
+
+<p>return 키워드 뒤에 아무 값도 반환하지 않는 경우 undefined를 반환한다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">getHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getHello</span><span class="p">());</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<h3 id="매개변수-prameter">매개변수 Prameter</h3>
+<p>함수 외부에서 데이터를 받아 내부에서 사용할 수 있는 변수를 매개변수라고 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위와 같은 함수가 정의되었을 때, a와 b는 sum함수의 매개변수라고 한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sum(1, 2)</code> 호출할 때 괄호 안에 들어간 데이터 즉, 1과 2는 인수라고 한다.</p>
+
+<p>매개변수에 할당 연산자를 통해 기본값을 지정할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 4</span>
+</code></pre></div></div>
+
+<h3 id="객체-구조분해할당">객체 구조분해할당</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EungBug</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">12</span>
+<span class="p">}</span>
+
+<span class="c1">// 매개변수에서 구조분해할당을 해서 바로 필요한 데이터를 반환할 수 있다.</span>
+<span class="kd">function</span> <span class="nf">getName</span><span class="p">({</span> <span class="nx">name</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">name</span>
+<span class="p">}</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getName</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span> <span class="c1">// EungBug</span>
+</code></pre></div></div>
+
+<h3 id="배열-구조분해할당">배열 구조분해할당</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numArr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+
+<span class="kd">function</span> <span class="nf">getFirst</span><span class="p">([</span><span class="nx">a</span><span class="p">])</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">getFirst</span><span class="p">(</span><span class="nx">numArr</span><span class="p">));</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<h3 id="화살표-함수-arrow-function">화살표 함수 Arrow Function</h3>
+
+<p>화살표 함수는 function 키워드를 사용하지 않고 <code class="language-plaintext highlighter-rouge">=&gt;</code> 를 통해 함수를 정의한다. 할당 연산자를 사용해 정의하기 때문에 화살표 함수는 함수 표현식이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위와 같이 함수를 function 키워드를 사용해서 정의하는데 화살표 함수는 function 키워드를 생략하고 =&gt; 기호를 사용하여 간략하게 작성하는 방법이다.</p>
+
+<p>return 키워드가 함수 내부에서 바로 나오는 경우 <code class="language-plaintext highlighter-rouge">return </code>키워드와 <code class="language-plaintext highlighter-rouge">{}</code> 기호는 생략이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+
+<span class="c1">// return 생략</span>
+<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+</code></pre></div></div>
+
+<p>화살표 함수는 여러가지 규칙이 있다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 변수에 할당해야한다.</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">}</span>
+<span class="c1">// 매개변수가 1개이면 () 생략 가능</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">}</span>
+<span class="c1">// 매개변수가 2개이상이면 () 생략 불가능</span>
+<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="p">}</span>
+<span class="c1">// return키워드가 함수 제일 처음에 시작하면 {}와 함께 생략 가능</span>
+<span class="kd">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">x</span>
+<span class="c1">// return 키워드 앞에 다른 로직이 있으면 생략 불가</span>
+<span class="kd">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">x</span><span class="p">);</span>
+	<span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">x</span>
+<span class="p">}</span>
+<span class="c1">// 객체 반환은 return과 {} 생략 불가 </span>
+<span class="kd">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> 
+	<span class="k">return</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 소괄호로 묶어서반환</span>
+<span class="kd">const</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+<span class="c1">// 배열은 생략해서 반환 가능 </span>
+<span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="즉시실행함수-iife">즉시실행함수 IIFE</h3>
+<p>즉시실행함수란 <code class="language-plaintext highlighter-rouge">정의되자마자 즉시 실행되는 함수</code>를 말한다.<br />
+즉시실행함수는 <code class="language-plaintext highlighter-rouge">()</code>로 함수를 감싸서 작성한다.</p>
+
+<p>보통은 함수를 정의하고 호출문을 통해 호출을 한다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">printHello</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello~</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 호출</span>
+<span class="nf">printHello</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>위 함수를 즉시실행함수로 만들면 아래와 같고 선언과 동시에 실행되어 console에 ‘Hello~’가 찍히게 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello~</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">})()</span> 
+
+<span class="c1">// 매개변수를 받는 경우 뒷쪽 소괄호에 인수를 작성한다.</span>
+<span class="p">;((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>즉시실행함수로 선언하는 방법은 여러가지가 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;()()</span> <span class="c1">// (F)()</span>
+<span class="p">;(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{})()</span> <span class="c1">// (F)()</span>
+<span class="p">;(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{}())</span> <span class="c1">// (F())</span>
+<span class="p">;</span><span class="o">!</span><span class="nf">function </span><span class="p">()</span> <span class="p">{}()</span> <span class="c1">// !F()</span>
+<span class="p">;</span><span class="o">+</span><span class="nf">function </span><span class="p">()</span> <span class="p">{}()</span> <span class="c1">// +F()</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">JS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-06">April 6, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-10+%3A+JavaScript+%ED%95%A8%EC%88%98%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-10%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-10%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-10%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-09/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/study/til-11/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-03-review/" rel="permalink">[Etc] 레이아웃 클론코딩 과제 회고
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">카카오뱅크 메인페이지 클론코딩 회고
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-10/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-10"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

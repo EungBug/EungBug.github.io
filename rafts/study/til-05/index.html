@@ -1,0 +1,737 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-05 : 스타벅스 클론코딩 Header 영역 - 응벅로그</title>
+<meta name="description" content="Today I Learned!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
+<meta property="og:url" content="http://localhost:4000/study/til-05/">
+
+
+  <meta property="og:description" content="Today I Learned!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-24T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-26T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-05/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-05 : 스타벅스 클론코딩 Header 영역">
+    <meta itemprop="description" content="Today I Learned!">
+    <meta itemprop="datePublished" content="2023-03-24T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-26T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-05/" class="u-url" itemprop="url">TIL-05 : 스타벅스 클론코딩 Header 영역
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</a></li><li><a href="#트위터-카드">트위터 카드</a></li><li><a href="#favicon">favicon</a><ul><li><a href="#favicon이-적용되지-않을-때-tip">favicon이 적용되지 않을 때 TIP</a></li></ul></li><li><a href="#javascriptvoid0이란">Javascript:void(0)이란?</a></li><li><a href="#bemblock-element-modifier">BEM(Block Element Modifier)</a></li><li><a href="#요소를-특정-비율로-만드는-방법">요소를 특정 비율로 만드는 방법</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>스타벅스 클론코딩 강의를 수강하며 배운 내용들을 정리해본다.</p>
+
+<h2 id="오픈-그래프open-graph-protocol">오픈 그래프(Open Graph Protocol)</h2>
+
+<p>오픈 그래프 프로토콜은 HTML 문서에서 meta 정보들을 미리보기를 통해 쉽게 표시하여 보여주는 프로토콜이다.<br />
+웹 페이지를 SNS 등에 공유할 때 웹사이트의 제목, 종류, 대표 URL, 대표 이미지 등의 정보들을 보여준다.</p>
+
+<p>오픈 그래프에 지정할 수 있는 대표적인 속성들은 아래와 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>og:type</td>
+      <td>웹 사이트의 유형</td>
+    </tr>
+    <tr>
+      <td>og:title</td>
+      <td>웹 사이트의 제목</td>
+    </tr>
+    <tr>
+      <td>og:description</td>
+      <td>웹 사이트의 간단한 설명</td>
+    </tr>
+    <tr>
+      <td>og:image</td>
+      <td>웹 사이트의 대표 이미지 주소</td>
+    </tr>
+    <tr>
+      <td>og:url</td>
+      <td>웹 사이트의 대표 URL</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"website"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"🎮몬스터와 싸워서 전투에서 이겨보세요!🎮"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"./images/site_image.png"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"URL"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="트위터-카드">트위터 카드</h2>
+<p>트위터 카드는 트위터에서 웹 사이트를 공유할 때 메시지를 사용자 정의하는데 사용되는 메타 태그이다.</p>
+
+<p>트위터 카드에 지정할 수 있는 대표적인 속성은 아래와 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>twitter:card</td>
+      <td>카드 유형을 지정하는 속성</td>
+    </tr>
+    <tr>
+      <td>twitter:url</td>
+      <td>웹 사이트의 대표 URL</td>
+    </tr>
+    <tr>
+      <td>twitter:title</td>
+      <td>카드에 표시 될 제목</td>
+    </tr>
+    <tr>
+      <td>twitter:description</td>
+      <td>카드의 표시 될 웹 사이트의 간단한 설명</td>
+    </tr>
+    <tr>
+      <td>twitter:image</td>
+      <td>웹 사이트의 대표 이미지 주소</td>
+    </tr>
+    <tr>
+      <td>twitter:site</td>
+      <td>웹 사이트가 속한 사이트의 이름</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:site"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:title"</span> <span class="na">content=</span><span class="s">"몬스터 죽이기 게임"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:description"</span> <span class="na">content=</span><span class="s">"🎮몬스터와 싸워서 전투에서 이겨보세요!🎮"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:image"</span> <span class="na">content=</span><span class="s">"./images/site_image.png"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:url"</span> <span class="na">content=</span><span class="s">"URL"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="favicon">favicon</h2>
+<p>파비콘이란 <code class="language-plaintext highlighter-rouge">웹 사이트를 대표하는 16 * 16 픽셀의 작은 이미</code>지로 브라우저의 탭 부분에 Title과 함께 표시된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ICO</code>는 파비콘의 파일 형식으로 모든 브라우저에서 지원한다. 요즘은 PNG, JPEG, SVG 등 다른 파일 형식도 지원한다.</p>
+
+<h3 id="favicon이-적용되지-않을-때-tip">favicon이 적용되지 않을 때 TIP</h3>
+<p>종종 작업을 하다가 파비콘을 적용하거나 변경하면 브라우저에 바로 반영되지 않는 경우가 있다. 이럴 때 개발자도구를 열고 강제 새로고침을 하면 반영된 파비콘을 확인 할 수 있다.</p>
+
+<h2 id="javascriptvoid0이란">Javascript:void(0)이란?</h2>
+<p>a태그의 href 속성 값으로 javascript:가 들어가면 경로로 취급하지 않고 <code class="language-plaintext highlighter-rouge">콜론(:)</code> 뒤를 javascript 코드로 해석하게 된다.<br />
+void는 <code class="language-plaintext highlighter-rouge">함수가 비어있다</code>는 의미로 void(0)은 <code class="language-plaintext highlighter-rouge">아무것도 실행하지 않는</code> 의미의 코드가 된다.</p>
+
+<p>따라서 a태그가 클릭 되긴 하지만 <code class="language-plaintext highlighter-rouge">다른 페이지로 이동하거나 현재 페이지를 다시 로딩하지 않도록 가상의 URL</code>을 적용한 것이다.</p>
+
+<h2 id="bemblock-element-modifier">BEM(Block Element Modifier)</h2>
+<p>클래스 속성 작명법중 하나로 블록, 요소, 수정자를 기준으로 작성한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">.block__element--modifier</code> 형식으로 작성한다.</p>
+
+<ul>
+  <li>block : 구성 요소의 가장 상위 요소를 블록으로 지정한다.</li>
+  <li>element : block으로 지정한 요소의 일부분 중 하나</li>
+  <li>modifier : 요소의 상태 또는 변형을 표시한다.</li>
+</ul>
+
+<h2 id="요소를-특정-비율로-만드는-방법">요소를 특정 비율로 만드는 방법</h2>
+<p>자식 요소에 <code class="language-plaintext highlighter-rouge">padding-top</code> 속성을 <code class="language-plaintext highlighter-rouge">%</code>로 지정할 경우 부모요소의 width를 기준으로 자식 요소의 높이를 비율에 맞게 설정할 수 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.child</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">56.25%</span> <span class="c">/* 16:9 비율 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p>혹시라도 포스트에 잘못된 내용이 있거나, 오타가 있다면 댓글로 알려주시면 감사하겠습니다🙇🏻‍♀️</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#html" class="page__taxonomy-item p-category" rel="tag">HTML</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-26">March 26, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-05+%3A+%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4+%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9+Header+%EC%98%81%EC%97%AD%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-05%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-04/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/study/til-06/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-05/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-05"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EungBug(Eunbi Lee)</title>
+    <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+	<lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0900</lastBuildDate>
+	
+	<item>
+		<title>TIL-13 : JavaScript Date</title>
+        
+        
+            <description>Today I Learned JavaScript Date!</description>
+        
+        <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-13/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-13/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-12 : JavaScript</title>
+        
+        
+            <description>Today I Learned JavaScript Number</description>
+        
+        <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-12/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-12/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-11 : JavaScript</title>
+        
+        
+            <description>Today I Learned JavaScript String</description>
+        
+        <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-11/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-11/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-10 : JavaScript 함수</title>
+        
+        
+            <description>Today I Learned JavaScript 함수!</description>
+        
+        <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-10/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-10/</guid>
+      </item>
+    
+	<item>
+		<title>[Etc] 레이아웃 클론코딩 과제 회고</title>
+        
+        
+            <description>카카오뱅크 메인페이지 클론코딩 회고</description>
+        
+        <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/etc/etc-03-review/</link>
+        <guid isPermaLink="true">http://localhost:4000/etc/etc-03-review/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-09 : JavaScript</title>
+        
+        
+            <description>Today I Learned JavaScript!</description>
+        
+        <pubDate>Tue, 04 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-09/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-09/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-08 : JavaScript 이벤트 버블링</title>
+        
+        
+            <description>Today I Learned JavaScript!</description>
+        
+        <pubDate>Fri, 31 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-08/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-08/</guid>
+      </item>
+    
+	<item>
+		<title>[Etc] 첫 클론코딩 회고</title>
+        
+        
+            <description>제주맥주 홈페이지 클론코딩 회고</description>
+        
+        <pubDate>Thu, 30 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/etc/etc-02-review/</link>
+        <guid isPermaLink="true">http://localhost:4000/etc/etc-02-review/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-07 : CSS 변수 사용</title>
+        
+        
+            <description>Today I Learned CSS!</description>
+        
+        <pubDate>Wed, 29 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-07/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-07/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-06 : Git</title>
+        
+        
+            <description>Today I Learned Git!</description>
+        
+        <pubDate>Sun, 26 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-06/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-06/</guid>
+      </item>
+    
+  </channel>
+</rss>

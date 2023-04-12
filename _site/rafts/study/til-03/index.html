@@ -1,0 +1,1106 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-03 : CSS - 응벅로그</title>
+<meta name="description" content="Today I Learned CSS!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-03 : CSS">
+<meta property="og:url" content="http://localhost:4000/study/til-03/">
+
+
+  <meta property="og:description" content="Today I Learned CSS!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-22T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-22T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-03 : CSS">
+    <meta itemprop="description" content="Today I Learned CSS!">
+    <meta itemprop="datePublished" content="2023-03-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-22T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-03/" class="u-url" itemprop="url">TIL-03 : CSS
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#background">background</a><ul><li><a href="#background-color">background-color</a></li><li><a href="#background-image">background-image</a></li><li><a href="#background-repeat">background-repeat</a></li><li><a href="#background-position">background-position</a></li><li><a href="#background-size">background-size</a></li><li><a href="#background-attachment">background-attachment</a></li></ul></li><li><a href="#position">position</a><ul><li><a href="#relative">relative</a></li><li><a href="#absolute">absolute</a></li><li><a href="#stack-order">Stack order</a><ul><li><a href="#z-index">z-index</a></li></ul></li></ul></li><li><a href="#flex">flex</a><ul><li><a href="#flex-direction">flex-direction</a></li><li><a href="#flex-wrap">flex-wrap</a></li><li><a href="#justify-content">justify-content</a></li><li><a href="#align-content">align-content</a></li><li><a href="#align-items">align-items</a></li><li><a href="#플렉스-아이템-관련-속성">플렉스 아이템 관련 속성</a><ul><li><a href="#order">order</a></li><li><a href="#flex-grow">flex-grow</a></li><li><a href="#flex-shrink">flex-shrink</a></li><li><a href="#flex-basis">flex-basis</a></li></ul></li></ul></li><li><a href="#transition-전환">transition 전환</a><ul><li><a href="#transition-property">transition-property</a></li><li><a href="#transition-duration">transition-duration</a></li><li><a href="#transition-timing-function">transition-timing-function</a></li><li><a href="#transition-delay">transition-delay</a></li></ul></li><li><a href="#transform-변환">transform 변환</a><ul><li><a href="#backface-visibility">backface-visibility</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="background">background</h2>
+
+<h3 id="background-color">background-color</h3>
+<p>요소의 <code class="language-plaintext highlighter-rouge">배경 색상</code>을 지정하는 속성이다. 속성값으로 색상값을 입력해야 한다.<br />
+배경 색상의 기본값은 <code class="language-plaintext highlighter-rouge">transparent</code> 투명함이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-color</span><span class="o">:</span> <span class="nt">색상값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-image">background-image</h3>
+<p>요소의 배경에 <code class="language-plaintext highlighter-rouge">이미지</code>를 넣는 속성이다. 속성값은 삽입할 이미지의 경로를 <code class="language-plaintext highlighter-rouge">url()</code> 함수로 지정해야 한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>background-image 속성을 사용할 때는 <strong>요소의 배경 크기가 반드시 있어야 한다.</strong>
+(width와 height 속성을 같이 사용해야 한다.)<br />
+배경 색상과 함께 사용 시 배경 색상은 이미지 뒤에 들어가게 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("이미지 경로")</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-repeat">background-repeat</h3>
+<p>요소의 배경 <code class="language-plaintext highlighter-rouge">이미지가 반복되는 설정</code>을 지정하는 속성이다.<br />
+요소의 크기가 이미지의 크기보다 큰 경우 자동으로 이미지가 반복해서 크기를 채우게 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">속성값</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">repeat</code>(기본값) : 이미지를 수직, 수평 반복</li>
+  <li>repeat-x : 이미지를 수평 반복</li>
+  <li>repeat-y : 이미지를 수직 반복</li>
+  <li><code class="language-plaintext highlighter-rouge">no-repeat</code> : 이미지를 반복하지 않음</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-position">background-position</h3>
+<p>요소의 배경 이미지의 위치를 지정하는 속성이다.<br />
+속성값을 1개만 입력 시 x축 값으로 인식되고 y축은 자동으로 center가 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-position</span><span class="o">:</span> <span class="nt">x위치</span><span class="o">,</span> <span class="nt">y위치</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>background-position 속성 값</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>위치</th>
+      <th>속성값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x</td>
+      <td>left, center, right</td>
+      <td>x축 방향의 위치를 지정한다.</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>top, center, bottom</td>
+      <td>y축 방향의 위치를 지정한다.</td>
+    </tr>
+    <tr>
+      <td>공통</td>
+      <td>px, em, rem, % 등 단위</td>
+      <td>위치를 직접 지정한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">top</span><span class="p">,</span> <span class="nb">right</span><span class="p">;</span> <span class="c">/* 이미지가 우상단에 위치 */</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 이미지가 정가운데 위치 */</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="m">100px</span> <span class="m">30px</span><span class="p">;</span> <span class="c">/* 왼쪽에서 100px 위에서 30px 지점에 이미지 위치 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="background-size">background-size</h3>
+<p>요소의 배경에 삽입될 이미지의 크기를 지정하는 속성이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">background-size:속성값;</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">auto</code>(기본) : 이미지의 실제 크기</li>
+  <li><code class="language-plaintext highlighter-rouge">cover</code> : 이미지의 가로 세로 비율을 유지하면서 크기를 확대하거나 축소해 요소의 배경을 채움(요소의 더 넓은 너비에 맞춤)</li>
+  <li>contain : 이미지의 가로 세로 비율을 유지하면서 이미지가 배경 요소 안에 들어가도록 크기를 확대하거나 축소함(요소의 더 짧은 너비에 맞춤)</li>
+  <li>단위 : 너비 높이를 직접 입력</li>
+</ul>
+
+<h3 id="background-attachment">background-attachment</h3>
+<p>요소의 배경에 삽입된 이미지를 스크롤 특성을 지정하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-attachment</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scroll</code>(기본) : 이미지가 요소를 따라서 같이 스크롤 됨</li>
+  <li><code class="language-plaintext highlighter-rouge">fixed</code> : 이미지가 뷰포트에 고정되고 스크롤 되지 않음</li>
+  <li>local : 요소 내 스크롤 시 이미지가 같이 스크롤 됨</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">background-attachment</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+<p><strong>backgroudn 속성 한 번에 지정</strong></p>
+
+<p>background 속성은 속성값을 나열하여 한 번에 지정할 수 있다. 나열하는 순서는 정해져 있지 않지만 background-size 속성은 항상 background-position 속성을 먼저 입력하고 <code class="language-plaintext highlighter-rouge">슬래시(/)</code>로 구분한 후 사용한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">color</span> <span class="nt">속성값</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">image</span> <span class="nt">속성값</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">repeat</span> <span class="nt">속성값</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">position</span> <span class="nt">속성값</span><span class="o">/</span><span class="nt">size</span> <span class="nt">속성값</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nt">attachment</span> <span class="nt">속성값</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="py">backgroud</span><span class="p">:</span> <span class="no">red</span> <span class="sx">url("경로")</span> <span class="nb">no-repeat</span> <span class="nb">top</span> <span class="nb">center</span><span class="p">/</span><span class="n">cover</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>한 번에 지정하는 것은 가독성에 좋지 않기 때문에 각 속성을 하나씩 작성하는 것이 더 좋다.</li>
+</ul>
+
+<h2 id="position">position</h2>
+<p>position은 HTML <code class="language-plaintext highlighter-rouge">요소의 위치를 지정</code>하는 속성이다. (배치)<br />
+top, bottom, left, right, z-index CSS 속성들과 같이 사용할 수 있다. (각 방향별 거리를 입력)<br />
+<strong>position 속성의 값으로 <code class="language-plaintext highlighter-rouge">absolute</code>, <code class="language-plaintext highlighter-rouge">fixed</code>가 지정된 요소는 <code class="language-plaintext highlighter-rouge">display의 속성이 자동으로 block</code>으로 변경된다.</strong></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">position</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>position 속성값들</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성값</th>
+      <th>설명</th>
+      <th>기준</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>statc</td>
+      <td>요소를 기본 흐름에 따라 배치한다. (기본값)</td>
+      <td>기준 없음</td>
+    </tr>
+    <tr>
+      <td>relative</td>
+      <td>요소를 기본 흐름에 따라 배치하지만 좌표 속성을 사용한다.</td>
+      <td>요소 자신을 기준</td>
+    </tr>
+    <tr>
+      <td>absolute</td>
+      <td>절대적인 좌표 위치에 따라 배치한다.</td>
+      <td>위치 상 부모 요소를 기준</td>
+    </tr>
+    <tr>
+      <td>fixed</td>
+      <td>절대적인 좌표 위치에 따라 배치하고 스크롤을 해도 고정된다.</td>
+      <td>뷰포트를 기준</td>
+    </tr>
+    <tr>
+      <td>sticky</td>
+      <td>기본 흐름에 따라 배치하지만 지정 좌표에 이르면 고정된다.</td>
+      <td>스크롤 영역 기준</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="relative">relative</h3>
+<ul>
+  <li>relative로 지정된 요소는 <code class="language-plaintext highlighter-rouge">원래 있던 위치를 기준</code>으로 좌표 속성에 따라 요소의 위치가 움직인다.</li>
+  <li>배치하기 전 원래 있던 공간은 시각적으로 비어 있고 원래 있던 것 처럼 <strong>공간이 유지</strong>된다.</li>
+</ul>
+
+<h3 id="absolute">absolute</h3>
+<ul>
+  <li>absolute로 지정된 요소는 브라우저의 왼쪽 모서리가 기준점(뷰포트가 위치 상 부모가 됨)이 된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">위치 상 부모 요소를 기준</code>으로 배치되기 때문에 부모 요소에 static을 제외한 position 값을 주어 위치 상 부모 요소가 될 수 있도록 지정이 가능하다.</li>
+  <li>배치하기 전 원래 있던 공간은 <strong>빈 공간</strong>으로 인식하게 된다.</li>
+</ul>
+
+<h3 id="stack-order">Stack order</h3>
+<p>어떤 요소가 더 위에 쌓이는지 결정되는 요소 쌓임 순서는 아래와 같다.</p>
+
+<ol>
+  <li>요소에 기본값인 static을 제외한 position 속성의 값이 있는 경우 위에 쌓인다.</li>
+  <li>1번 조건이 같은 경우에는 z-index 속성의 숫자 값이 높을 수록 위에 쌓인다.</li>
+  <li>1번과 2번 조건까지 같은 경우에는 HTML의 다음 구조일 수록 위에 쌓인다.</li>
+</ol>
+
+<h4 id="z-index">z-index</h4>
+<p>z-index 속성을 사용하여 position 속성으로 배치한 요소의 z축 위치를 결정할 수 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">z-index</span><span class="nd">:정수</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>auto (기본값) : 부모 요소와 동일한 쌓임 정도로 기본 0으로 설정되어 있다.</li>
+  <li>숫자 : 숫자가 높을 수록 위에 쌓인다. (음수도 가능하지만 주로 -1정도까지만 사용한다.)</li>
+</ul>
+
+<h2 id="flex">flex</h2>
+
+<p><code class="language-plaintext highlighter-rouge">플렉스(플렉서블) 박스 레이아웃</code>이란 <code class="language-plaintext highlighter-rouge">1차원 방식</code>(가로나 세로 중 한 방향으로만 레이아웃을 설계하는 방식)으로 레이아웃을 설계할 수 있도록 고안된 스타일 속성을 말한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">display: flex;</code> : 블록 요소와 같이 Flex Container로 지정한다.
+<code class="language-plaintext highlighter-rouge">dispaly: inline-flex</code> : 인라인 요소와 같이 Flex Container로 지정한다.</p>
+
+<p>구성 요소</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">주축(main axis)</code> : 플렉스 박스의 진행 방향과 수평한 축</li>
+  <li><code class="language-plaintext highlighter-rouge">교차축(cross axis)</code> : 주축과 수직한 축</li>
+  <li><code class="language-plaintext highlighter-rouge">플렉스 컨테이너(flex container)</code> : display 값이 flex나 inline-flex로 지정된 요소</li>
+  <li><code class="language-plaintext highlighter-rouge">플레스 아이템(flex item</code>) : 플렉스 컨테이너와 자식 관계를 이루는 태그 구성 요소</li>
+</ul>
+
+<h3 id="flex-direction">flex-direction</h3>
+<p>플렉스 박스 레이아웃의 <code class="language-plaintext highlighter-rouge">주축 방향</code>을 결정하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">flex-direction</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>row : 주축 방향을 좌 -&gt; 우로 지정한다. (수평정렬)</li>
+  <li>row-reverse : 주축 방향을 우 -&gt; 좌로 지정한다.</li>
+  <li>column : 주축 방향을 위 -&gt; 아래로 지정한다. (수직 정렬)</li>
+  <li>column-reverse : 주축 방향을 아래 -&gt; 위로 지정한다.</li>
+</ul>
+
+<h3 id="flex-wrap">flex-wrap</h3>
+<p>플렉스 아이템이 플렉스 컨테이너 영역을 벗어날 때 어떻게 처리할지(<code class="language-plaintext highlighter-rouge">줄 바꿈</code> 여부)를 결정하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">flex-wrap</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nowrap</code>(기본값) : 벗어나도 줄바꿈 없이 무시한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">wrap</code> : 컨테이너를 벗어나면 줄 바꿈한다.</li>
+  <li>wrap-reverse : 컨테이너를 벗어나면 역방향으로 줄 바꿈한다.</li>
+</ul>
+
+<h3 id="justify-content">justify-content</h3>
+<p>플렉스 아이템의 <code class="language-plaintext highlighter-rouge">주축 방향으로 정렬</code>할 때 사용하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">justify-content</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>flex-start : 주축 방향의 시작점을 기준으로 정렬한다.</li>
+  <li>flex-end : 주축 방향의 끝점을 기준으로 정렬한다.</li>
+  <li>center : 주축 방향의 중앙에 정렬한다.</li>
+  <li>space-between : 플렉스 아이템 사이의 간격이 균일하도록 정렬한다.</li>
+  <li>space-around : 플렉스 아이템의 외부 여백을 균등하게 정렬한다.</li>
+  <li>space-evenly : 플렉스 아이템 사이와 양끝의 간격이 균일하도록 정렬한다.</li>
+</ul>
+
+<h3 id="align-content">align-content</h3>
+<p>플렉스 아이템을 <code class="language-plaintext highlighter-rouge">교차축 방향으로 정렬</code>할 때 사용하는 속성이다.<br />
+flex-wrap 속성으로 인해 <code class="language-plaintext highlighter-rouge">여러 줄</code>이 된 경우에만 사용한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">align-content</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>stretch(기본값) : 플렉스 아이템을 시작점으로 정렬하고 플렉스 아이템의 높이가 없는 경우 컨테이너에 맞게 늘어난다.</li>
+  <li>flex-start : 플렉스 아이템을 시작점으로 정렬한다.</li>
+  <li>flex-end : 플렉스 아이템을 끝점으로 정렬한다.</li>
+  <li>center : 플렉스 아이템을 가운데 정렬한다.</li>
+  <li>space-betwee : 플렉스 아이템 사이의 간격이 균일하도록 정렬한다.</li>
+  <li>space-around : 플렉스 아이템의 외부 여백을 균등하게 정렬한다.</li>
+</ul>
+
+<h3 id="align-items">align-items</h3>
+<p>플렉스 아이템을 <code class="language-plaintext highlighter-rouge">교차축 방향으로 한 줄 정렬</code>할 때 사용하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">align-items</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>stretch(기본값) : 교차축 방향으로 너비나 높이가 늘어난다.</li>
+  <li>flex-start : 교차축 방향의 시작점으로 정렬한다.</li>
+  <li>flex-end : 교차축 방향의 끝점으로 정렬한다.</li>
+  <li>center : 교차축 방향의 가운데로 정렬한다.</li>
+  <li>baseline : 플렉스 아이템의 baseline(문자 기준선)을 기준으로 정렬한다.</li>
+</ul>
+
+<h3 id="플렉스-아이템-관련-속성">플렉스 아이템 관련 속성</h3>
+
+<h4 id="order">order</h4>
+<p>플렉스 아이템의 순서를 지정하는 속성이다. 숫자가 작을 수록 앞에 정렬된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">order</span><span class="o">:</span> <span class="err">11</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="flex-grow">flex-grow</h4>
+<p>컨테이너에 남는 영역이 잇따면 플렉스 아이템의 너비가 증가하는 비율을 지정하는 속성이다. 기본값은 0으로 증가 비율이 없다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">flex-grow</span><span class="o">:</span> <span class="err">2</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="flex-shrink">flex-shrink</h4>
+<p>컨테이너의 너비가 플렉스 아이템들의 너비보다 작을 경우 플렉스 아이템의 감소 너비 비율을 지정하는 속성이다. 기본값은 1이며, 0을 입력 시 감소되지 않는다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">flex-grow</span><span class="o">:</span> <span class="err">1</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="flex-basis">flex-basis</h4>
+<p>플렉스 아이템의 공간 배분 전 기본 너비를 설정하는 속성이다.
+기본값은 auto로 요소의 content 너비로 설정이 되고, 0으로 지정할 경우 content와 상관 없이 증가 너비의 비율로 늘어나게 된다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">flex-basis</span><span class="o">:</span> <span class="err">0</span><span class="o">;</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="err">100</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="transition-전환">transition 전환</h2>
+<p>CSS에서 한 요소에 적용된 스타일 속성값을 다른 속성값으로 전환하는 효과를 지정하는 단축속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 단축형으로 작성할 시 지속시간은 필수 속성이다. */</span>
+<span class="nt">transition</span><span class="o">:</span> <span class="nt">속성명</span> <span class="nt">지속시간</span> <span class="nt">타이밍함수</span> <span class="nt">대기시간</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="transition-property">transition-property</h3>
+<p>전환 효과를 적용할 대상 속성을 지정하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-property</span><span class="o">:</span> <span class="nt">속성값</span><span class="o">;</span>
+<span class="nt">transition-property</span><span class="o">:</span> <span class="nt">all</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>none : 전환 효과를 지정하지 않는다.</li>
+  <li>all(기본값) : 모든 속성을 전환 효과 대상으로 지정한다.</li>
+  <li>속성이름 : 특정 속성만 전환 효과 대상으로 지정한다.</li>
+</ul>
+
+<h3 id="transition-duration">transition-duration</h3>
+<p>전환 효과의 지속 시간을 설정하는 속성이다. 속성값으로 초 단위로 입력한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-duration</span><span class="o">:</span> <span class="nt">시간</span><span class="o">;</span>
+<span class="nt">transition-duration</span><span class="o">:</span> <span class="err">1</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="transition-timing-function">transition-timing-function</h3>
+<p>전환 효과의 진행 속도(타이밍)를 지정하는 속성이다.</p>
+
+<ul>
+  <li>linear : 처음 속도와 마지막 속도가 일정하다.</li>
+  <li>ease : 처음에는 빨라지다 중간부터 점점 느려진다.</li>
+  <li>ease-in : 처음에는 느리지만 끝날 때까지 점점 빨라진다.</li>
+  <li>ease-out : 처음에는 빠르지만 끝날 때까지 점점 느려진다.</li>
+  <li>ease-in-out : 처음에 느리다가 점점 빨라지다가 다시 점점 느려진다.</li>
+  <li>cubic-bezier(p1, p2, p3, p4) : 사용자가 정의한 속도로 진행된다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-timing-function</span><span class="o">:</span> <span class="nt">ease-in</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="transition-delay">transition-delay</h3>
+<p>전환 효과의 발생을 지연시킬 때 사용하는 속성이다. 속성값으로 초 단위로 입력한다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-delay</span><span class="o">:</span> <span class="nt">시간</span><span class="o">;</span>
+<span class="nt">transition-delay</span><span class="o">:</span> <span class="err">1</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="transform-변환">transform 변환</h2>
+<p>요소의 크기를 변경하거나 위치를 이동시키거나 회전시키는 등 요소를 변환하는 효과를 지정할 때 사용하는 속성이다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 여러가지를 한번에 사용 가능 */</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">변환함수1</span> <span class="nt">변환함수2</span> <span class="nt">변환함수3</span><span class="o">...;</span>
+</code></pre></div></div>
+
+<p>자주 사용하는 2D 변환 함수들</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>함수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>translate(x, y)</td>
+      <td>요소의 위치를 x축으로 x만큼 y축으로 y만큼 이동한다.</td>
+    </tr>
+    <tr>
+      <td>translateX(n)</td>
+      <td>요소의 위치를 x축으로 n만큼 이동한다.</td>
+    </tr>
+    <tr>
+      <td>translateY(n)</td>
+      <td>요소의 위치를 y축으로 n만큼 이동한다.</td>
+    </tr>
+    <tr>
+      <td>scale(x, y)</td>
+      <td>요소를 x와 y만큼 확대 또는 축소한다.</td>
+    </tr>
+    <tr>
+      <td>rotate(deg)</td>
+      <td>요소를 각도만큼 회전한다.</td>
+    </tr>
+    <tr>
+      <td>skewX(deg)</td>
+      <td>요소를 x축으로 각도만큼 기울인다.</td>
+    </tr>
+    <tr>
+      <td>skewY(deg)</td>
+      <td>요소를 y축으로 각도만큼 기울인다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>자주 사용하는 3D 변환 함수들</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>함수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>perspective(n)</td>
+      <td>원근 거리를 만든다.</td>
+    </tr>
+    <tr>
+      <td>rotateX(deg)</td>
+      <td>X축을 기준으로 각도만큼 회전한다.</td>
+    </tr>
+    <tr>
+      <td>rotateY(deg)</td>
+      <td>Y축을 기준으로 각도만큼 회전한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>원근법 함수는 제일 앞에 작성해야 한다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">100px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>perspective 속성과 함수의 차이</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성/함수</th>
+      <th>적용 대상</th>
+      <th>기준점 설정</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>perspective: 600px;</td>
+      <td>관찰대상의 부모</td>
+      <td>perspective-origin</td>
+    </tr>
+    <tr>
+      <td>transform: perspective(600px)</td>
+      <td>관찰대상</td>
+      <td>transform-origin</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="backface-visibility">backface-visibility</h3>
+<p>3D변환으로 회전된 요소의 뒷면 숨김 여부를 지정하는 속성이다.</p>
+
+<ul>
+  <li>visible(기본값) : 뒷면을 보여준다.</li>
+  <li>hidden : 뒷면을 숨겨준다.</li>
+</ul>
+
+<p><br />
+<br />
+<br /></p>
+
+<hr />
+
+<blockquote>
+  <p>패스트캠퍼스 부트캠프를 진행하면서 <code class="language-plaintext highlighter-rouge">박영웅 강사님</code>의 강의를 참고하여 공부하고 이해한 내용들을 작성한 포스트입니다.</p>
+</blockquote>
+
+<p>혹시라도 포스트에 잘못된 내용이 있거나, 오타가 있다면 댓글로 알려주시면 감사하겠습니다🙇🏻‍♀️</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-22">March 22, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-03+%3A+CSS%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-02/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/study/til-04/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-03/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-03"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

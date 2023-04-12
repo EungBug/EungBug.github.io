@@ -1,0 +1,626 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Etc] 첫 클론코딩 회고 - 응벅로그</title>
+<meta name="description" content="제주맥주 홈페이지 클론코딩 회고">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="[Etc] 첫 클론코딩 회고">
+<meta property="og:url" content="http://localhost:4000/etc/etc-02-review/">
+
+
+  <meta property="og:description" content="제주맥주 홈페이지 클론코딩 회고">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/etc/etc-02-review/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Etc] 첫 클론코딩 회고">
+    <meta itemprop="description" content="제주맥주 홈페이지 클론코딩 회고">
+    <meta itemprop="datePublished" content="2023-03-30T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-30T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/etc/etc-02-review/" class="u-url" itemprop="url">[Etc] 첫 클론코딩 회고
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#제주맥주-홈페이지-클론코딩">제주맥주 홈페이지 클론코딩</a></li><li><a href="#클론코딩-작업-과정">클론코딩 작업 과정</a></li><li><a href="#클론코딩-과제를-완성하며">클론코딩 과제를 완성하며..</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="제주맥주-홈페이지-클론코딩">제주맥주 홈페이지 클론코딩</h1>
+
+<p>부트캠프를 시작하면서 OT 이후 첫날 오후에 그룹활동 스케줄이 잡혀있었다.<br />
+조를 편성 받고 소회의실에 모이게 되었고 다들 어색한 첫인사와 함께 자기소개 등을 시작으로 앞으로 그룹활동 시간을 어떻게 활용하면 좋을지 이야기를 나눴다.<br />
+보통 그룹활동, 그룹스터디는 공동의 목표를 가지고 스터디를 하기 때문에 우리 조도 주마다 목표를 세우고 자신의 페이스대로 스터디하는 방식으로 결정했다.</p>
+
+<p>나는 웹 프론트엔드 직무에는 아직 미숙한 부분들이 많은 상태이고 특히 HTML과 CSS도 이제 막 사용하기 시작한 단계이기 때문에 레이아웃 구조를 잡거나 스타일을 적용하는 부분에 있어서 기술적으로 부족함을 느끼고 있었다.<br />
+그래서 이런 부분을 그룹활동 시간을 활용해 보충하고 싶다고 팀원분들께 의견을 전달했고 두 번째 주 활동으로 클론코딩을 통한 연습을 하기로 했다.</p>
+
+<p>클론코딩이라고는 스타벅스 클론코딩 강의를 통해 해본 게 전부이고 강의를 통해 배운 부분을 실제로 계속 써보고 왜 이걸 쓰는지 이해하는 게 중요하다는 멘토님의 말씀을 토대로 스타벅스 클론코딩에서 배운 내용들을 활용하기 좋은 비슷한 구조의 제주맥주 홈페이지 메인화면을 클론코딩 하기로 정했다.<br />
+팀원 각자 일주일간 구현할 수 있는 만큼 구현하고 그룹활동 시간에 모여 현재 자기가 진행한 상황을 공유하고, 조언이 필요한 부분이 있으면 조언을 구하거나 리뷰를 통해 피드백을 해주는 방식으로 진행하기로 했다.</p>
+
+<h1 id="클론코딩-작업-과정">클론코딩 작업 과정</h1>
+
+<p>제주맥주 홈페이지 메인화면을 골랐을 때는 마냥 강의에서 배운 내용을 최대한 활용해 볼 수 있기 좋겠다는 생각으로 선정하였지만, 막상 작업을 시작하니 제주맥주 홈페이지는 반응형 웹이었다.<br />
+당황했다.</p>
+
+<p>그래도 최대한 콘텐츠의 비율이나 이미지의 사이즈 등을 확인하기 위해 개발자 도구를 열어봤는데, 아직 개발자 도구도 제대로 다룰 줄 모르는 나에게는 멘붕만 오게 되었다.<br />
+그렇게 첫날 header 영역을 만드는 데만 수많은 고민과 우여곡절 끝에 header 영역을 하나 완성하고 나니 그다음이 또 문제였다.<br />
+깔끔하게 <code class="language-plaintext highlighter-rouge">지금 나는 반응형을 할 수준이 아니니 가로 사이즈를 고정하고 만들어보자.</code> 그러고 나서 <code class="language-plaintext highlighter-rouge">반응형을 배우면 반응형을 적용해보는 식으로 단계적으로 해보자.</code> <code class="language-plaintext highlighter-rouge">이건 다 연습이 된다.</code> 라고 생각했다.</p>
+
+<p>header 영역의 경우 flex를 활용해서 여러 요소를 배치해보고 메뉴를 구성해보는 좋은 연습이 되었다.<br />
+또한 hover 등 선택자들을 활용하여 스타일을 주고 점점 header 영역이 완성되다 보니 반응형이 아니더라도 좋았다.<br />
+다음 영역은 영상이 삽입된 section이었는데, 나는 youtube 삽입을 생각하고 있었는데, 영상이 mp4 형식으로 되어 있었다.<br />
+영상 삽입을 위한 video 태그를 검색해보고 큰 무리 없이 삽입할 수 있었다.ㅎ<br />
+각각의 제주 맥주를 소개하는 section의 경우는 section 태그를 활용해서 구분하고, 스타일이 공통으로 겹치는 부분들이 많아서 공통으로 들어갈 스타일은 클래스를 따로 빼서 작업했다.</p>
+
+<p>클래스 명을 만드는 것 또한 많게는 5분까지도 고민했던 것 같다. 어떻게 클래스 명을 지어야 식별하기 쉽고 일관성 있을까 고민을 많이 하게 되었는데 리뷰를 통해 나 말고 조원분들도 같은 고민이 있다는 것을 알게 되고 멘토링 시간에 클래스 컨벤션에 대한 얘기를 해봤다.<br />
+멘토님은 <code class="language-plaintext highlighter-rouge">지금의 우리는 그냥 개떡 같은 쓰레기 같은 클래스 명이여도 상관없으니 그냥 일단은 구현해봐라</code> 라고 말씀해주셨다.(마음이 한결 편해졌다.) <br />
+이 외에도 스크롤 위치에 따른 애니메이션 효과 주기, 배너 슬라이드 등 배웠던 라이브러리들을 활용해서 작업을 해서 무리 없이 완성할 수 있었다.</p>
+
+<h1 id="클론코딩-과제를-완성하며">클론코딩 과제를 완성하며..</h1>
+<p>강의를 보면서 클론코딩을 완성했을 때는 온전히 내 것이라는 생각이 들지 않았었는데 이번에 혼자서 처음부터 끝까지 클론코딩을 하다 보니 뿌듯함도 찾아왔고 내가 레이아웃을 잡으면서 부족한 부분이 무엇인지 작은 문제점이라도 찾게 되는 계기가 되었다.<br />
+앞으로도 HTML과 CSS 같은 근본적인 기술을 익히는데 많은 노력이 필요할 것 같고 많은 연습을 할 예정이다.<br />
+다음 클론코딩 때는 조금 더 <code class="language-plaintext highlighter-rouge">효율적인 CSS 스타일 적용</code> 및 <code class="language-plaintext highlighter-rouge">공통 스타일을 빼는 연습</code>과 <code class="language-plaintext highlighter-rouge">선택자를 적절하게 사용하는 연습</code>을 꾸준하게 해야 할 것 같다!<br />
+또한 반응형 웹 강의를 수강하고 있는데 제주맥주 홈페이지를 반응형으로 바꾸는 것도 꼭 완성해보고 싶다.<br />
+아직은 정적인 페이지를 만드는 것도 어렵게 느껴지고 하루에도 내가 앞으로 삐까뻔쩍한 앞단을 만들 수 있을까 라는 고민을 하게 되지만 뭐라도 조금 완성되면 친구나 가족에게 자랑하는 날 보면 또 이 길이 맞는 것 같다는 생각이 든다.</p>
+
+<p>첫 클론코딩 나름 재밌었다. :)</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9" class="page__taxonomy-item p-category" rel="tag">클론코딩</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%9A%8C%EA%B3%A0" class="page__taxonomy-item p-category" rel="tag">회고</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#etc" class="page__taxonomy-item p-category" rel="tag">Etc</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-30">March 30, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BEtc%5D+%EC%B2%AB+%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9+%ED%9A%8C%EA%B3%A0%20http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-02-review%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-02-review%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-02-review%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/etc/etc-01/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/etc/etc-03-review/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/etc/etc-02-review/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/etc/etc-02-review"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

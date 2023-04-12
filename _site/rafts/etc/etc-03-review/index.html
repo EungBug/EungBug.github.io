@@ -1,0 +1,621 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Etc] 레이아웃 클론코딩 과제 회고 - 응벅로그</title>
+<meta name="description" content="카카오뱅크 메인페이지 클론코딩 회고">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="[Etc] 레이아웃 클론코딩 과제 회고">
+<meta property="og:url" content="http://localhost:4000/etc/etc-03-review/">
+
+
+  <meta property="og:description" content="카카오뱅크 메인페이지 클론코딩 회고">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-06T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/etc/etc-03-review/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Etc] 레이아웃 클론코딩 과제 회고">
+    <meta itemprop="description" content="카카오뱅크 메인페이지 클론코딩 회고">
+    <meta itemprop="datePublished" content="2023-04-06T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-04-06T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/etc/etc-03-review/" class="u-url" itemprop="url">[Etc] 레이아웃 클론코딩 과제 회고
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#레이아웃-클론코딩-과제">레이아웃 클론코딩 과제</a><ul><li><a href="#과제-시작">과제 시작</a></li><li><a href="#section-작업">section 작업</a></li><li><a href="#느낀점">느낀점</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="레이아웃-클론코딩-과제">레이아웃 클론코딩 과제</h1>
+
+<p>부트캠프 1차 과제로 HTML/CSS 레이아웃 클론 코딩 과제가 할당되었다.<br />
+과제가 있다는 것을 미리 알고 있었지만 3주 뒤로 알고 있었는데 갑작스럽게 과제 공지가 내려왔다. 피어리뷰 일정도 잡혀있어서 최대한 과제를 빠르게 제출하자는 생각으로 과제 제출 안내문을 읽으며 어떤 사이트가 가장 적합할지 고민 끝에 카카오뱅크 메인 페이지를 클론코딩 하기로 결정했다.</p>
+
+<h2 id="과제-시작">과제 시작</h2>
+
+<p>헤더 영역과 네비게이션 메뉴 영역을 가장 먼저 작업했다. (박영웅 강사님께서도 레이아웃 작업을 할 때 위에서부터 내려와야 한다고 하셨다.)<br />
+사실 카카오뱅크 헤더 영역을 처음 봤을 때 <code class="language-plaintext highlighter-rouge">스타벅스랑 비슷하네, 메뉴도 할만 하겠는데?</code>라고 생각했다. 그러나 헤더 영역을 작업하는데 2시간 이상의 시간이 걸렸다.<br />
+좌절했다..<br />
+나는 이 길이 아닌가를 잠시동안 고민하게 된 계기였다.<br />
+html의 구조는 쉽게 잡았지만 css 스타일을 적용하면서 난관들에 봉착하기 시작했다.<br />
+네비게이션 메뉴를 ul, li, a 태그에 display를 사용해서 배치했는데 나름대로 공통 속성을 정리하고 공통 클래스로 작업을 했지만 여전히 지저분한 css 파일이 되었다.</p>
+
+<h2 id="section-작업">section 작업</h2>
+
+<p>지난번 그룹활동으로 클론코딩을 하면서 빨리 반응형 스터디를 시작해야겠다고 느꼈고, 지난주부터 박영웅 강사님의 반응형 강의를 수강하고 있었다. 그래서 반응형 강의에서 배운 내용들도 적용해보는 것이 좋겠다고 생각했다.<br />
+그래서 헤더 바로 아래 영역을 hero 영역으로 잡고 position 값들을 계산하며 작업했다.<br />
+마침 sprite 이미지에 대한 강의를 수강하고 난 직후였는데, 카카오뱅크의 앱 다운로드 스토어 버튼에 들어간 아이콘이 sprite 이미지로 되어 있는 것을 보고 바로 실습으로 옮기게 되었다.<br />
+아이콘이 들어갈 요소에 가로 너비와, 세로 너비 값을 주고 배경이미지로 다운받은 이미지를 넣은 뒤 position 값을 조정하여 해당 위치에 있는 이미지가 나오도록 하면 됐는데, 나는 이 이미지를 디자이너로부터 받은게 아니다 보니 그 아이콘이 어느 좌표 값에 위치해 있는지 계산할 수 없었다.<br />
+이값 저값을 다 넣어 봤는데 엉뚱한 이미지만 배경에 깔렸다.<br />
+결국 개발자도구를 통해 확인을 할 수 있긴 했지만 이렇게 개발자 도구를 보면서 모든 값을 확인하고싶지 않아 결국 강사님께 dm을 통해 위치를 어떤 식으로 구하면 좋을지 조언을 구하게 되었고, 유용한 사이트 하나를 추천 받을 수 있었다.</p>
+
+<p>이후 카카오뱅크의 서비스(상품)에 대한 설명 section들의 경우 비슷한 구조로 되어 있어서 비교적 쉽게 작업할 수 있었다.</p>
+
+<p>그 다음으로 어려웠던 부분 중 하나로는 카카오뱅크 대출 관련 설명 section이였는데, 이 section의 경우 해당 영역에 스크롤이 도달하면 배경 이미지가 낮에서 밤으로 바뀌고 해 모양이 달 모양으로 바뀌면서 별이 빛나는 애니메이션 효과가 적용되어 있었다.<br />
+배경의 경우 밤 영역에 해당하는 요소를 하단에 숨겨놨다가 해당 section에 도달하면 아래에서 위로 올리는 변환 효과와 전환효과를 사용하여 해결했고, 해에서 달로 바뀌는 부분도 하나의 원형 요소를 숨김처리 한 뒤 밤으로 변경 될 때 위치를 변환하고 전환효과를 주어 자연스럽게 처리했다.<br />
+문제는 여러 군데에서 1~2px로 반짝반짝 거리는 별 모양을 구현하는 부분이였는데, 이 부분의 경우는 자바스크립트로 뭔가 랜던하게 적용할 필요를 느껴서 추후 해결해야할 문제로 남겨두었다.</p>
+
+<p>다음으로는 체크카드를 slide 하는 영역으로 기존에 배운 Swiper 라이브러리를 연동해서 구현했는데, 아무리 값을 수정하고 또 수정해도 Swiper-wrapper의 영역이 이상하게 잡히는 문제가 발생했다. 이걸로 몇시간을 삽질했는데 라이브러리 버전 문제와 오타 문제로 정상 동작을 안 한 현상이였다. 이런 실수를 했다는 게 화도 났지만.. 신입이니까 할 수 있는 실수였다고 생각하고 다음에는 에러가 발생했을 때 오타 여부도 꼼꼼하게 확인하는 계기가 되었다.</p>
+
+<p>이후 footer 영역까지 무리없이 과제를 마무리 했고 git 저장소에 제출하면 끝이였는데, 이미 몇몇 수강생분들이 제출하기도 했고, 혹시나 실수로 잘못 올리면 어쩌나 걱정됐다. 다행이도 나의 경우 과제를 제출할 git 저장소를 fork해서 작업했기 때문에 Pull Request까지만 하면 됐고, 정상적으로 PR이 올라간 것을 확인하고 안심할 수 있었다.(내가 제출하고 난 이후 다른 분들이 제출하면서 실수하신 분들도 계셔서 약간 무서웠다..)</p>
+
+<h2 id="느낀점">느낀점</h2>
+
+<p>우리 조는 과제 제출 전 그룹 활동 시간에 모여 중간 발표를 했다. 각자 클론 코딩한 사이트와 본인이 구현한 사이트를 비교해서 보여주고, 아직 구현하지 못한 부분이나 어려운 부분에 대해 서로 조언해주는 시간을 가졌다.<br />
+다른 조원분들이 구현한 사이트를 보니 훨씬 더 난이도가 있고 퀄리티가 좋다고 생각했다. 그래서 앞으로 몇 주간은 계속해서 레이아웃 구현을 연습해야겠다고 생각했다. 남은 피어리뷰 기간과 멘토리뷰 기간 동안 다른 분들의 코드도 자세히 보면서 어떤 점이 다른지 비교도 해보고 멘토님과 강사님의 코멘트 등을 확인해서 좀 더 완성도 있는 결과물을 산출할 것이다. 파이팅!!💪🏻</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9" class="page__taxonomy-item p-category" rel="tag">클론코딩</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%9A%8C%EA%B3%A0" class="page__taxonomy-item p-category" rel="tag">회고</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#etc" class="page__taxonomy-item p-category" rel="tag">Etc</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-06">April 6, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BEtc%5D+%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83+%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9+%EA%B3%BC%EC%A0%9C+%ED%9A%8C%EA%B3%A0%20http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-03-review%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-03-review%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fetc%2Fetc-03-review%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/etc/etc-02-review/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/etc/etc-03-review/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/etc/etc-03-review"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

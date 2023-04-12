@@ -1,0 +1,832 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-01 : HTML - 응벅로그</title>
+<meta name="description" content="Today I Learned HTML!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-01 : HTML">
+<meta property="og:url" content="http://localhost:4000/study/til-01/">
+
+
+  <meta property="og:description" content="Today I Learned HTML!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-20T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-20T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-01 : HTML">
+    <meta itemprop="description" content="Today I Learned HTML!">
+    <meta itemprop="datePublished" content="2023-03-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-03-20T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-01/" class="u-url" itemprop="url">TIL-01 : HTML
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#htmlhyper-text-markup-language">HTML(Hyper Text Markup Language)</a><ul><li><a href="#html의-기본-구성-요소">HTML의 기본 구성 요소</a><ul><li><a href="#태그">태그</a></li><li><a href="#속성">속성</a><ul><li><a href="#전역-속성">전역 속성</a></li></ul></li><li><a href="#문법">문법</a></li><li><a href="#주석comment">주석(comment)</a></li></ul></li><li><a href="#html의-기본-구조">HTML의 기본 구조</a><ul><li><a href="#dtddocument-type-definition">DTD(Document Type Definition)</a></li><li><a href="#html-태그">html 태그</a></li><li><a href="#head-태그">head 태그</a></li><li><a href="#body-태그">body 태그</a></li></ul></li><li><a href="#html-특징">HTML 특징</a><ul><li><a href="#부모-자식-형제-관계">부모, 자식, 형제 관계</a></li><li><a href="#인라인-요소와-블록-요소">인라인 요소와 블록 요소</a></li><li><a href="#인라인inline-요소">인라인(Inline) 요소</a></li><li><a href="#블록block-요소">블록(Block) 요소</a></li></ul></li><li><a href="#html-핵심-요소들">HTML 핵심 요소들</a><ul><li><a href="#divdivision">div(Division)</a></li><li><a href="#hnheading">hn(Heading)</a></li><li><a href="#pparagraph">p(Paragraph)</a></li><li><a href="#span">span</a></li><li><a href="#brbreak">br(Break)</a></li><li><a href="#imgimage">img(Image)</a></li><li><a href="#aanchor">a(Anchor)</a></li><li><a href="#input">input</a></li><li><a href="#label">label</a></li><li><a href="#ulunordered-list">ul(Unordered List)</a></li><li><a href="#olordered-list">ol(Ordered List)</a></li><li><a href="#table">table</a></li></ul></li><li><a href="#시맨틱-태그">시맨틱 태그</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="htmlhyper-text-markup-language">HTML(Hyper Text Markup Language)</h1>
+
+<blockquote>
+  <p>Hyper Text : 참조를 통해 현재 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트(링크)</p>
+</blockquote>
+
+<p>HTML은 웹의 구조를 담당한다.</p>
+
+<h2 id="html의-기본-구성-요소">HTML의 기본 구성 요소</h2>
+
+<h3 id="태그">태그</h3>
+
+<p>태그란 다양한 구성 요소(텍스트, 이미지, 버튼 등)를 정의하는 역할을 하고 HTML 문법을 이루는 가장 작은 단위로 <code class="language-plaintext highlighter-rouge">&lt;&gt;</code>사이에 태그명을 넣는 형식이다.</p>
+
+<h3 id="속성">속성</h3>
+
+<p>속성은 태그에 어떤 의미나 기능을 보충하는 역할을 한다.<br />
+<code class="language-plaintext highlighter-rouge">&lt;태그명 속성명="속성값"&gt;</code>처럼 속성명과 속성값으로 구성되어 있다.<br />
+속성명은 <code class="language-plaintext highlighter-rouge">큰따옴표("")</code>안에 작성하고 속성값은 여러 개인 경우 <code class="language-plaintext highlighter-rouge">쉼표(,)</code>로 구분해서 값을 넣어준다.</p>
+
+<h4 id="전역-속성">전역 속성</h4>
+<p>모든 태그에서 사용이 가능한 속성을 전역 속성이라고 한다.
+<code class="language-plaintext highlighter-rouge">title="설명'</code> : 요소의 정보나 설명을 지정<br />
+<code class="language-plaintext highlighter-rouge">style="스타일"</code> : 요소에 적용할 스타일을 지정
+<code class="language-plaintext highlighter-rouge">class="이름"</code> : 요소를 지칭하는 중복 가능한 이름
+<code class="language-plaintext highlighter-rouge">id="이름"</code> : 요소를 지칭하는 고유한 이름
+<code class="language-plaintext highlighter-rouge">data-이름="데이터"</code> : 요소에 데이터를 지정</p>
+
+<h3 id="문법">문법</h3>
+
+<p>HTML은 태그와 속성으로 문법을 구성한다.</p>
+
+<p><strong>Content가 있는 문법</strong><br />
+<code class="language-plaintext highlighter-rouge">시작 태그</code>와 <code class="language-plaintext highlighter-rouge">종료 태그</code>로 콘텐츠 앞뒤를 감싼다.<br />
+시작 태그 + 콘텐츠 + 종료 태그를 합쳐 <code class="language-plaintext highlighter-rouge">요소(element)</code>라고 한다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>Hello, world!<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Content가 없는 문법</strong><br />
+앞뒤로 감쌀 콘텐츠가 없고 시작태그만 사용한다. <code class="language-plaintext highlighter-rouge">빈 태그(empty tag)</code>라고 한다.<br />
+XHTML/HTML5부터는 <code class="language-plaintext highlighter-rouge">슬래시(/)</code>로 종료 태그를 표시하지 않아도 된다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;br&gt;</span>
+</code></pre></div></div>
+
+<h3 id="주석comment">주석(comment)</h3>
+<p>웹 브라우저에는 표시되지 않지만 코드에 메모나 설명을 남기고 싶을 때 <code class="language-plaintext highlighter-rouge">&lt;!-- 주석 내용 --&gt;</code>형식으로 주석  처리를 할 수 있다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 이 부분은 주석입니다. --&gt;</span>
+</code></pre></div></div>
+
+<h2 id="html의-기본-구조">HTML의 기본 구조</h2>
+<blockquote>
+  <p>브라우저는 주소에 명시적으로 파일을 요청하지 않을 경우 가장 먼저 index.html 파일을 요청한다.</p>
+</blockquote>
+
+<h3 id="dtddocument-type-definition">DTD(Document Type Definition)</h3>
+<p><code class="language-plaintext highlighter-rouge">문서형 정의</code>란 마크업 언어에서 문서 형식을 정의하며, 브라우저가 처리할 HTML 문서(하나의 페이지)가 어떤 형식(HTML 버전)을 따라야 하는지 알려주는 것이다.<br />
+아래와 같이 작성 시 HTML 문서를 <code class="language-plaintext highlighter-rouge">HTML5</code> 문서 형식으로 해석한다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="html-태그">html 태그</h3>
+<p>html 태그는 HTML 문서의 전체 범위로 문서의 시작과 끝을 브라우저에 알리는 역할을 한다.</p>
+
+<h3 id="head-태그">head 태그</h3>
+<p>head 태그는 <code class="language-plaintext highlighter-rouge">HTML 문서의 정보(메타데이터 metadata)</code>를 정의한다.<br />
+<code class="language-plaintext highlighter-rouge">meta 태그</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">link</code>, <code class="language-plaintext highlighter-rouge">style</code>, <code class="language-plaintext highlighter-rouge">script</code>등의 태그를 사용해서 정보를 정의한다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- meta : 문서의 제작자, 내용, 키워드 등 문서의 정보를 검색엔진이나 브라우저에 제공 --&gt;</span>
+<span class="c">&lt;!-- 문자인코딩 방식 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- 문서의 제목을 정의 --&gt;</span>
+<span class="nt">&lt;title&gt;</span>Google<span class="nt">&lt;/title&gt;</span> 
+
+<span class="c">&lt;!-- 외부 문서(css파일)를 연결 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"가져올 문서의 경로"</span> <span class="nt">/&gt;</span> 
+
+<span class="c">&lt;!-- 내부에서 스타일(css)을 작성 --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- 자바스크립트 파일을 가져오거나, 자바스크립트를 문서 내부에서 작성할 때 사용 --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js 파일 경로"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="body-태그">body 태그</h3>
+<p>body 태그는 <code class="language-plaintext highlighter-rouge">문서의 구조</code>를 나타내는 범위로 브라우저에 보여지는 내용을 작성하는 영역이다.</p>
+
+<h2 id="html-특징">HTML 특징</h2>
+
+<h3 id="부모-자식-형제-관계">부모, 자식, 형제 관계</h3>
+<p>아래와 같은 구조에서 <code class="language-plaintext highlighter-rouge">&lt;div&gt;~&lt;/div&gt;</code>는 하나의 요소라고 볼 수 있다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt; 
+    &lt;p&gt;
+        내용
+        &lt;a&gt;내용&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;span&gt;내용&lt;/span&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<p>각각의 태그 입장에서 관계를 정리해보면 아래와 같다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">div</code> tag
+    <ul>
+      <li>자식 요소 : p, span</li>
+      <li>하위(후손) 요소 : p, span, a (감싸고 있는 모든 요소)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">p</code> tag
+    <ul>
+      <li>부모 요소 : div</li>
+      <li>자식 요소 : a</li>
+      <li>형제 요소 : span</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">a</code> tag
+    <ul>
+      <li>상위(조상)요소 : div, p(부모 요소도 포함)</li>
+      <li>부모 요소 : p</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="인라인-요소와-블록-요소">인라인 요소와 블록 요소</h3>
+<p>요소가 화면에 출력되는 특성은 크게 <code class="language-plaintext highlighter-rouge">인라인 요소</code>, <code class="language-plaintext highlighter-rouge">블록 요소</code> 2가지로 구분한다.</p>
+
+<h3 id="인라인inline-요소">인라인(Inline) 요소</h3>
+<p>인라인 요소는 글자를 만들기 위한 요소들이라고 보면 된다.<br />
+대표적인 요소로는 <code class="language-plaintext highlighter-rouge">span</code>태그가 있다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span&gt;</span>Hello<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span&gt;</span>World<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+<p>출력 » <span>Hello</span>
+<span>World</span></p>
+
+<p><strong>인라인 요소의 특징</strong></p>
+<ul>
+  <li>요소가 수평으로 쌓인다. (줄바꿈X)</li>
+  <li>포함하는 콘텐츠 크기만큼 가로,세로 너비가 자동으로 줄어든다. (width와 height를 가질 수 없어 스타일 지정이 안된다.)</li>
+  <li>margin과 padding은 좌,우만 적용되고, 위,아래는 적용되지 않는다.</li>
+  <li>인라인 요소 안에는 블록 요소를 포함할 수 없다.</li>
+  <li>인라인 요소 안에는 텍스트와 또 다른 인라인 요소를 포함할 수 있다.</li>
+</ul>
+
+<h3 id="블록block-요소">블록(Block) 요소</h3>
+<p>블록 요소는 상자(레이아웃)를 만들기 위한 요소들이라고 보면 된다.<br />
+대표적으로 <code class="language-plaintext highlighter-rouge">div</code>태그가 있다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>Hello<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>World<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>출력 »</p>
+<div>Hello</div>
+<div>World</div>
+
+<p><strong>블록요소의 특징</strong></p>
+<ul>
+  <li>요소가 수직으로 쌓인다.(줄바꿈이 일어남)</li>
+  <li>가로 너비가 부모 요소만큼 늘어난다.(세로는 콘텐츠 크기만큼 줄어듬)</li>
+  <li>요소에 가로, 세로 너비를 지정하는 속성을 사용할 수 있다.</li>
+  <li>margin, padding이 모두 적용된다.</li>
+  <li>블록 요소는 또 다른 블록 요소를 포함할 수 있다.(예외 있음)</li>
+  <li>블록 요소는 텍스트와 인라인 요소도 포함할 수 있다.</li>
+</ul>
+
+<h2 id="html-핵심-요소들">HTML 핵심 요소들</h2>
+
+<h3 id="divdivision">div(Division)</h3>
+<p>특별한 의미가 없는 구분을 위한 요소로 블록 요소와 인라인 요소를 묶을 때 주로 사용한다. <code class="language-plaintext highlighter-rouge">블록</code></p>
+
+<h3 id="hnheading">hn(Heading)</h3>
+<p>h1~h6까지 제목이나 주제를 의미하는 태그이다.
+숫자가 작을수록 중요도가 크다. <code class="language-plaintext highlighter-rouge">블록</code></p>
+
+<h3 id="pparagraph">p(Paragraph)</h3>
+<p>본문의 문단을 작성할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">블록</code></p>
+
+<h3 id="span">span</h3>
+<p>특별한 의미 없이 인라인 요소를 구분할 때 사용하는 태그 <code class="language-plaintext highlighter-rouge">인라인</code></p>
+
+<h3 id="brbreak">br(Break)</h3>
+<p>줄바꿈을 강제로 할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">인라인</code></p>
+
+<h3 id="imgimage">img(Image)</h3>
+
+<p>이미지를 삽입할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">인라인</code></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"이미지 경로"</span> <span class="na">alt=</span><span class="s">"대체 텍스트"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="aanchor">a(Anchor)</h3>
+<p>HTML에서 내부/외부 페이지로 이동하는 하이퍼링크를 생성할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">인라인</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"링크 URL 경로"</span> <span class="na">target=</span><span class="s">"링크 연결 방식"</span> <span class="na">title=</span><span class="s">"링크 설명"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="input">input</h3>
+<p>사용자로부터 데이터를 입력받는 요소를 생성할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">인라인-블록</code></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"입력 받을 타입의 종류"</span> <span class="na">value=</span><span class="s">"초깃값"</span> <span class="na">placeholder=</span><span class="s">"힌트 텍스트"</span> <span class="na">name=</span><span class="s">"서버로 전송될 때 사용할 이름"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="label">label</h3>
+<p>form 태그 안에서 상호작용 요소에 이름(라벨링)을 붙일 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">인라인</code></p>
+
+<h3 id="ulunordered-list">ul(Unordered List)</h3>
+<p>순서가 없는 비순서형 목록을 생성할 때 사용하는 태그이다.
+목록의 내용은 <code class="language-plaintext highlighter-rouge">li(List Item)태그</code>로 구성한다. <code class="language-plaintext highlighter-rouge">블록</code></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ul&gt;li*4 
+<span class="c">&lt;!-- ul태그 안에 자식 요소로 li태그 4개가 자동 생성된다. --&gt;</span>
+</code></pre></div></div>
+<h3 id="olordered-list">ol(Ordered List)</h3>
+<p>순서가 있는 순서형 목록을 생성할 때 사용하는 태그이다.
+목록의 내용은 <code class="language-plaintext highlighter-rouge">li(List Item)태그</code>로 구성한다. <code class="language-plaintext highlighter-rouge">블록</code></p>
+
+<h3 id="table">table</h3>
+<p>표를 생성할 때 사용하는 태그이다. <code class="language-plaintext highlighter-rouge">테이블 요소</code><br />
+<code class="language-plaintext highlighter-rouge">tr</code>(Table Row) : 행을 지정하는 요소<br />
+<code class="language-plaintext highlighter-rouge">td</code>(Table Data) : 열을 지정하는 요소(셀)<br />
+<code class="language-plaintext highlighter-rouge">th</code>(Table Header) : 표에서 제목 열을 지정하는 요소</p>
+
+<h2 id="시맨틱-태그">시맨틱 태그</h2>
+<p>시맨틱 태그는 태그의 이름만으로도 태그의 용도나 역할에 대한 의미가 명확한 태그이다.<br />
+대표적으로 <code class="language-plaintext highlighter-rouge">header</code>, <code class="language-plaintext highlighter-rouge">nav</code>, <code class="language-plaintext highlighter-rouge">footer</code>, <code class="language-plaintext highlighter-rouge">section</code>, <code class="language-plaintext highlighter-rouge">article</code> 등이 있다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#html" class="page__taxonomy-item p-category" rel="tag">HTML</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-20">March 20, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-01+%3A+HTML%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/study-01/" class="pagination--pager">이전</a>
+    
+    
+      <a href="/study/til-02/" class="pagination--pager">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-13/" rel="permalink">TIL-13 : JavaScript Date
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Date!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-12/" rel="permalink">TIL-12 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Number
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-11/" rel="permalink">TIL-11 : JavaScript
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript String
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-10/" rel="permalink">TIL-10 : JavaScript 함수
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript 함수!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-01/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-01"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
