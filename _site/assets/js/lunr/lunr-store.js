@@ -106,4 +106,10 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-14/",
         "teaser": null
+      },{
+        "title": "TIL-15 : JavaScript Module",
+        "excerpt":"모듈 Module 시스템은 하나의 JavaScript 파일로 모든 자원들을 관리하기 어렵기 때문에 나온 개념이다. 모듈은 특정 데이터들의 집합을 의미하며 하나의 JavaScript 파일을 분리했을 때, 각각의 파일들을 모듈이라고 부른다. 하나의 JS 파일에서 다른 JS 파일의 데이터를 사용할 때 해당 JS 파일이 모듈이라는 것을 브라우저에게 알려야한다. &lt;script type=\"module\" src=\"./js/main.js\"&gt;&lt;/script&gt; 하나의 JS 파일에서 다른...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-15/",
+        "teaser": null
       }]
