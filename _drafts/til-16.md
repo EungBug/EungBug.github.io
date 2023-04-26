@@ -1,0 +1,44 @@
+---
+published: true
+title:   "TIL-15 : React에서 줄바꿈 하기"
+excerpt: "Today I Learned React에서 줄바꿈 하는 방법!"
+
+categories:
+    - Study
+tags:
+    - JS
+
+toc: true
+toc_label: "목차"
+toc_icon: "bars"
+toc_sticky: true
+
+comments: true
+
+date: 2023-04-14
+last_modified_at: 2023-04-14
+---
+<br>
+
+## React에서 줄바꿈은 어떻게?
+
+React 기초를 처음 배우고 나서 바로 과제가 주어졌다.  
+영화 API를 활용한 영화 검색 사이트 만들기! Vanilla JS 또는 React 둘중 하나로 프로젝트를 만들어서 제출해야했다.  
+일단 React랑 친해져보자고 생각해서 React로 프로젝트를 시작하게 되었다.
+
+네트워크 에러처리를 위해 팝업에 에러코드별로 에러 메세지를 띄우기 위해 메세지를 매개변수로 전달하는 함수를 만들었는데,
+jsx에서 줄 바꿈 기호 (\n)를 추가해도 줄바꿈이 안되는 현상이 발생했다.  
+`<br />` 태그를 넣어봐도 결과는 똑같았다.
+
+```jsx
+setErrorMessage('🚨 네트워크 오류가 발생했습니다.\n잠시후 다시 시도해주세요!!')
+```
+
+## 줄바꿈 적용하기
+
+공백을 어떻게 처리할 지 정하는 속성인 CSS `white-space`속성의 값을 `pre-line`으로 지정하면된다.  
+이 속성을 지정하면 개행 문자 \n을 인식하여 줄바꿈하여 출력되게 된다.
+
+```css
+white-space: pre-line;
+```
