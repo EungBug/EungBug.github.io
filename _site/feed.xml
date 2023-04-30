@@ -5,8 +5,30 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Sun, 30 Apr 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>[Etc] 퀴즈 사이트 만들기 회고</title>
+        
+        
+            <description>Javascript 연습을 위한 퀴즈 사이트를 만들고 나서 주저리 주저리</description>
+        
+        <pubDate>Sun, 30 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/etc/etc-04-review/</link>
+        <guid isPermaLink="true">http://localhost:4000/etc/etc-04-review/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-16 : React에서 줄바꿈 하기</title>
+        
+        
+            <description>Today I Learned React에서 줄바꿈 하는 방법!</description>
+        
+        <pubDate>Wed, 26 Apr 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-16/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-16/</guid>
+      </item>
+    
 	<item>
 		<title>TIL-15 : JavaScript Module</title>
         
@@ -93,28 +115,6 @@
         <pubDate>Tue, 04 Apr 2023 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/study/til-09/</link>
         <guid isPermaLink="true">http://localhost:4000/study/til-09/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-08 : JavaScript 이벤트 버블링</title>
-        
-        
-            <description>Today I Learned JavaScript!</description>
-        
-        <pubDate>Fri, 31 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-08/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-08/</guid>
-      </item>
-    
-	<item>
-		<title>[Etc] 첫 클론코딩 회고</title>
-        
-        
-            <description>제주맥주 홈페이지 클론코딩 회고</description>
-        
-        <pubDate>Thu, 30 Mar 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/etc/etc-02-review/</link>
-        <guid isPermaLink="true">http://localhost:4000/etc/etc-02-review/</guid>
       </item>
     
   </channel>

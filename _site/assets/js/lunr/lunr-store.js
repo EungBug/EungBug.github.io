@@ -112,4 +112,16 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-15/",
         "teaser": null
+      },{
+        "title": "TIL-16 : React에서 줄바꿈 하기",
+        "excerpt":"React에서 줄바꿈은 어떻게? React 기초를 처음 배우고 나서 바로 과제가 주어졌다. 영화 API를 활용한 영화 검색 사이트 만들기! Vanilla JS 또는 React 둘중 하나로 프로젝트를 만들어서 제출해야했다. 일단 React랑 친해져보자고 생각해서 React로 프로젝트를 시작하게 되었다. 네트워크 에러처리를 위해 팝업에 에러코드별로 에러 메세지를 띄우기 위해 메세지를 매개변수로 전달하는 함수를 만들었는데, jsx에서...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-16/",
+        "teaser": null
+      },{
+        "title": "[Etc] 퀴즈 사이트 만들기 회고",
+        "excerpt":"퀴즈 사이트를 만들게 된 이유 지난주부터 부트캠프의 2차 과제로 OMDbAPI를 활용하여 영화 검색 사이트를 만드는 과제를 진행하게 되었다. JS 또는 React를 사용해서 요구사항에 맞게 자유롭게 구현하면 되는 과제였고, React를 배운지 4일.. 시간으로 따지면 12시간도 안되지만 강의를 듣고 사용하지 않으면 백지상태가 될 것 같아 과제를 React로 진행하게 되었다. 강의와 구글링 그리고...","categories": ["Etc"],
+        "tags": ["회고"],
+        "url": "/etc/etc-04-review/",
+        "teaser": null
       }]
