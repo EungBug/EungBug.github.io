@@ -5,8 +5,30 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Sun, 30 Apr 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Fri, 12 May 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>TIL-18 : Map, Set Type</title>
+        
+        
+            <description>Today I Learned Map, Set!</description>
+        
+        <pubDate>Fri, 12 May 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-18/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-18/</guid>
+      </item>
+    
+	<item>
+		<title>TIL-17 : bind()</title>
+        
+        
+            <description>Today I Learned bind method!</description>
+        
+        <pubDate>Sun, 07 May 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-17/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-17/</guid>
+      </item>
+    
 	<item>
 		<title>[Etc] 퀴즈 사이트 만들기 회고</title>
         
@@ -93,28 +115,6 @@
         <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/study/til-10/</link>
         <guid isPermaLink="true">http://localhost:4000/study/til-10/</guid>
-      </item>
-    
-	<item>
-		<title>[Etc] 레이아웃 클론코딩 과제 회고</title>
-        
-        
-            <description>카카오뱅크 메인페이지 클론코딩 회고</description>
-        
-        <pubDate>Thu, 06 Apr 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/etc/etc-03-review/</link>
-        <guid isPermaLink="true">http://localhost:4000/etc/etc-03-review/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-09 : JavaScript</title>
-        
-        
-            <description>Today I Learned JavaScript!</description>
-        
-        <pubDate>Tue, 04 Apr 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-09/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-09/</guid>
       </item>
     
   </channel>

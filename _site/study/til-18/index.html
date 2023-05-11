@@ -1,0 +1,750 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-18 : Map, Set Type - 응벅로그</title>
+<meta name="description" content="Today I Learned Map, Set!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-18 : Map, Set Type">
+<meta property="og:url" content="http://localhost:4000/study/til-18/">
+
+
+  <meta property="og:description" content="Today I Learned Map, Set!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-12T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-05-12T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-18/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-18 : Map, Set Type">
+    <meta itemprop="description" content="Today I Learned Map, Set!">
+    <meta itemprop="datePublished" content="2023-05-12T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-05-12T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-18/" class="u-url" itemprop="url">TIL-18 : Map, Set Type
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#array-set-map">Array, Set, Map</a></li><li><a href="#set">Set</a></li><li><a href="#map">Map</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /></p>
+
+<h2 id="array-set-map">Array, Set, Map</h2>
+
+<p>Map과 Set은 ES6에서 새롭게 들어온 <code class="language-plaintext highlighter-rouge">자료구조</code>이다.</p>
+
+<p>Set과 Map은 Array와는 다른 특징들이 있다.</p>
+
+<p>Array</p>
+<ul>
+  <li>요소의 순서를 보장하여 인덱스로 요소에 접근이 가능하다.</li>
+  <li>중첩 데이터를 가질 수 있다.</li>
+  <li>Array에서 제공하는 다양한 메서드를 사용할 수 있다.</li>
+</ul>
+
+<p>Set</p>
+<ul>
+  <li>Set은 <code class="language-plaintext highlighter-rouge">중복을 허용하지 않는 데이터 집합</code>이다.</li>
+  <li>Array와 다르게 <code class="language-plaintext highlighter-rouge">요소의 순서를 보장하지 않는다.</code></li>
+  <li>Array에서 제공하는 프로퍼티나 메서드는 사용할 수 없지만 Set에서 사용할 수 있는 프로퍼티나 메서드가 있다.</li>
+  <li>중첩 데이터를 가질 수 있다.</li>
+</ul>
+
+<p>Map</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Key-value</code> 형식으로 데이터를 저장한다.</li>
+  <li>Array에서 제공하는 프로퍼티나 메서드는 사용할 수 없지만 Set에서 사용할 수 있는 프로퍼티나 메서드가 있다.</li>
+  <li>요소의 순서를 보장한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">key 값을 중복할 순 없지만, 중복 value는 허용된다.</code></li>
+  <li>Object와 달리 key에 문자형 외에도 <code class="language-plaintext highlighter-rouge">여러 데이터 타입</code>이 허용된다.</li>
+</ul>
+
+<h2 id="set">Set</h2>
+<p>set은 중복을 허용하지 않는 데이터 집합으로 고유한 값을 가지는 목록이 필요할 때 주로 사용한다.</p>
+
+<p>set 객체는 new 키워드와 함께 <code class="language-plaintext highlighter-rouge">set 생성자</code> 함수를 통해 생성할 수 있다.
+인수로 <code class="language-plaintext highlighter-rouge">배열이나 Iterable</code>을 받아 초기화 할 수 있고, 아무것도 전달하지 않는 경우 빈 set 객체가 생성된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">();</span>
+<span class="c1">// Set(0) {}</span>
+
+<span class="kd">const</span> <span class="nx">ids2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="c1">// Set(3) { 1, 2, 3 }</span>
+</code></pre></div></div>
+
+<p>초기화 시 중복되는 데이터가 있는 경우 <code class="language-plaintext highlighter-rouge">중복 값은 제외</code>하고 생성된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+<span class="c1">// Set(4) { 1, 2, 3, 4 }</span>
+</code></pre></div></div>
+
+<p>순서를 보장하지 않기 때문에 인덱스로 접근 시 <code class="language-plaintext highlighter-rouge">undefined</code>가 반환된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstId</span> <span class="o">=</span> <span class="nx">ids</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">firstId</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>Set 객체에서 사용할 수 있는 여러 메서드들이 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="c1">// size : 요소 수 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ids</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span> <span class="c1">// 3</span>
+
+<span class="c1">// add() : 요소 추가</span>
+<span class="nx">ids</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ids</span><span class="p">);</span> <span class="c1">// Set(4) { 1, 2, 3, 99 }</span>
+
+<span class="c1">// has() : 해당 요소를 가지고 있는지 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ids</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ids</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span> <span class="c1">// fase</span>
+
+<span class="c1">// delete() : 요소 삭제</span>
+<span class="nx">ids</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ids</span><span class="p">);</span> <span class="c1">// Set(3) { 1, 2, 99 }</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">entries()</code> 메서드를 사용하면 set객체를 Iterable로 반환하는데 반환된 Interable을 통해 반복문을 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// entries() : Iterable을 반환하여 반복문이 가능하도록</span>
+<span class="nf">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">id</span> <span class="k">of</span> <span class="nx">ids</span><span class="p">.</span><span class="nf">entries</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// [ 1, 1 ]</span>
+<span class="c1">// [ 2, 2 ]</span>
+<span class="c1">// [ 99, 99 ]</span>
+</code></pre></div></div>
+
+<p>이때 각각 반환되는 요소에는 배열형태로 값이 2개씩 들어가는데,
+forEach 메서드와 인터페이스를 통일시키기 위한 이유로 2개의 값이 들어간다.<br />
+<code class="language-plaintext highlighter-rouge">Array.prototype.forEach</code>의 경우 순서 즉, <code class="language-plaintext highlighter-rouge">index</code>를 가지고 있어서 두 번째 인수로 index 값을 받을 수 있지만 set에서는 요소의 순서를 보장하지 않기 때문에 index는 받지 않고 같은 값이 들어간다고 보면 된다.</p>
+
+<p>추가적으로 set은 요소 삭제 시 set 객체가 가지고 있지 않는 값을 삭제하려고 해도 오류가 발생하지 않는다는 특징이 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nx">ids</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span> <span class="c1">// 오류 없이 아무 반응 없음</span>
+</code></pre></div></div>
+
+<h2 id="map">Map</h2>
+
+<p>map 객체는 데이터에 추가적으로 정보를 저장하고 싶지만 실제 데이터는 건드리지 않고 데이터를 가공할 때 주로 사용한다.</p>
+
+<p>map 객체도 set과 동일하게 new 키워드와 함께 <code class="language-plaintext highlighter-rouge">map 생성자</code> 함수를 통해 생성할 수 있다.
+map은 <code class="language-plaintext highlighter-rouge">배열 안에 배열 형태</code>의 인수를 받을 수 있으며, 아무것도 전달하지 않는 경우 빈 map 객체가 생성된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span>
+<span class="c1">// Map(0) {}</span>
+
+<span class="kd">const</span> <span class="nx">map2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">key1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value1</span><span class="dl">'</span><span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">key2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">value2</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">]);</span>
+<span class="c1">//Map(2) { 'key1' =&gt; 'value1', 'key2' =&gt; 'value2' }</span>
+</code></pre></div></div>
+
+<p>map의 key에는 어떠한 데이터 타입이라도 들어갈 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">jain</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jain</span><span class="dl">'</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">tom</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span> <span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="nx">jain</span><span class="p">,</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">hobby</span><span class="p">:</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span> <span class="p">}],</span>
+  <span class="p">[</span><span class="nx">tom</span><span class="p">,</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="na">hobby</span><span class="p">:</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">}]</span>
+<span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">);</span>
+<span class="c1">// Map(2) {</span>
+<span class="c1">//   { name: 'Jain' } =&gt; { age: 20, hobby: 'coding' },</span>
+<span class="c1">//   { name: 'Tom' } =&gt; { age: 25, hobby: 'game' }</span>
+<span class="c1">// }</span>
+</code></pre></div></div>
+
+<p>Map 객체 또한 Map 객체에서 사용할 수 있는 여러 메서드들이 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">jain</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jain</span><span class="dl">'</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">tom</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span> <span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="nx">jain</span><span class="p">,</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">hobby</span><span class="p">:</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span> <span class="p">}],</span>
+  <span class="p">[</span><span class="nx">tom</span><span class="p">,</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="na">hobby</span><span class="p">:</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">}]</span>
+<span class="p">]);</span>
+
+<span class="c1">// size : 요소 수 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span> <span class="c1">// 2</span>
+
+<span class="c1">// set(key, value) : 요소 추가</span>
+<span class="nx">users</span><span class="p">.</span><span class="nf">set</span><span class="p">({</span> <span class="na">naem</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Kim</span><span class="dl">'</span> <span class="p">},</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">hobby</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Cook</span><span class="dl">'</span> <span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">);</span> 
+<span class="c1">// Map(3) {</span>
+<span class="c1">//   { name: 'Jain' } =&gt; { age: 20, hobby: 'coding' },</span>
+<span class="c1">//   { name: 'Tom' } =&gt; { age: 25, hobby: 'game' },</span>
+<span class="c1">//   { naem: 'Kim' } =&gt; { age: 30, hobby: 'Cook' }</span>
+<span class="c1">// }</span>
+
+<span class="c1">// get() : 요소 값 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">tom</span><span class="p">));</span> <span class="c1">// { age: 25, hobby: 'game' }</span>
+
+<span class="c1">// has() : 요소를 가지고 있는지 확인</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">jain</span><span class="p">));</span> <span class="c1">// true</span>
+
+<span class="c1">// delete() : 요소 삭제</span>
+<span class="nx">users</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nx">tom</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">users</span><span class="p">);</span> 
+<span class="c1">// Map(2) {</span>
+<span class="c1">//   { name: 'Jain' } =&gt; { age: 20, hobby: 'coding' },</span>
+<span class="c1">//   { naem: 'Kim' } =&gt; { age: 30, hobby: 'Cook' }</span>
+<span class="c1">// }</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">JS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-12">May 12, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-18+%3A+Map%2C+Set+Type%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-18%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-18%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-18%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-17/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-17/" rel="permalink">TIL-17 : bind()
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned bind method!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-04-review/" rel="permalink">[Etc] 퀴즈 사이트 만들기 회고
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Javascript 연습을 위한 퀴즈 사이트를 만들고 나서 주저리 주저리
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-16/" rel="permalink">TIL-16 : React에서 줄바꿈 하기
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned React에서 줄바꿈 하는 방법!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-15/" rel="permalink">TIL-15 : JavaScript Module
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned JavaScript Module!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-18/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-18"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

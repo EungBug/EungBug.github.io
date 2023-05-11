@@ -124,4 +124,16 @@ var store = [{
         "tags": ["회고"],
         "url": "/etc/etc-04-review/",
         "teaser": null
+      },{
+        "title": "TIL-17 : bind()",
+        "excerpt":"bind() 함수는 객체이기 때문에 특별한 속성(메서드)을 연결할 수 있다. bind 메서드는 즉시 실행되지 않는 함수를 생성하는데 이때 받는 인자에 따라 새로운 함수, 새로운 참조가 생성된다. bind 메서드는 최소 2개의 인자를 사용한다. 첫 번째 매개변수의 경우 함수 내 this 키워드를 주어진 값으로 설정하며, 두 번째 매개변수부터는 사전에 함수를 구성하고 싶은 매개변수들을...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-17/",
+        "teaser": null
+      },{
+        "title": "TIL-18 : Map, Set Type",
+        "excerpt":"Array, Set, Map Map과 Set은 ES6에서 새롭게 들어온 자료구조이다. Set과 Map은 Array와는 다른 특징들이 있다. Array 요소의 순서를 보장하여 인덱스로 요소에 접근이 가능하다. 중첩 데이터를 가질 수 있다. Array에서 제공하는 다양한 메서드를 사용할 수 있다. Set Set은 중복을 허용하지 않는 데이터 집합이다. Array와 다르게 요소의 순서를 보장하지 않는다. Array에서 제공하는...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-18/",
+        "teaser": null
       }]
