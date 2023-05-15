@@ -136,4 +136,10 @@ var store = [{
         "tags": ["JS"],
         "url": "/study/til-18/",
         "teaser": null
+      },{
+        "title": "TIL-19 : Object Property Key",
+        "excerpt":"객체의 프로퍼티 추가와 삭제 객체에 새로운 프로퍼티를 추가하고자 할 땐? 점 표기법을 사용하여 프로퍼티에 값을 할당해야 한다. const user = { name: 'EunBi', age: 27, hobbies: ['coding', 'game'] }; // 프로퍼티 추가 user.phoneNum = '010-1234-5678'; console.log(user); // ==== 결과 ===== { name: 'EunBi', age: 27, hobbies: [ 'coding', 'game' ],...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-19/",
+        "teaser": null
       }]

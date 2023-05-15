@@ -1,0 +1,707 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-19 : Object Property Key - 응벅로그</title>
+<meta name="description" content="Today I Learned Object Property Key!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-19 : Object Property Key">
+<meta property="og:url" content="http://localhost:4000/study/til-19/">
+
+
+  <meta property="og:description" content="Today I Learned Object Property Key!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-05-15T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-19/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-19 : Object Property Key">
+    <meta itemprop="description" content="Today I Learned Object Property Key!">
+    <meta itemprop="datePublished" content="2023-05-15T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-05-15T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-19/" class="u-url" itemprop="url">TIL-19 : Object Property Key
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#객체의-프로퍼티-추가와-삭제">객체의 프로퍼티 추가와 삭제</a></li><li><a href="#특수-키-이름과-대괄호-프로퍼티-액세스">특수 키 이름과 대괄호 프로퍼티 액세스</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /></p>
+
+<h2 id="객체의-프로퍼티-추가와-삭제">객체의 프로퍼티 추가와 삭제</h2>
+
+<blockquote>
+  <p>객체에 새로운 프로퍼티를 추가하고자 할 땐?</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">점 표기법</code>을 사용하여 프로퍼티에 값을 할당해야 한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EunBi</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+  <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">};</span>
+
+<span class="c1">// 프로퍼티 추가</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">phoneNum</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">010-1234-5678</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// ==== 결과 =====</span>
+<span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EunBi</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+  <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">],</span>
+  <span class="na">phoneNum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">010-1234-5678</span><span class="dl">'</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체에 정의되지 않은 프로퍼티를 액세스하는 경우 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>그렇기 때문에 해당 프로퍼티에 값을 바로 할당할 수 있으며, 이미 있는 프로퍼티를 다시 할당하더라도 새로운 값으로 <code class="language-plaintext highlighter-rouge">덮어쓸 수 있다</code>.</p>
+
+<blockquote>
+  <p>특정 프로퍼티를 삭제하고자 할땐?</p>
+
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">delete</code> 키워드(독립 실행형 키워드)를 사용해야 한다.</p>
+
+<p>delete 키워드를 통해 프로퍼티를 삭제 한 뒤 해당 프로퍼티에 접근 하면 다시 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// delete 키워드 뒤에 삭제하고자 하는 프로퍼티 키를 작성한다.</span>
+<span class="k">delete</span> <span class="nx">user</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// ==== 결과 ====</span>
+<span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EunBi</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">],</span>
+  <span class="na">phoneNum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">010-1234-5678</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그러면 그냥 해당 값에 undefined를 할당하면 되지 않나?</p>
+
+<p>⇒ 가능하다. 깔끔한 방법은 아니지만 정상 동작하는 코드이다. 하지만 undefined는 개발작가 직접 할당해서는 안 되는 값이다. (하나의 규칙이라고 생각하면 된다.)</p>
+
+<p>그러면 null로 넣어주면 될까?</p>
+
+<p>⇒ 프로퍼티 값을 null로 <code class="language-plaintext highlighter-rouge">리셋</code>하는 것은 프로퍼티를 <code class="language-plaintext highlighter-rouge">삭제</code>하는 것과는 다른 개념이다.
+프로퍼티 값에 null을 할당하는 것은 <strong>객체에 해당 프로퍼티는 있지만 아무 값도 지정되지 않는 상태</strong>라는 것을 의미한다. 반면, undefined로 설정되어 있는 경우는 <strong>객체에 해당 프로퍼티가 없다는 의미</strong>가 된다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">user</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// ==== 결과 ====</span>
+<span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EunBi</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">],</span>
+  <span class="na">phoneNum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">010-1234-5678</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>따라서 delete 키워드를 사용하여 프로퍼티를 삭제하는 것은 프로퍼티 자체가 불필요하다는 의미가 되고, 프로젝트 내부에서 사용하지 않겠다는 의미가 된다.</strong></p>
+
+<h2 id="특수-키-이름과-대괄호-프로퍼티-액세스">특수 키 이름과 대괄호 프로퍼티 액세스</h2>
+
+<hr />
+
+<p>객체에서 Key를 지정할 때, 변수의 이름을 지정할 때와 같은 방식으로 지정했다.</p>
+
+<p>⇒ 즉, 변수에서 사용할 수 있는 이름은 Key에 사용할 수 있다.</p>
+
+<p>⇒ Key는 변수보다 더 <code class="language-plaintext highlighter-rouge">유연</code>하다.</p>
+
+<p>≠ Key에서 쓸 수 있는 이름을 변수에서 쓸 수 있는 것은 아니다.</p>
+
+<p>변수명에 <code class="language-plaintext highlighter-rouge">공백</code>을 넣는다거나 <code class="language-plaintext highlighter-rouge">-</code> 를 넣는 경우 오류가 발생한다. Javascript에서 허용하지 않는다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 둘다 오류 발생</span>
+<span class="kd">const</span> <span class="nx">first</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lee</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">first</span><span class="o">-</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lee</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>변수의 이름엔 공백 없이 이루어져야 하며 - 기호를 사용하면 안된다.</p>
+
+<p>해당 규칙은 객체 프로퍼티 Key에도 적용되는 규칙이긴 하다.</p>
+
+<p>하지만 사용할 수 있는 방법이 있다.</p>
+
+<p>⇒ JavaScript에게 해당 값은 <code class="language-plaintext highlighter-rouge">Key의 이름으로만 사용</code>할 것이며, 따로 연산이 필요하지 않다는 것을 <code class="language-plaintext highlighter-rouge">따옴표</code>(큰 따옴표, 작은 따옴표 상관 없음)로 감싸 알려줘야한다. “이 이름은 단순 Key 이름이고 <code class="language-plaintext highlighter-rouge">문자열</code>에 불과하다.” 라고.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">first name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Lee</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">k-age</span><span class="dl">'</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+  <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+<span class="c1">// ==== 결과 ====</span>
+<span class="p">{</span> <span class="dl">'</span><span class="s1">first name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Lee</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">k-age</span><span class="dl">'</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span> <span class="dl">'</span><span class="s1">coding</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">game</span><span class="dl">'</span> <span class="p">]</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>위와 같은 특수 키 이름을 가진 프로퍼티를 액세스하고 싶은 경우 <code class="language-plaintext highlighter-rouge">대괄호 표기법</code>을 통해서만 액세스가 가능하다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">first</span> <span class="nx">name</span><span class="p">);</span> <span class="c1">// 오류 발생</span>
+</code></pre></div></div>
+
+<p>⇒ 표현식 그대로 사용할 경우 Javascript가 “first”가 키워드인지 아니면 연산자인지 알 수 없기 때문에 “first”에 대해서 어떻게 해석하고 작업을 수행해야 할지 알 수 없기 때문이다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">JS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-15">May 15, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-19+%3A+Object+Property+Key%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-19%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-19%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-19%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-18/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-18/" rel="permalink">TIL-18 : Map, Set Type
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned Map, Set!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-17/" rel="permalink">TIL-17 : bind()
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned bind method!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-04-review/" rel="permalink">[Etc] 퀴즈 사이트 만들기 회고
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Javascript 연습을 위한 퀴즈 사이트를 만들고 나서 주저리 주저리
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-16/" rel="permalink">TIL-16 : React에서 줄바꿈 하기
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned React에서 줄바꿈 하는 방법!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-19/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-19"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
