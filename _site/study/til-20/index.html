@@ -1,0 +1,759 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL-20 : TypeScript의 타입들(1) - 응벅로그</title>
+<meta name="description" content="Today I Learned TypeScript!">
+
+
+  <meta name="author" content="Eunbi Lee">
+  
+  <meta property="article:author" content="Eunbi Lee">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="응벅로그">
+<meta property="og:title" content="TIL-20 : TypeScript의 타입들(1)">
+<meta property="og:url" content="http://localhost:4000/study/til-20/">
+
+
+  <meta property="og:description" content="Today I Learned TypeScript!">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-17T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-05-17T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/til-20/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "EungBug(Eunbi Lee)",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="응벅로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- 파비콘 적용 -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          응벅로그
+          <span class="site-subtitle">Don't worry if it doesn't work right.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/img/me/me256.png" alt="Eunbi Lee" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Eunbi Lee</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>안드로이드 개발자에서<br />웹 프론트엔드 개발자 전향 준비중..<br />공부하는 만큼, 잔디도 열심히 심어보자!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:eungb14@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+<!-- hits -->
+<a href="https://hits.seeyoufarm.com">
+  <style>
+    .hits {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 20px;
+    }
+  </style>
+  <img class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feungbug.github.io&count_bg=%23FF7B54&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL-20 : TypeScript의 타입들(1)">
+    <meta itemprop="description" content="Today I Learned TypeScript!">
+    <meta itemprop="datePublished" content="2023-05-17T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-05-17T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/til-20/" class="u-url" itemprop="url">TIL-20 : TypeScript의 타입들(1)
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#타입스크립트란">타입스크립트란?</a><ul><li><a href="#타입스크립트에서-사용하는-타입들">타입스크립트에서 사용하는 타입들</a><ul><li><a href="#string">String</a></li><li><a href="#number">Number</a></li><li><a href="#boolean">Boolean</a></li><li><a href="#null--undefined">Null / Undefined</a></li><li><a href="#배열">배열</a></li><li><a href="#객체">객체</a></li><li><a href="#function">Function</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /></p>
+
+<h1 id="타입스크립트란">타입스크립트란?</h1>
+
+<p>자바스크립트 기반의 <code class="language-plaintext highlighter-rouge">정적 타입 문법</code>을 추가한 프로그래밍 언어<br />
+이 말은 즉 <strong>“데이터의 타입을 정해놓고 사용한다.”</strong>라는 의미이다.</p>
+
+<p>타입스크립트는 <code class="language-plaintext highlighter-rouge">자바스크립트로 변환(컴파일) 후</code> 브라우저나 Node.js 환경에서 동작한다.</p>
+
+<p>자바스크립트 = 동적 타입 ⇒ <code class="language-plaintext highlighter-rouge">런타임</code>에서 동작할 때 타입 오류를 확인한다.<br />
+타입스크립트 = 정적 타입(정적 타입의 컴파일 언어) ⇒ <code class="language-plaintext highlighter-rouge">코드 작성 단계</code>에서 타입 오류를 확인한다.</p>
+
+<p>타입스크립트는 자바스크립트를 완변하게 호환한다.(자바스크립트의 <code class="language-plaintext highlighter-rouge">슈퍼셋</code>)</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">hello</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// 오류 발생 string 타입의 변수에 number 타입의 값을 할당할 수 없음</span>
+<span class="kd">let</span> <span class="nx">hello</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> 
+</code></pre></div></div>
+
+<h2 id="타입스크립트에서-사용하는-타입들">타입스크립트에서 사용하는 타입들</h2>
+
+<h3 id="string">String</h3>
+
+<p>변수명 뒤에 콜론(:)과 함께 <code class="language-plaintext highlighter-rouge">string</code> 타입을 명시해준다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str</span><span class="p">:</span> <span class="kr">string</span>
+<span class="kd">let</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">EungBug</span><span class="dl">'</span>
+<span class="kd">let</span> <span class="nx">hi</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="s2">`Hi, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span>
+</code></pre></div></div>
+<h3 id="number">Number</h3>
+
+<p>변수명 뒤에 콜론(:)과 함께 <code class="language-plaintext highlighter-rouge">number</code> 타입을 명시해준다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span><span class="p">:</span> <span class="kr">number</span>
+<span class="kd">let</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="kd">let</span> <span class="nx">float</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="kd">let</span> <span class="nx">infinity</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="kc">Infinity</span>
+<span class="kd">let</span> <span class="nx">nan</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="kc">NaN</span>
+</code></pre></div></div>
+
+<h3 id="boolean">Boolean</h3>
+
+<p>변수명 뒤에 콜론(:)과 함께 <code class="language-plaintext highlighter-rouge">boolean</code> 타입을 명시해준다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isValid</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="kd">let</span> <span class="nx">isChecked</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h3 id="null--undefined">Null / Undefined</h3>
+
+<p>변수명 뒤에 콜론(:)과 함께 <code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">undefined</code> 타입을 명시해준다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">nul</span><span class="p">:</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">und</span><span class="p">:</span> <span class="kc">undefined</span>
+</code></pre></div></div>
+
+<p>null의 경우 null 값이 할당 되기 전 변수를 참조하는 경우 에러가 발생한다.</p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">nul</span><span class="p">)</span> <span class="c1">// 에러 발생</span>
+
+<span class="c1">// null 타입은 null 밖에 할당할 수 없다.</span>
+<span class="nx">nul</span> <span class="o">=</span> <span class="kc">null</span>
+</code></pre></div></div>
+
+<p>null 타입의 경우 null 밖에 할당할 수 없기 때문에 실제 매우 불필요한 타입으로 잘 사용하지 않는다.</p>
+
+<h3 id="배열">배열</h3>
+
+<p><code class="language-plaintext highlighter-rouge">대괄호[]</code> 앞에 배열에 들어갈 <code class="language-plaintext highlighter-rouge">요소들의 타입</code>을 같이 명시해준다.</p>
+
+<p>string타입의 요소들로만 이루어진 배열을 생성할 때는 아래와 같다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">colors</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Red</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Green</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="c1">// string 타입이 아닌 다른 타입의 아이템을 추가할 경우 에러가 발생한다.</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span> <span class="c1">// 에러 발생</span>
+</code></pre></div></div>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 배열의 모든 아이템은 number 타입이여야한다.</span>
+<span class="kd">const</span> <span class="nx">numbers</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">// 여러 데이터 타입을 사용하는 경우)</span>
+<span class="kd">const</span> <span class="nx">union</span><span class="p">:</span> <span class="p">(</span><span class="kr">string</span> <span class="o">|</span> <span class="kr">number</span><span class="p">)[]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">AAA</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">BBB</span><span class="dl">'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="객체">객체</h3>
+
+<p>object라는 타입 자체는 엄격하지 않기 때문에 거의 사용하지 않는다.<br />
+object, array, function 모두 <code class="language-plaintext highlighter-rouge">Object</code> 타입이기 때문이다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span><span class="p">:</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kd">const</span> <span class="nx">arr</span><span class="p">:</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kd">const</span> <span class="nx">func</span><span class="p">:</span> <span class="nx">object</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>대신 객체 데이터에<code class="language-plaintext highlighter-rouge"> 각 속성의 타입</code>들을 <code class="language-plaintext highlighter-rouge">명시</code>하는 방식으로 주로 사용한다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">eungbug</span><span class="p">:</span> <span class="p">{</span>
+	<span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+	<span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+	<span class="nx">isActive</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EungBug</span><span class="dl">"</span><span class="p">,</span>
+	<span class="na">age</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 위와 같은 구조의 User를 여러 개를 생성해야 한다면 매번 속성의 타입을 명시하는 것은 불필요하고 불편하다.<br />
+그렇기 때문에 객체의 타입이 <code class="language-plaintext highlighter-rouge">반복</code>된다면 하나의 <code class="language-plaintext highlighter-rouge">Interface</code>로 만들어서 <code class="language-plaintext highlighter-rouge">재사용</code>하는 것이 좋다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+	<span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+	<span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+	<span class="nx">isActive</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span> 
+
+<span class="kd">const</span> <span class="nx">eunbi</span><span class="p">:</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EungBi</span><span class="dl">'</span><span class="p">,</span>
+	<span class="na">age</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+	<span class="na">isActive</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Interface로 만든 객체는 <strong>Interface에 정의된 속성 이외에 속성을 추가할 수 없다.</strong></p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">eunbi</span><span class="p">.</span><span class="nx">phoneNum</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">010-1234-5678</span><span class="dl">'</span> <span class="c1">// 오류 발생</span>
+
+<span class="kd">const</span> <span class="nx">kuru</span><span class="p">:</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Kuru</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span>
+    <span class="na">isActive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">phoneNum</span><span class="p">:</span> <span class="dl">'</span><span class="s1">010-9876-5432</span><span class="dl">'</span> <span class="c1">// 오류 발생</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="function">Function</h3>
+
+<p>함수를 생성할 때는 함수의 <code class="language-plaintext highlighter-rouge">반환 타입</code>, 전달받는 <code class="language-plaintext highlighter-rouge">매개변수의 타입</code>을 명시해야한다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 매개변수 x와 y의 타입은 각 매개변수 뒤에 : 과 함께 받을 타입을 작성한다.</span>
+<span class="c1">// =&gt; 뒤에는 해당 함수가 반환하는 값의 타입을 작성한다.</span>
+<span class="kd">const</span> <span class="nx">add</span><span class="p">:</span> <span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>함수 자체에 매개변수와 반환하는 값의 타입을 작성하는 방법도 있다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>함수에서 반환하는 타입과 함수의 반환 데이터를 받는 변수의 타입은 <code class="language-plaintext highlighter-rouge">일치</code>해야한다.<br />
+일치하지 않는 경우 오류가 발생한다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">sum2</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 오류 발생</span>
+
+<span class="c1">// 마찬가지로 매개변수의 타입도 일치해야한다.</span>
+<span class="kd">const</span> <span class="nx">sum3</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 오류 발생</span>
+</code></pre></div></div>
+
+<p>반환 값이 없는 경우에는 <code class="language-plaintext highlighter-rouge">void</code> 타입으로 명시해야 한다.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello~</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">hi</span> <span class="o">=</span> <span class="nf">function </span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hi~</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">fHi</span><span class="p">:</span> <span class="k">void</span> <span class="o">=</span> <span class="nf">hello</span><span class="p">()</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ts" class="page__taxonomy-item p-category" rel="tag">TS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#study" class="page__taxonomy-item p-category" rel="tag">Study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-17">May 17, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL-20+%3A+TypeScript%EC%9D%98+%ED%83%80%EC%9E%85%EB%93%A4%281%29%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-20%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-20%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-20%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      <!--첫 번째 문단-->
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+<!--두 번째 문단-->
+
+  <nav class="pagination">
+    
+      <a href="/study/til-19/" class="pagination--pager">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-19/" rel="permalink">TIL-19 : Object Property Key
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned Object Property Key!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-18/" rel="permalink">TIL-18 : Map, Set Type
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned Map, Set!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-17/" rel="permalink">TIL-17 : bind()
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned bind method!
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/etc/etc-04-review/" rel="permalink">[Etc] 퀴즈 사이트 만들기 회고
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Javascript 연습을 위한 퀴즈 사이트를 만들고 나서 주저리 주저리
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/eungbug" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 EungBug(Eunbi Lee). Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/study/til-20/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-20"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eungbug-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -5,8 +5,19 @@
     <description>웹 프론트엔드 개발자를 준비하며 기록해 나갈 여정의 시작.</description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Mon, 15 May 2023 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Wed, 17 May 2023 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>TIL-20 : TypeScript의 타입들(1)</title>
+        
+        
+            <description>Today I Learned TypeScript!</description>
+        
+        <pubDate>Wed, 17 May 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/study/til-20/</link>
+        <guid isPermaLink="true">http://localhost:4000/study/til-20/</guid>
+      </item>
+    
 	<item>
 		<title>TIL-19 : Object Property Key</title>
         
@@ -104,17 +115,6 @@
         <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/study/til-12/</link>
         <guid isPermaLink="true">http://localhost:4000/study/til-12/</guid>
-      </item>
-    
-	<item>
-		<title>TIL-11 : JavaScript</title>
-        
-        
-            <description>Today I Learned JavaScript String</description>
-        
-        <pubDate>Mon, 10 Apr 2023 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/study/til-11/</link>
-        <guid isPermaLink="true">http://localhost:4000/study/til-11/</guid>
       </item>
     
   </channel>
