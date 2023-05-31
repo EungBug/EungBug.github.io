@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>TIL-17 : bind() - 응벅로그</title>
-<meta name="description" content="Today I Learned bind method!">
+<!-- begin _includes/seo.html --><title>TIL-21 : JS - Promise.all() - 응벅로그</title>
+<meta name="description" content="Today I Learned JS Promise.all !">
 
 
   <meta name="author" content="Eunbi Lee">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="응벅로그">
-<meta property="og:title" content="TIL-17 : bind()">
-<meta property="og:url" content="http://localhost:4000/study/til-17/">
+<meta property="og:title" content="TIL-21 : JS - Promise.all()">
+<meta property="og:url" content="http://localhost:4000/study/til-21/">
 
 
-  <meta property="og:description" content="Today I Learned bind method!">
-
-
-
+  <meta property="og:description" content="Today I Learned JS Promise.all !">
 
 
 
 
-  <meta property="article:published_time" content="2023-05-07T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-05-07T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-06-01T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-06-01T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/study/til-17/">
+
+<link rel="canonical" href="http://localhost:4000/study/til-21/">
 
 
 
@@ -290,16 +290,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="TIL-17 : bind()">
-    <meta itemprop="description" content="Today I Learned bind method!">
-    <meta itemprop="datePublished" content="2023-05-07T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-05-07T00:00:00+09:00">
+    <meta itemprop="headline" content="TIL-21 : JS - Promise.all()">
+    <meta itemprop="description" content="Today I Learned JS Promise.all !">
+    <meta itemprop="datePublished" content="2023-06-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-06-01T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/study/til-17/" class="u-url" itemprop="url">TIL-17 : bind()
+            <a href="http://localhost:4000/study/til-21/" class="u-url" itemprop="url">TIL-21 : JS - Promise.all()
 </a>
           </h1>
           
@@ -313,23 +313,68 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-bars"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#bind">bind()</a></li></ul>
+              <ul class="toc__menu"><li><a href="#비동기-처리를-위한-promiseall-메서드">비동기 처리를 위한 Promise.all() 메서드</a></li></ul>
 
             </nav>
           </aside>
         
         <p><br /></p>
 
-<h2 id="bind">bind()</h2>
+<h2 id="비동기-처리를-위한-promiseall-메서드">비동기 처리를 위한 Promise.all() 메서드</h2>
 
-<p>함수는 객체이기 때문에 특별한 속성(메서드)을 연결할 수 있다.<br />
-<code class="language-plaintext highlighter-rouge">bind</code> 메서드는 <code class="language-plaintext highlighter-rouge">즉시 실행되지 않는 함수</code>를 생성하는데 이때 받는 인자에 따라 새로운 함수, 새로운 참조가
-생성된다.<br />
-bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개</code>의 인자를 사용한다.</p>
+<p>복수의 API 요청을 보내고, 모든 응답을 받아 결과를 처리해야 할 때, 어떤 방식으로 처리하는 것이 좋을까요?</p>
 
-<p>첫 번째 매개변수의 경우 함수 내 <code class="language-plaintext highlighter-rouge">this</code> 키워드를 <code class="language-plaintext highlighter-rouge">주어진 값</code>으로 설정하며, 두 번째 매개변수부터는 사전에 함수를 구성하고 싶은 매개변수들을 넣는다. 이때 함수가 지원하는 만큼 여러개를 넣을 수 있다.</p>
+<p>일단, 1차원적인 생각으로 처리를 한다고 하면 아마 아래와 같은 방법을 생각할 수 있습니다.</p>
 
-<p>이렇게 bind 메서드를 사용하면 원본 함수 객체를 감싸는 새로운 함수를 생성할 수 있다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 5개의 API를 요청하고 응답 받는다.</span>
+<span class="mi">1</span><span class="p">.</span> <span class="nx">첫</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">요청</span><span class="p">...</span>
+<span class="o">====</span> <span class="nx">서버에서</span> <span class="nx">요청</span> <span class="nx">처리중</span><span class="p">...(</span><span class="nx">n</span> <span class="nx">ms</span><span class="p">)</span> <span class="o">====</span>
+<span class="mi">2</span><span class="p">.</span> <span class="nx">첫</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">응답</span><span class="p">...</span>
+<span class="mi">3</span><span class="p">.</span> <span class="nx">두</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">요청</span><span class="p">...</span>
+<span class="o">====</span> <span class="nx">서버에서</span> <span class="nx">요청</span> <span class="nx">처리중</span><span class="p">...(</span><span class="nx">n</span> <span class="nx">ms</span><span class="p">)</span> <span class="o">====</span>
+<span class="mi">4</span><span class="p">.</span> <span class="nx">두</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">응답</span><span class="p">...</span>
+<span class="mi">5</span><span class="p">.</span> <span class="nx">세</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">요청</span><span class="p">...</span>
+<span class="o">====</span> <span class="nx">서버에서</span> <span class="nx">요청</span> <span class="nx">처리중</span><span class="p">...(</span><span class="nx">n</span> <span class="nx">ms</span><span class="p">)</span> <span class="o">====</span>
+<span class="mi">6</span><span class="p">.</span> <span class="nx">세</span> <span class="nx">번째</span> <span class="nx">API</span> <span class="nx">응답</span><span class="p">...</span>
+
+<span class="p">...</span> <span class="nx">반복</span>
+
+<span class="mi">11</span><span class="p">.</span> <span class="nx">전체</span> <span class="nx">응답</span> <span class="nx">결과</span> <span class="nx">확인</span> <span class="nx">후</span> <span class="nx">후</span> <span class="nf">처리 </span><span class="p">(</span><span class="nx">Total</span> <span class="nx">n</span> <span class="nx">ms</span><span class="p">)...</span>
+</code></pre></div></div>
+
+<p>이런 식으로 요청을 보내고 →  처리 시간을 기다리고 → 응답을 받고 반복을 하게 됩니다.</p>
+
+<p>이렇게 로직을 구현한 경우 마지막에 이 로직을 처리하기 위해선 5번의 처리 시간을 합산한 시간만큼 로딩이 걸리게 됩니다.</p>
+
+<p>위와 같은 로직은 사용자가 많은 시간을 기다리게 되고 좋은 로직이라고 볼 수 없으며, 성능 개선이 필요한 로직이라고 생각됩니다.</p>
+
+<p>그렇다면 어떻게 하면 좋을까요?🤔</p>
+
+<p>5개의 API 요청을 동시에 보낸 뒤, 각각 비동기 처리를 통해 마지막으로 응답이 들어오면 후처리를 하는 것이 효율적이라고 볼 수 있습니다.</p>
+
+<p>이런 상황에서 사용할 수 있는 메서드가 바로 <code class="language-plaintext highlighter-rouge">Promise 클래스</code>의 <code class="language-plaintext highlighter-rouge">all()</code> 입니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nf">all</span><span class="p">([</span><span class="nb">Promise</span> <span class="nx">배열</span><span class="p">])</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong><code class="language-plaintext highlighter-rouge">Promise</code></strong> 객체는 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타냅니다.</p>
+
+</blockquote>
+
+<p>all() 파라미터로 API 호출을 위한 복수의 Promise들이 <code class="language-plaintext highlighter-rouge">배열</code> 형태로 들어가게 됩니다.</p>
+
+<p>배열의 각 Promise가 실행되고, 각각의 결과값을 받아 처리하는 새로운 Promise가 실행됩니다.
+실행 결과로 각 Promise의 결과값을 배열안에 담아 반환하는 로직을 실행합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Promise.all()</code>은 각각의 요청을 <code class="language-plaintext highlighter-rouge">비동기</code>로 처리하기 때문에 서버에서 처리되는 순서가  Promise 배열의 순서와 일치하지 않을 수 있습니다. 순서를 보장하지 않습니다.</p>
+
+<p>다만 결과값을 담는 배열의 경우 Promise의 순서대로 결과값이 들어갑니다.
+⇒ index 0의 요청이 가장 마지막에 완료되어도 결과 배열에는 원래 자리인 0번에 들어가게 됩니다.</p>
+
+<p>때문에 이 all()을 활용하면 여러 개의 비동기 처리를 한번에 할 수 있지만 문제점 같은 주의사항이 있습니다.</p>
+
+<p>이 Promise들 중 하나라도 요청 실패로 error가 발생하면 <code class="language-plaintext highlighter-rouge">reject</code>이 되고, 전체 Promise들이 reject 된다는 점입니다. 그렇기 때문에 all을 사용할 경우 예외처리를 신중하게 해야한다는 주의사항이 있습니다.</p>
 
         
       </section>
@@ -371,7 +416,7 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-05-07">May 7, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-06-01">June 1, 2023</time></p>
 
       </footer>
 
@@ -380,25 +425,17 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=TIL-17+%3A+bind%28%29%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-17%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=TIL-21+%3A+JS+-+Promise.all%28%29%20http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-21%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-17%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-21%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-17%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fstudy%2Ftil-21%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       <!--첫 번째 문단-->
 
 
-
-  
-
-  
-
-  
-
-  
 
   
   	
@@ -411,10 +448,10 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
 
   <nav class="pagination">
     
-      <a href="/study/til-16/" class="pagination--pager">이전</a>
+      <a href="/study/til-20/" class="pagination--pager">이전</a>
     
     
-      <a href="/study/til-18/" class="pagination--pager">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -428,28 +465,6 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/til-21/" rel="permalink">TIL-21 : JS - Promise.all()
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Today I Learned JS Promise.all !
-</p>
-  </article>
-</div>
-
         
           
 
@@ -517,6 +532,28 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/til-17/" rel="permalink">TIL-17 : bind()
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">Today I Learned bind method!
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -579,8 +616,8 @@ bind 메서드는 최소 <code class="language-plaintext highlighter-rouge">2개
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/study/til-17/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/til-17"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/study/til-21/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/til-21"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

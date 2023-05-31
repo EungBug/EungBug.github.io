@@ -148,4 +148,10 @@ var store = [{
         "tags": ["TS"],
         "url": "/study/til-20/",
         "teaser": null
+      },{
+        "title": "TIL-21 : JS - Promise.all()",
+        "excerpt":"비동기 처리를 위한 Promise.all() 메서드 복수의 API 요청을 보내고, 모든 응답을 받아 결과를 처리해야 할 때, 어떤 방식으로 처리하는 것이 좋을까요? 일단, 1차원적인 생각으로 처리를 한다고 하면 아마 아래와 같은 방법을 생각할 수 있습니다. // 5개의 API를 요청하고 응답 받는다. 1. 첫 번째 API 요청... ==== 서버에서 요청 처리중...(n ms)...","categories": ["Study"],
+        "tags": ["JS"],
+        "url": "/study/til-21/",
+        "teaser": null
       }]
